@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj": {}
+  },
+  "projects": {
+    "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj",
+        "projectName": "Aryzac.Common",
+        "projectPath": "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj",
+        "packagesPath": "C:\\Users\\StephanJohnson\\.nuget\\packages\\",
+        "outputPath": "E:\\intent-modules\\src\\Aryzac.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "E:\\intent-modules\\NuGet.Config",
+          "C:\\Users\\StephanJohnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "E:\\intent-modules\\.nuget-packages": {},
+          "E:\\intent-modules\\.nuget-packages-internal": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/intentarchitect/4bb4c1b9-5b56-4972-8bac-0ad3fa64204e/_packaging/intentarchitect-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Intent.Modules.Common": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "Intent.Packager": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
+            "Intent.RoslynWeaver.Attributes": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "Intent.SoftwareFactory.SDK": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

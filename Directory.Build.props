@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <PackageOutputPath>$(MSBuildThisFileDirectory).nuget-packages</PackageOutputPath>
+    <IntentModuleOutputPath>$(MSBuildThisFileDirectory).intent-modules</IntentModuleOutputPath>
+  </PropertyGroup>
+</Project>

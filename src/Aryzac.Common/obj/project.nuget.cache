@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "SkXihfP9LFI=",
+  "success": true,
+  "projectFilePath": "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\intent.modules.common\\3.5.0\\intent.modules.common.3.5.0.nupkg.sha512",
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\intent.packager\\3.4.2\\intent.packager.3.4.2.nupkg.sha512",
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\intent.roslynweaver.attributes\\2.1.4\\intent.roslynweaver.attributes.2.1.4.nupkg.sha512",
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\intent.softwarefactory.sdk\\3.5.0\\intent.softwarefactory.sdk.3.5.0.nupkg.sha512",
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.32\\microsoft.extensions.filesystemglobbing.3.1.32.nupkg.sha512",
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

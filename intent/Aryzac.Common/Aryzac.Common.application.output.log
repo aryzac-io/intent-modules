@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<outputLog>
+  <ApplicationId>fe041d83-c3b4-464a-bd03-1a3e071959c3</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <ProjectId>256091ff-016b-4602-8e00-24bcbff63e7d</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#256091ff-016b-4602-8e00-24bcbff63e7d</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../src/Aryzac.Common/Aryzac.Common.csproj</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Aryzac.Common.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>256091ff-016b-4602-8e00-24bcbff63e7d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../src/Aryzac.Common/Aryzac.Common.imodspec</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Aryzac.Common.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>a110d594-7f5b-44fc-8855-42852fd6b642</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.DesignerSettings#bfc79451-c689-4f3b-93bf-de846c55cece</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../src/Aryzac.Common/modelers/Aryzac Common Designer Settings.designer.settings</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Aryzac Common Designer Settings.designer.settings</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>256091ff-016b-4602-8e00-24bcbff63e7d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.ReleaseNotes</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../src/Aryzac.Common/release-notes.md</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>release-notes.md</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#d1bb94bb-f2c5-4abc-a96f-0984646d3775</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../src/Aryzac.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+  </FileLogs>
+</outputLog>

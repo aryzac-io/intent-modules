@@ -1,0 +1,344 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Intent.Modules.Common/3.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Intent.SoftwareFactory.SDK": "3.5.0-pre.2",
+          "Microsoft.Extensions.FileSystemGlobbing": "3.1.32",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Intent.Modules.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Intent.Modules.Common.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Intent.Packager/3.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Intent.IArchitect.Agent.Persistence.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Intent.IArchitect.Common.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Intent.IArchitect.CrossCutting.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Intent.IArchitect.CrossPlatform.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Intent.IArchitect.Packager.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Intent.Packager.BuildTasks.dll": {
+            "related": ".deps.json;.pdb"
+          },
+          "lib/netstandard2.0/Intent.SoftwareFactory.SDK.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/NuGet.Versioning.dll": {},
+          "lib/netstandard2.0/Serilog.dll": {}
+        },
+        "build": {
+          "Build/Intent.Packager.targets": {}
+        }
+      },
+      "Intent.RoslynWeaver.Attributes/2.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Intent.RoslynWeaver.Attributes.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Intent.RoslynWeaver.Attributes.dll": {}
+        }
+      },
+      "Intent.SoftwareFactory.SDK/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Intent.SoftwareFactory.SDK.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Intent.SoftwareFactory.SDK.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/3.1.32": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Reflection.Emit/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Intent.Modules.Common/3.5.0": {
+      "sha512": "qn+YQ6TlN/pbldphfz0rWxBPHUkc4Nhf9QM25Qo+m9TEVCo5WkA+P9w4aUY3ZD91hFTcCloyDT17lJB7yRSmzg==",
+      "type": "package",
+      "path": "intent.modules.common/3.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "intent.modules.common.3.5.0.nupkg.sha512",
+        "intent.modules.common.nuspec",
+        "lib/netcoreapp3.1/Intent.Modules.Common.dll",
+        "lib/netcoreapp3.1/Intent.Modules.Common.xml",
+        "logo.png"
+      ]
+    },
+    "Intent.Packager/3.4.2": {
+      "sha512": "j/gy9kTgm15ruq6+cTQKFXstBXXWREGlcIT+wYrr+sbH/FBkiZIasdlNywoCvj6I+0xt5o0mMDzVX1RZEjvRtA==",
+      "type": "package",
+      "path": "intent.packager/3.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Build/Intent.Packager.targets",
+        "intent.packager.3.4.2.nupkg.sha512",
+        "intent.packager.nuspec",
+        "lib/netstandard2.0/Intent.IArchitect.Agent.Persistence.dll",
+        "lib/netstandard2.0/Intent.IArchitect.Agent.Persistence.pdb",
+        "lib/netstandard2.0/Intent.IArchitect.Common.dll",
+        "lib/netstandard2.0/Intent.IArchitect.Common.pdb",
+        "lib/netstandard2.0/Intent.IArchitect.CrossCutting.dll",
+        "lib/netstandard2.0/Intent.IArchitect.CrossCutting.pdb",
+        "lib/netstandard2.0/Intent.IArchitect.CrossPlatform.dll",
+        "lib/netstandard2.0/Intent.IArchitect.CrossPlatform.pdb",
+        "lib/netstandard2.0/Intent.IArchitect.Packager.dll",
+        "lib/netstandard2.0/Intent.IArchitect.Packager.pdb",
+        "lib/netstandard2.0/Intent.Packager.BuildTasks.deps.json",
+        "lib/netstandard2.0/Intent.Packager.BuildTasks.dll",
+        "lib/netstandard2.0/Intent.Packager.BuildTasks.pdb",
+        "lib/netstandard2.0/Intent.SoftwareFactory.SDK.dll",
+        "lib/netstandard2.0/Intent.SoftwareFactory.SDK.pdb",
+        "lib/netstandard2.0/NuGet.Versioning.dll",
+        "lib/netstandard2.0/Serilog.dll",
+        "logo.png"
+      ]
+    },
+    "Intent.RoslynWeaver.Attributes/2.1.4": {
+      "sha512": "vo8FpHYQr7iGgin7jcx9zg+13DUkPDgcb6jh8Eic7Yp2ac/ivLrnr/b0Uo8/7aPUH4+OSpcAPFJ4CyG1LtJhjw==",
+      "type": "package",
+      "path": "intent.roslynweaver.attributes/2.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "intent.roslynweaver.attributes.2.1.4.nupkg.sha512",
+        "intent.roslynweaver.attributes.nuspec",
+        "lib/net45/Intent.RoslynWeaver.Attributes.dll",
+        "lib/netstandard2.0/Intent.RoslynWeaver.Attributes.dll",
+        "logo.png"
+      ]
+    },
+    "Intent.SoftwareFactory.SDK/3.5.0": {
+      "sha512": "hmUOT5XPp6SL2bkw6RE7/CuBVHy7yXesF/l6PEnuClNPwdLmUK6zpQ1FXj1aZYlKk7qagxB/D2evVx002wgqjg==",
+      "type": "package",
+      "path": "intent.softwarefactory.sdk/3.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Intent Architect - Logo (color).png",
+        "intent.softwarefactory.sdk.3.5.0.nupkg.sha512",
+        "intent.softwarefactory.sdk.nuspec",
+        "lib/netstandard2.0/Intent.SoftwareFactory.SDK.dll",
+        "lib/netstandard2.0/Intent.SoftwareFactory.SDK.xml",
+        "lib/netstandard2.1/Intent.SoftwareFactory.SDK.dll",
+        "lib/netstandard2.1/Intent.SoftwareFactory.SDK.xml"
+      ]
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/3.1.32": {
+      "sha512": "MnccV+5jJkc69IlI/1+Hzak8w5a2wQzOgaooq0iDcd5MBA1vudkE/iHuT97+cQCyauNmXnAdPWQ7e4Y1q93sbg==",
+      "type": "package",
+      "path": "microsoft.extensions.filesystemglobbing/3.1.32",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "microsoft.extensions.filesystemglobbing.3.1.32.nupkg.sha512",
+        "microsoft.extensions.filesystemglobbing.nuspec"
+      ]
+    },
+    "System.Reflection.Emit/4.7.0": {
+      "sha512": "VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "type": "package",
+      "path": "system.reflection.emit/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Reflection.Emit.dll",
+        "lib/netstandard1.1/System.Reflection.Emit.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.xml",
+        "lib/netstandard2.1/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Reflection.Emit.dll",
+        "ref/netstandard1.1/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/de/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/es/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/fr/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/it/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/ja/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/ko/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/ru/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/zh-hans/System.Reflection.Emit.xml",
+        "ref/netstandard1.1/zh-hant/System.Reflection.Emit.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.xml",
+        "ref/netstandard2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.xml",
+        "system.reflection.emit.4.7.0.nupkg.sha512",
+        "system.reflection.emit.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Intent.Modules.Common >= 3.5.0",
+      "Intent.Packager >= 3.4.2",
+      "Intent.RoslynWeaver.Attributes >= 2.1.4",
+      "Intent.SoftwareFactory.SDK >= 3.5.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\StephanJohnson\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj",
+      "projectName": "Aryzac.Common",
+      "projectPath": "E:\\intent-modules\\src\\Aryzac.Common\\Aryzac.Common.csproj",
+      "packagesPath": "C:\\Users\\StephanJohnson\\.nuget\\packages\\",
+      "outputPath": "E:\\intent-modules\\src\\Aryzac.Common\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "E:\\intent-modules\\NuGet.Config",
+        "C:\\Users\\StephanJohnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "E:\\intent-modules\\.nuget-packages": {},
+        "E:\\intent-modules\\.nuget-packages-internal": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/intentarchitect/4bb4c1b9-5b56-4972-8bac-0ad3fa64204e/_packaging/intentarchitect-feed/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Intent.Modules.Common": {
+            "target": "Package",
+            "version": "[3.5.0, )"
+          },
+          "Intent.Packager": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.4.2, )"
+          },
+          "Intent.RoslynWeaver.Attributes": {
+            "target": "Package",
+            "version": "[2.1.4, )"
+          },
+          "Intent.SoftwareFactory.SDK": {
+            "target": "Package",
+            "version": "[3.5.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
