@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="eeba2b8c-1455-43d9-9af1-302fa0d8f430" version="3.1.0">
+  <name>GitHub Issue Closed</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="04e12b51-ed12-42a3-9667-a6aa81bb6d10">Class</type>
+    <type id="0814e459-fb9b-47db-b7eb-32ce30397e8a">Domain Event</type>
+    <type id="5fe6bb0a-7fc3-42ae-a351-d9188f5b8bc5">Value Object</type>
+    <type id="544f1d57-27ce-4985-a4ec-cc01568d72b0">Eventing DTO</type>
+    <type id="cbe970af-5bad-4d92-a3ed-a24b9fdaa23e">Message</type>
+    <type id="fee0edca-4aa0-4f77-a524-6bbd84e78734">DTO</type>
+    <type id="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9">Command</type>
+    <type id="e71b0662-e29d-4db2-868b-8a12464b25d0">Query</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>manually</applyMode>
+  <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAABHRJREFUeF7tnM9v3EQUx7+vu5QDQqxXBXLjwp8BtBXrVgg4NY4ElZAQggNHfqkoVWmlAgEVwQ31gDhBxXrvlGwgoeqfwI0/ABA/vBcklDr76CRZWDa2d2aebTbOs5ST5ztv3mff+OtxPCboISJAIrWKoQCFRaAAFaCQgFBeawUu3wwepxbeA/CYcNzZcsZtEN6Ow+R2Jf1ndFobwGg9uAnCaQDHK05uG8B3cZg8VXGc3e5rARitd06CaAjgnjqSAnCHxtzrnx3dqjpePQA3gu/BeKLqZP7TP+FW3EtOVh2zHoDDgKtOJKv/OEwqz6/yACaxKANg2cnVESPrR1KAwqkhAhhtPriENH2Jwe2icRDo8uz5OiqQwQfiTo+DQCm225/FT//6sy9HL4BRHy0EwWsAPvQNXAdA27Ex6E1K/vg4XsGOrWbSzg/gevcSiC8BaLkGnLRfJIAAdgjHLvfD36+65uMMMNq8bwnp8Z9cA/0fU9h1jG3aXrrR+/MXF507wGGwCsD5lzoMAImw2u8lZqlpfTgDXB523skwhS0Gb+VFXUQTIdApAObvn8OYziAcXbGm57OUywI4L3Ad92iuMXzyKOU+0Cewa3IuFTBp6xrDJ4+FAugDyVVT5PQK0IKmArSAVNREASrAPQJZF3ghGyt5YyrQKtuaGx0qE6mZjVU4BWiFKb+RAlSAQgJCuVagAhQSEMq1AhWgkIBQrhWoAIUEhHKtQAUoJCCUawUqQCEBoVwrUAEKCQjlWoEKUEhAKNcKVIBCAgsiL+XlonnvxixIrpUMQwEKsSpABSgkIJRrBSpAIYEC+fI3wfnB2eSLoghagTl0oo3udTC/zOArRa/9KsAZgGYPDHW7N5g5mpwyt2m/tUfvbp1GOstbAc4QWdno9nnM53B348jUqfTubqyrWZWoAKco7U/bV2arjIEUjIuDM8kHWoF517xhdwjwk1k7F5j5DQpHn8R0cCuYVqB5AXTfMHK2fZhvMKzlOfGRBphlGP8ah5m2fGFwZvSR3sbkEMgxjN3WzLhAYXIta9pOd3dkK9DHMLJ+h0MPcHnYeXEQjj53WY9EnobROIDRMHgfwFsArsdh8qoNRIlhNAbgqU20H9rprjHz61NJfYkkeSFv13kZhtEYgCsbwRozDLzpbzWY7fpfxWFyPivRMgyjMQD3/6N2cQbgJL9PZ6dzWYbRGIBmCp9IO6tZG7kBjEH4Ou4lz5iEyzSMxgCcJJKze96cHhtjAVHLPJLyWWHYGJJp04TbGPMJgrzpfIDD3oOB+SuMIwNwznQ+CNByhVErQNtgPu1svy8zx1hQ9EjKZ1wTjfMUXhk+cI5xbCAJ6qK1BTivEoseSbmMZ7atM8A9Zwt+BPCoJLCt1hbgHGMpfCRlO5ZSXNh08tzm/SfStPUDQA9LgttoXQGaPifTefejhSUaRmkATUfPf9t55M6YnmXma0R0rw0MnzY+ACfTGUx/2TyS8hmX9zVQEqyJWq9rYBNB+OakAH3J7esUoAIUEhDK/wZTYu1+DQDC1gAAAABJRU5ErkJggg==" />
+  <displayIcon>false</displayIcon>
+  <displayIconFunction>return false;</displayIconFunction>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>cb867450-70e9-45de-84bd-ed5e8fe194d4</parentFolderId>
+  <order>0</order>
+  <packageId>cb867450-70e9-45de-84bd-ed5e8fe194d4</packageId>
+  <packageName>Aryzac.GitHubIssues</packageName>
+  <properties />
+</stereotypeDefinition>

@@ -1,0 +1,59 @@
+<#@ template language="C#" inherits="IntentTemplateBase<Intent.Modelers.Services.CQRS.Api.QueryModel>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="Intent.Modelers.Services.CQRS.Api" #>
+<#@ import namespace="Aryzac.GitHubIssues.Api" #>
+---
+id: <#= Model.Id #>
+title: "task(query): Add <#= Model.Name #> query handler"
+type: task
+<# if (Model.HasGitHubIssueClosed()) { #>
+closed: true
+<# } else { #>
+closed: false
+<# } #>
+---
+<# if (Model.HasBusinessRequirement()) { #>
+
+### Business Goal
+
+<#= Model.GetBusinessRequirement().Summary() #>
+<# if (!string.IsNullOrWhiteSpace(Model.Comment)) { #>
+
+<#= Model.Comment #>
+<# } } #>
+
+### Scope & Notes
+
+| Property | Type | Nullable | Description |
+|-----------|------|----------|-------------|
+<# foreach (var property in Model.Properties) { #>
+| <#= property.Name #> | <#= property.TypeReference.Element.Name #> <#= property.TypeReference.IsCollection ? "[]" : "" #> | <#= property.TypeReference.IsNullable ? "Yes" : "No" #> | <#= string.IsNullOrWhiteSpace(property.Comment) ? "" : property.Comment #> |
+<# } #>
+
+Estimated Effort
+Estimated Days: 0.5
+
+| Task                                          | Target Hours      |
+|-----------------------------------------------|-------------------|
+| Define query + DTO                            | 0.5h              |
+| Add validator (if required)                   | 0.25h             |
+| Implement handler (projection + filters)      | 0.75h             |
+| Tests (happy, not found, pagination/ordering) | 1.0h              |
+| Documentation updates                         | 0.25h             |
+| Buffer                                        | 0.25h             |
+| Total Target Hours                            | 2.75h (≈ 0.5 day) |
+
+Acceptance Checklist
+- [ ] Query implements IRequest<<#= Model.Name #>> (+ IQuery if applicable)
+- [ ] DTO defined and returned (no domain entity leakage)
+- [ ] Handler uses repository IQueryable + ProjectTo + AsNoTracking
+- [ ] NotFoundException thrown when entity missing
+- [ ] Pagination/ordering/filters handled or N/A documented
+- [ ] Tests cover happy path, not found, filter/pagination cases
+- [ ] Documentation updated (this recipe referenced)
+- [ ] Effort variance >20% captured in issue comments

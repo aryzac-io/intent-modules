@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="b0d77ec8-1af5-44e9-97c4-c101cdc3c173" version="3.1.0">
+  <comment>Capture a summary of the business requirement that is used to justify this element</comment>
+  <name>Business Requirement</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="04e12b51-ed12-42a3-9667-a6aa81bb6d10">Class</type>
+    <type id="0814e459-fb9b-47db-b7eb-32ce30397e8a">Domain Event</type>
+    <type id="cbe970af-5bad-4d92-a3ed-a24b9fdaa23e">Message</type>
+    <type id="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9">Command</type>
+    <type id="e71b0662-e29d-4db2-868b-8a12464b25d0">Query</type>
+    <type id="fee0edca-4aa0-4f77-a524-6bbd84e78734">DTO</type>
+    <type id="5fe6bb0a-7fc3-42ae-a351-d9188f5b8bc5">Value Object</type>
+    <type id="544f1d57-27ce-4985-a4ec-cc01568d72b0">Eventing DTO</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>manually</applyMode>
+  <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAABR1JREFUeF7tnE2P21QUht/jpCxYdfoDSlmwrMQCsYUWVpWQSFxGqoRm4nQKghUIWgptJ5k0nbZTtqgUlTht+WrE2CMhVXxUyk9AYsumI/YVm3YBMz7ImWTIJNcTj4/tTJybrX3u9Xnyvvf4XvuaoH8iAiSK1sHQAIUi0AA1QCEBYXg8Cmw4x4lwFcDLwusJG/4PgxdQKn4DIg4blMR5YoDUcH+Dwa+CkU/iAndrk5k/QdlcSbvf/v5kAG+7r5HBP4PSh9dLogPRKt4YlxJFAMl2/gBwdJwK8PtmA6cxX2yM4zqkAMc6/vQDY1AVVmEpbYixA2SrKGpzEADZTug/qaPEuYKdpp1FyaqSSwMgEy0Q822V2tIuLJMJsFQwYK+dJeLrgRBTKiyTCbA3TDTcc4EQUyoskw2QmXBnrRxo5xQKy2QD7PnXdisErirtnHBhyQZAn9wdp0wevk67sGQHoG9n2zlLRKkWluwA7EmvsXouEGIChSV7AH0l3nWtQDvHXFiyBzDlwpJdgD5I2ykTki0s2QYIv7C4HxOgXDOMYyks4wC7fvarcxBE8Bws817UVZzpALilREttZ/6XLfOZqQIYNdmgOMkK0iQo8HcAL8YNbcdirGANc98DhP/ED/glyecumVagrxSy3YcgfiWpJ3+ZB9ixm69Eg66D+aW47TwdAGOiFvdjiP0/BsYErteMBigEqgFqgEICwnCtQA1QSEAYrhWoAQoJCMO1AqcR4F7esArDRzT1UrztJWovzAUHnRPWDhpgAEENELKNNhqgBtjx1r4fAyXj7H6PnbrlrLj/EA1QSFQD1ACFBIThqShQciMtqZBCNqHCNcDdMN1dO4G5Nx/sdooGGEDHaLq3mPkMg+qwCouB09lQOh3jVC51C7daOeNJ/nsG3uqlzeAlrB+qo3psYxCFVuAAEcN2Wgw2ATK2DzE22KAllAr1sQCUqDzNWMN2vmLgzFCfhA3ysOyVixUNMHg4egjguP8qjgLSsndkpoJjY7JwmiqK0ldXeQtKeMR1r2ReGmsRiZJUKjGtVo6e5O4DZCpty1jxrOKFsd/GpAIjQidG07nPzCd3FIxuO8S44j0/U1XZtr+rVKpwhNwSDzFs50sG3lUqD3TNKxUCbZstgPaPL8A6+edeiJPt/ArgddWYx0Sf4bmDN0Ypr9ffZCvQXq0QaJGYb3ll8/0wELvKeydKwVC1P5kA2+28sf53hZkvbiuB8K337MY8Zmc3lSD9GcbT/D1mnFLZljd5BafNXQtGZgAatrPCRB+Cuf9rSZsE/OBZxbdViRpN5ztmzALIDR7vfDLlyMErYW07+WNg0/2ImP1vdR0YuullvjloZ8N2v2DwsMX9KVqOapgvXA5j/8woEK1WDk8PfEDMnyuS8kB4wKXiG/4xaro/gfkEgP/ntt0g9ngRfx26qlokCAt0MsfAXnZN5wIxhib4ADwCbvqnMfCeEh7RJdXiQFhw2ajCfhaN1U8JVAu9Ece3LXENlhnZtpM/BvZnUK3mcfjoeSIKBYQJFTyaWZbYNlGAe7WA6nw2qIr5PX5IrOleJI8rgUrcUl4dlhnrB8qkY2AiGwEjAay28zj8OFCJcSsvljEwqY2AkQD2MrLdKoF3LHx24JWKtTjcMXTbJG00iY2AIoBbheUyGXQeHsBENVjR7/NG8RFZeLvxmDcCigG223k8euxP8zaxLrvPSwfgqF4yfDweBWYY0KjUNMBRhEYc1wA1QCEBYfh/zQdDfqstQM0AAAAASUVORK5CYII=" />
+  <displayIcon>false</displayIcon>
+  <displayIconFunction>return true;</displayIconFunction>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>cb867450-70e9-45de-84bd-ed5e8fe194d4</parentFolderId>
+  <order>0</order>
+  <packageId>cb867450-70e9-45de-84bd-ed5e8fe194d4</packageId>
+  <packageName>Aryzac.GitHubIssues</packageName>
+  <properties>
+    <property id="7646e926-3365-4282-ab6f-e4e657cfc898">
+      <name>Summary</name>
+      <type>string</type>
+      <controlType>textarea</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder>Capture a summary of the business requirement that is used to justify this element</placeholder>
+    </property>
+  </properties>
+</stereotypeDefinition>

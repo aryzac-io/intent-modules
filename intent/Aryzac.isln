@@ -6,8 +6,10 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="3.3.65" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="4.1.10-pre.1" />
   <applications>
-    <application id="fe041d83-c3b4-464a-bd03-1a3e071959c3" name="Aryzac.Common" relativePath="Aryzac.Common/Aryzac.Common.application.config" />
+    <application id="02ab05cd-cfdd-49a8-94cc-5d3d86370d64" name="Aryzac.Documentation" relativePath="Aryzac.Documentation/Aryzac.Documentation.application.config" />
+    <application id="36712813-e594-4c38-a292-fe5193757ec4" name="Aryzac.GitHubIssues" relativePath="Aryzac.GitHubIssues/Aryzac.GitHubIssues.application.config" />
+    <application id="4cc755a4-25a9-425b-a086-7f9ec5cc96ed" name="Aryzac.Aspire" relativePath="Aryzac.Aspire/Aryzac.Aspire.application.config" />
   </applications>
 </solution>

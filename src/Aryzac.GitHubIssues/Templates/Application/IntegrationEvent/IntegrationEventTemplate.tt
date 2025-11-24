@@ -1,0 +1,57 @@
+<#@ template language="C#" inherits="IntentTemplateBase<Intent.Modelers.Eventing.Api.MessageModel>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="Intent.Modelers.Eventing.Api" #>
+<#@ import namespace="Aryzac.GitHubIssues.Api" #>
+---
+id: <#= Model.Id #>
+title: "task(integration event): Publish <#= Model.Name #> integration event"
+type: task
+<# if (Model.HasGitHubIssueClosed()) { #>
+closed: true
+<# } else { #>
+closed: false
+<# } #>
+---
+<# if (Model.HasBusinessRequirement()) { #>
+
+### Business Goal
+
+<#= Model.GetBusinessRequirement().Summary() #>
+<# if (!string.IsNullOrWhiteSpace(Model.Comment)) { #>
+
+<#= Model.Comment #>
+<# } } #>
+
+### Scope & Notes
+
+| Property | Type | Nullable | Description |
+|-----------|------|----------|-------------|
+<# foreach (var property in Model.Properties) { #>
+| <#= property.Name #> | <#= property.TypeReference.Element.Name #> <#= property.TypeReference.IsCollection ? "[]" : "" #> | <#= property.TypeReference.IsNullable ? "Yes" : "No" #> | <#= string.IsNullOrWhiteSpace(property.Comment) ? "" : property.Comment #> |
+<# } #>
+
+Estimated Effort
+Estimated Days: 0.25
+
+| Task                                    | Target Hours       |
+|-----------------------------------------|--------------------|
+| Confirm domain event + handler location | 0.25h              |
+| Define integration message contract     | 0.25h              |
+| Map & publish in handler                | 0.5h               |
+| Configure DI / bus wiring               | 0.25h              |
+| Documentation updates                   | 0.25h              |
+| Buffer                                  | 0.25h              |
+| Total Target Hours                      | 1.75h (≈ 0.25 day) |
+
+Acceptance Checklist
+- [ ] Integration event contract (<#= Model.Name #>V1Event) defined and versioned
+- [ ] Domain event handler publishes message via IEventBus
+- [ ] Bus registration / configuration updated as required
+- [ ] Validation approach for publish path recorded (automated or manual)
+- [ ] Documentation updated (this recipe referenced)
+- [ ] Effort variance >20% captured in issue comments

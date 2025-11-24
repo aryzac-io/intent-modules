@@ -1,0 +1,66 @@
+<#@ template language="C#" inherits="IntentTemplateBase<Intent.Modelers.Domain.ValueObjects.Api.ValueObjectModel>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="Intent.Modelers.Domain.ValueObjects.Api" #>
+<#@ import namespace="Aryzac.GitHubIssues.Api" #>
+---
+id: <#= Model.Id #>
+title: "task(value object): Introduce <#= Model.Name #> value object"
+type: task
+<# if (Model.HasGitHubIssueClosed()) { #>
+closed: true
+<# } else { #>
+closed: false
+<# } #>
+---
+<# if (Model.HasBusinessRequirement()) { #>
+
+### Business Goal
+
+<#= Model.GetBusinessRequirement().Summary() #>
+<# if (!string.IsNullOrWhiteSpace(Model.Comment)) { #>
+
+<#= Model.Comment #>
+<# } } #>
+
+### Scope & Notes
+
+| Attribute | Type | Nullable | Default | Description |
+|-----------|------|----------|---------|-------------|
+<# foreach (var attribute in Model.Attributes) { #>
+| <#= attribute.Name #> | <#= GetTypeName(attribute.TypeReference) #> | <#= attribute.TypeReference.IsNullable ? "Yes" : "No" #> | <#= attribute.Value #> | <#= string.IsNullOrWhiteSpace(attribute.Comment) ? "" : attribute.Comment #> |
+<# } #>
+
+Estimated Effort
+Estimated Days: 0.25
+
+| Task | Target Hours | Actual Hours |
+| --- | --- | --- |
+| Implement <Name>ValueObject | 0.5h | |
+| Update consuming aggregate behaviour | 0.5h | |
+| Adjust persistence configuration (if required) | 0.25h | |
+| Documentation updates | 0.25h | |
+| Buffer | 0.25h | |
+| Total Target Hours | 1.75h (≈ 0.25 day) | |
+
+Acceptance Checklist
+- [ ] Value object class created and inherits from ValueObject
+- [ ] Equality components include all invariant-driving fields
+- [ ] Consuming aggregate updated to use the value object
+- [ ] Persistence configuration updated or N/A documented
+- [ ] Validation approach for value object usage recorded (automated or manual)
+- [ ] Documentation updated (this recipe referenced)
+- [ ] Effort variance >20% noted
+
+<#+
+string GetTypeName(ITypeReference tr)
+{
+    var name = tr.Element.Name;
+    if (tr.IsCollection) name += " []";
+    return name;
+}
+#>
