@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="278a647e-8ea2-436c-b9df-5851354d8544" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>ApiProgramFactoryExtension</name>
+  <display>ApiProgramFactoryExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>7053e781-8a1d-4437-9aaf-d3e9959d0438</parentFolderId>
+  <packageId>7053e781-8a1d-4437-9aaf-d3e9959d0438</packageId>
+  <packageName>Aryzac.Aspire</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

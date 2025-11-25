@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d87c63a0-eb81-4588-87b3-c047c472c2aa" type="Component Group" typeId="027f8bb9-9b28-4c1d-a516-8c3daa70e46d">
+  <name>Aspire</name>
+  <display>Aspire (1)</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <order>2</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</parentFolderId>
+  <packageId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</packageId>
+  <packageName>Aryzac.Aspire.Application.Template</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="08b4c68f-3654-44cc-b3a1-87de79c23936" name="Component Group Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
+      <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
+      <properties>
+        <property name="54b29a03-082b-407a-b42e-cbacbcfa7fd7" display="Selection Mode" value="Allow Multiple" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="bfdd6ce0-b443-45cb-8603-a02110d794ec" type="Component" typeId="47064ef1-2295-4287-8301-c446910a1b1e">
+      <name>Aspire Host</name>
+      <display>Aspire Host (1)</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d87c63a0-eb81-4588-87b3-c047c472c2aa</parentFolderId>
+      <packageId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</packageId>
+      <packageName>Aryzac.Aspire.Application.Template</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="78da9b5b-428f-4b1e-a5e5-120c7b3d87d3" name="Component Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
+          <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
+          <properties>
+            <property name="004dc68b-f2c0-4859-9f03-fb2e29505437" display="Icon" value="{&quot;source&quot;:&quot;data:image/png;base64,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&quot;,&quot;type&quot;:0,&quot;absolutePathRelativeTo&quot;:null}" isActive="true" />
+            <property name="476744d2-a4bc-4750-a9db-7022edf576c5" display="Description" isActive="true" />
+            <property name="b928f640-5dfd-4676-b8c9-4aadac826d18" display="Include by Default" value="true" isActive="true" />
+            <property name="07af017d-20a4-4e73-978f-ca4a59351f70" display="Is Required" value="false" isActive="true" />
+            <property name="aafd8156-fffe-471f-96da-813239f1982a" display="Is New" value="false" isActive="true" />
+            <property name="ed4d09bb-52e7-43dc-91db-6244d5390e53" display="Dependencies" isActive="true" />
+            <property name="ab4e67f3-24c9-47c3-8a27-0589c9c6656f" display="Incompatibilities" isActive="true" />
+            <property name="dc6f3968-ed14-40d5-b5c5-7c722b93b4cc" display="Required License" value="None" isActive="true" />
+            <property name="25e2d8a3-0158-4823-842d-60773ff85edc" display="Documentation Url" isActive="true" />
+            <property name="8d427d1f-985c-47e7-b925-719dbcbc485c" display="Tags" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="262bc08c-69c2-4d14-a3ba-ce93e5a0d2c6" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+          <name>Aryzac.Aspire.Host</name>
+          <display>Aryzac.Aspire.Host</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bfdd6ce0-b443-45cb-8603-a02110d794ec</parentFolderId>
+          <packageId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</packageId>
+          <packageName>Aryzac.Aspire.Application.Template</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="7033e6f4-2a22-4357-bd65-f0ec06c516d5" name="Module Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
+              <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
+              <properties>
+                <property name="8235e942-6dec-4576-be44-3543b35ca44c" display="Version" value="1.0.0-pre.8" isActive="true" />
+                <property name="860a2a3a-9812-4fff-acc6-b342ddb23f96" display="Include By Default" value="true" isActive="true" />
+                <property name="42e43cfe-4073-4f7f-8a7e-ef79c150c8c7" display="Is Required" value="true" isActive="true" />
+                <property name="4bdd0a51-5a47-4119-b0bb-cd1240ac7850" display="Include Assets" value="All" isActive="true" />
+                <property name="478326e2-5290-428e-aef9-10f2c67f24c2" display="Included Assets" value="[]" isActive="false" />
+                <property name="406cbf38-4267-4260-8abc-4842116639d3" display="Is New" value="false" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

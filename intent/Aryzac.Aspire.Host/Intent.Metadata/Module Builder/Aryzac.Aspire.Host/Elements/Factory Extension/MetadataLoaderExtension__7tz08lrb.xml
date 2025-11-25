@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9e8d6771-93d8-4430-b41c-ffaef2863507" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>MetadataLoaderExtension</name>
+  <display>MetadataLoaderExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0c9391c0-bc25-4753-9367-abb50b0f5133</parentFolderId>
+  <packageId>0c9391c0-bc25-4753-9367-abb50b0f5133</packageId>
+  <packageName>Aryzac.Aspire.Host</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
