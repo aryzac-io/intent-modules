@@ -26,7 +26,7 @@ namespace Aryzac.Aspire.FactoryExtensions
         public override string Id => "Aryzac.Aspire.InfrastructureDependencyInjectionFactoryExtension";
 
         [IntentManaged(Mode.Ignore)]
-        public override int Order => 0;
+        public override int Order => 1000;
 
         /// <summary>
         /// This is an example override which would extend the
@@ -56,19 +56,25 @@ namespace Aryzac.Aspire.FactoryExtensions
                 var method = file.Classes.First().FindMethod("AddInfrastructure");
                 foreach (var dbContextInstance in dbContexts)
                 {
-                    method.AddStatement(UpdateAddDbContextStatement(dependencyInjectionTemplate, dbContextInstance, dependencyInjectionTemplate.ExecutionContext));
+                    var dbContextConnectionStringStatement = method.FindStatement(s => s.HasMetadata("is-connection-string"));
+                    var newStatement = UpdateAddDbContextStatement(
+                        dependencyInjectionTemplate, 
+                        dbContextInstance, 
+                        dbContextConnectionStringStatement.Parent,
+                        dependencyInjectionTemplate.ExecutionContext);
+
+                    method.FindAndReplaceStatement(s => s == dbContextConnectionStringStatement.Parent, newStatement);
                 }
             });
         }
 
-        private static AddDbContextStatement UpdateAddDbContextStatement(ICSharpFileBuilderTemplate dependencyInjection,
+        private static CSharpStatement UpdateAddDbContextStatement(
+            ICSharpFileBuilderTemplate dependencyInjection,
             DbContextInstance dbContextInstance,
+            IHasCSharpStatementsActual optionsStatement,
             ISoftwareFactoryExecutionContext executionContext)
         {
-            var connectionString = $@"""{dbContextInstance.ConnectionStringName}""";
-
-            var addDbContext = new AddDbContextStatement(dbContextInstance.GetTypeName(dependencyInjection));
-            var statements = new List<CSharpStatement>();
+            var statement = new CSharpStatementBlock();
 
             var targetDbProvider = DbContextManager.GetDatabaseProviderForDbContext(dbContextInstance.DbProvider, executionContext);
             switch (targetDbProvider)
@@ -103,7 +109,7 @@ namespace Aryzac.Aspire.FactoryExtensions
                         new CSharpStatement("        cosmosOptions.LimitToEndpoint();")
                     };
 
-                    statements.Add(new CSharpInvocationStatement("options.UseCosmos")
+                    statement.AddStatement(new CSharpInvocationStatement("options.UseCosmos")
                         .WithArgumentsOnNewLines()
                         .AddArgument(@"configuration[""ConnectionStrings:cosmos-db""]", a => a.AddMetadata("is-connection-string", true))
                         .AddArgument(@"configuration[""Cosmos:DatabaseName""]")
@@ -121,8 +127,7 @@ namespace Aryzac.Aspire.FactoryExtensions
                     throw new ArgumentOutOfRangeException(null, "Database Provider has not been set to a valid value. Please fix in the Database Settings.");
             }
 
-            addDbContext.AddConfigOptionStatements(statements);
-            return addDbContext;
+            return statement;
         }
 
         /// <summary>
