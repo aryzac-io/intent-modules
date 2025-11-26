@@ -28,9 +28,12 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public AppHostTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
+            const string aspireModule = "Aryzac.Aspire";
+
             apps = ExecutionContext.GetSolutionConfig()
                 .GetApplicationReferences()
                 .Select(app => ExecutionContext.GetSolutionConfig().GetApplicationConfig(app.Id))
+                .Where(app => app.Modules.Any(x => x.ModuleId == aspireModule))
                 .ToArray();
 
             var builderCreationStatement = new CSharpStatement("var builder = DistributedApplication.CreateBuilder(args);");

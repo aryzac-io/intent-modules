@@ -33,9 +33,12 @@ internal class IntegrationManager
 
     private IntegrationManager(ISoftwareFactoryExecutionContext executionContext)
     {
+        const string aspireModule = "Aryzac.Aspire";
+
         var applications = executionContext.GetSolutionConfig()
             .GetApplicationReferences()
             .Select(app => executionContext.GetSolutionConfig().GetApplicationConfig(app.Id))
+            .Where(app => app.Modules.Any(x => x.ModuleId == aspireModule))
             .ToArray();
 
         const string domainModelModule = "Intent.Modelers.Domain";

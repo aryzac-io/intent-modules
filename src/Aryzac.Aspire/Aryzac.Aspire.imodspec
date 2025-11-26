@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Aryzac.Aspire</id>
-  <version>1.0.0-pre.0</version>
+  <version>1.0.0-pre.1</version>
   <supportedClientVersions>[4.4.0-a,5.0.0)</supportedClientVersions>
   <summary>A custom module for Aryzac</summary>
   <description>A custom module for Aryzac</description>
@@ -12,6 +12,7 @@
   <factoryExtensions>
     <factoryExtension id="Aryzac.Aspire.ApiProgramFactoryExtension" externalReference="278a647e-8ea2-436c-b9df-5851354d8544" />
     <factoryExtension id="Aryzac.Aspire.InfrastructureDependencyInjectionFactoryExtension" externalReference="b6e465f8-b84e-4307-833c-91784d88f209" />
+    <factoryExtension id="Aryzac.Aspire.ProgramFactoryExtension" externalReference="cfeb15ee-5176-40b7-9ab8-fe08ac13bd10" />
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>

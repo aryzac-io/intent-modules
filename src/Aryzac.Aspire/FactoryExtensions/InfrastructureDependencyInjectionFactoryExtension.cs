@@ -56,6 +56,9 @@ namespace Aryzac.Aspire.FactoryExtensions
                 var method = file.Classes.First().FindMethod("AddInfrastructure");
                 foreach (var dbContextInstance in dbContexts)
                 {
+                    // Matching the options.UseCosmos (or other database provider) by matching the connection string
+                    // ⚠️ PROBABLY BETTER TO MARK the options.UsePROVIDER statement with specific metadata to clear 
+                    //    up this logic.
                     var dbContextConnectionStringStatement = method.FindStatement(s => s.HasMetadata("is-connection-string"));
                     var newStatement = UpdateAddDbContextStatement(
                         dependencyInjectionTemplate, 
@@ -68,6 +71,8 @@ namespace Aryzac.Aspire.FactoryExtensions
             });
         }
 
+        // No need for this module at all if this is embedded in Intent.Modules.EntityFrameworkCore. 
+        // In case this stays a custom module, we can extend this to support more providers as needed.
         private static CSharpStatement UpdateAddDbContextStatement(
             ICSharpFileBuilderTemplate dependencyInjection,
             DbContextInstance dbContextInstance,
@@ -94,6 +99,9 @@ namespace Aryzac.Aspire.FactoryExtensions
                     break;
 
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Cosmos:
+                    // Cosmos requires some additional configuration when using the emulator.
+                    // This needs to be disabled for production deployments, should maybe be 
+                    // driven via a setting or wrapped up in a #if DEBUG directive.
                     var cosmosOptionsStatements = new List<CSharpStatement>
                     {
                         new CSharpStatement("// Required for emulator"),

@@ -17,6 +17,8 @@ using PackageDbProvider = Intent.EntityFrameworkCore.Api.DomainPackageModelStere
 
 namespace Aryzac.Aspire;
 
+// Copied this from Intent.Modules.NET (.\Intent.Modules.net\Modules\Intent.Modules.EntityFrameworkCore\Templates\DbContextManager.cs).
+// Redundant if this logic is encapsulated in the Intent.Modules.EntityFrameworkCore module.
 public static class DbContextManager
 {
     public static IList<DbContextInstance> GetDbContexts(string applicationId, IMetadataManager metadataManager)
