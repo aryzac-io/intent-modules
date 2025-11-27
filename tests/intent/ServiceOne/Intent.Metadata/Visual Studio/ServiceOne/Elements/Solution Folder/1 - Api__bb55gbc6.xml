@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="65d56f95-2dc2-4537-b30c-b34de5c0943d" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>1 - Api</name>
+  <display>1 - Api</display>
+  <externalReference>2b76d8c9-dd09-40ff-9955-8ab74ee9512a</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>63b1a452-a0ab-4755-b3d7-259bb9e1ade0</parentFolderId>
+  <packageId>4f2a6412-a07b-4d9a-900e-f1cbb51bb1d6</packageId>
+  <packageName>ServiceOne</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

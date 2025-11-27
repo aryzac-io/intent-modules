@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c167f6b4-331e-4fbc-9c47-f03f68812e38" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>4 - Infrastructure</name>
+  <display>4 - Infrastructure</display>
+  <externalReference>03755119-cb3c-4cca-a0d0-532c2b817667</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>79d7f7cb-25fa-4f04-85cf-6765d4b19d6c</parentFolderId>
+  <packageId>3b1dc8a0-88d1-4f07-978a-a28e967c06f3</packageId>
+  <packageName>ServiceTwo</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

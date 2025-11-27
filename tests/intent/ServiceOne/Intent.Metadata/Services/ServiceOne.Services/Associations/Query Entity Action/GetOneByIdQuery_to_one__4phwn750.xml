@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="84e3ea43-cd78-43e3-8124-cc9a501f4d50">
+  <sourceEnd id="8ef8a323-d751-4a24-b3cd-3505176679ee" type="Query Entity Action Source End" typeId="32a65f26-2555-4616-8a2c-6a90805600bb">
+    <display>: GetOneByIdQuery</display>
+    <order>0</order>
+    <typeReference id="bfc214d8-45ca-4977-ba4a-aa60621ff2d2">
+      <typeId>77fb5096-4bdc-4752-bd09-5f216604397c</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceOne.Services</typePackageName>
+      <typePackageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="84e3ea43-cd78-43e3-8124-cc9a501f4d50" type="Query Entity Action Target End" typeId="93ef6675-cba4-4998-adff-cb22d5343ed4">
+    <name>one</name>
+    <display>[query] one: One</display>
+    <order>1</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="1f16bcb8-45fa-495b-a8ff-85af9b670734">
+      <typeId>d5f98edc-5c48-4599-af9a-71b17b0a696e</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceOne.Domain</typePackageName>
+      <typePackageId>24675568-f61b-4f7d-ab40-e530dbc63597</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="d00e5121-3963-43ff-bcbc-a12ed1c56328" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="77fb5096-4bdc-4752-bd09-5f216604397c" location="[ServiceOne].[Services].[GetOneByIdQuery]" />
+        <target applicationId="d00e5121-3963-43ff-bcbc-a12ed1c56328" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="d5f98edc-5c48-4599-af9a-71b17b0a696e" location="[ServiceOne].[Services].[One]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{Id}</expression>
+            <path>
+              <target id="d5f98edc-5c48-4599-af9a-71b17b0a696e" name="One" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
+              <target id="6c294a67-3683-497d-900f-355da7d3558c" name="Id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
+            </path>
+            <sources>
+              <source identifier="Id" mappingType="Filter Mapping" mappingTypeId="01d09a7f-0e7c-4670-b7bc-395d7e893ef2">
+                <path>
+                  <target id="77fb5096-4bdc-4752-bd09-5f216604397c" name="GetOneByIdQuery" type="element" specialization="Query" specializationId="e71b0662-e29d-4db2-868b-8a12464b25d0" />
+                  <target id="5d156b40-12e4-4b71-bf28-161da8b61faf" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Query Entity Action</associationType>
+  <associationTypeId>47ab5888-a258-4bec-a9fc-a83de69eb79d</associationTypeId>
+  <stereotypes />
+</association>

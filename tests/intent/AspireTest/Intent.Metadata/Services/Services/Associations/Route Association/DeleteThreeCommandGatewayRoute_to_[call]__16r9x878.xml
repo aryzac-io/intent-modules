@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="74e89e11-b090-40e4-bda0-7b6f1ea47130">
+  <sourceEnd id="fa374cf4-bdea-49ea-bbad-03486470ba4a" type="Upstream End" typeId="4143dbe5-12ce-4705-ba69-2683c46b1b96">
+    <display>: DeleteThreeCommandGatewayRoute</display>
+    <order>0</order>
+    <typeReference id="7aaa0ac9-4034-4bf9-9d28-9d7689863189">
+      <typeId>5d7166f9-692b-4598-8173-02ec8f4eaa82</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Services</typePackageName>
+      <typePackageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="74e89e11-b090-40e4-bda0-7b6f1ea47130" type="Downstream End" typeId="17084378-a3d8-4233-b275-c856eea4dd61">
+    <name>[call]</name>
+    <display>[call]: DeleteThreeCommand</display>
+    <order>1</order>
+    <typeReference id="8d5ac5e6-a745-4098-b5f4-fcf8371f55b8">
+      <typeId>29a7a775-c158-47c2-9b94-cdd4f42a463a</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Services</typePackageName>
+      <typePackageId>e0a2e675-41aa-4c84-9e6c-8ca1cab3b489</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Route Association</associationType>
+  <associationTypeId>dd35ed32-76bb-4abf-a4e0-370f230765cf</associationTypeId>
+  <stereotypes />
+</association>

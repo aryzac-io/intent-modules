@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c622d3de-c7f3-4e76-bb92-0917640b438f" type="Api Gateway Route" typeId="b09d7684-5dde-4d4b-9cb5-0707bfd8578f">
+  <name>OperationTwoCommandGatewayRoute</name>
+  <display>OperationTwoCommandGatewayRoute</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</parentFolderId>
+  <packageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</packageId>
+  <packageName>Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="PUT" isActive="true" />
+        <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="twos/{id}/operation" isActive="true" />
+        <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="false" />
+        <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="false" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="1b07ed9c-507b-4d30-8ae3-c868498d1093" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>Id</name>
+      <display>Id: string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="c102b84d-250c-4f6e-8ff7-f882d0154fab">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>c622d3de-c7f3-4e76-bb92-0917640b438f</parentFolderId>
+      <packageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</packageId>
+      <packageName>Services</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="routeVar" value="id" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="b87f60b9-b60b-4adb-9601-8d732e417c4a" type="Body Field" typeId="6b201f1e-03e3-4a9d-923f-ca3976c998c5">
+      <name>Body</name>
+      <display>Body: OperationTwoCommand</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="76ecf74f-8373-417a-b661-da007c41a20e">
+        <typeId>24c98a20-e1ca-48ac-8d46-473f12f78444</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>ServiceTwo.Services</typePackageName>
+        <typePackageId>4b4f41e7-93b6-44e1-8cd2-69b625dde244</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>c622d3de-c7f3-4e76-bb92-0917640b438f</parentFolderId>
+      <packageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</packageId>
+      <packageName>Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

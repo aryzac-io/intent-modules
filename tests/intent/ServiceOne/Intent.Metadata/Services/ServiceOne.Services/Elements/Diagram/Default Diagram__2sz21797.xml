@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9ac79728-8590-4a3d-bd18-a3e4590a8c98" type="Diagram" typeId="8c90aca5-86f4-47f1-bd58-116fe79f5c55">
+  <name>Default Diagram</name>
+  <display>Default Diagram</display>
+  <externalReference>169f3801-8244-4b9e-ac2f-3eaede785048</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</parentFolderId>
+  <packageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</packageId>
+  <packageName>ServiceOne.Services</packageName>
+  <diagram>
+    <targetPackageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</targetPackageId>
+  </diagram>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

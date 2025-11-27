@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="a4f7aeee-5e1b-4438-8335-f5155c24119f" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>4 - Infrastructure</name>
+  <display>4 - Infrastructure</display>
+  <externalReference>03755119-cb3c-4cca-a0d0-532c2b817667</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>63b1a452-a0ab-4755-b3d7-259bb9e1ade0</parentFolderId>
+  <packageId>4f2a6412-a07b-4d9a-900e-f1cbb51bb1d6</packageId>
+  <packageName>ServiceOne</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

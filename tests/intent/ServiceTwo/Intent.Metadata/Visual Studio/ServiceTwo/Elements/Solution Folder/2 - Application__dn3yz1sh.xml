@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d13e06b7-49ad-4ee0-912c-f138bb4c5d1f" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>2 - Application</name>
+  <display>2 - Application</display>
+  <externalReference>b44dfcb9-e9e9-43a2-855e-abf9c45a0359</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>79d7f7cb-25fa-4f04-85cf-6765d4b19d6c</parentFolderId>
+  <packageId>3b1dc8a0-88d1-4f07-978a-a28e967c06f3</packageId>
+  <packageName>ServiceTwo</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

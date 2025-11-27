@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b26c834c-8906-4eaf-8c32-34ddc383c4b6" type="Api Gateway Route" typeId="b09d7684-5dde-4d4b-9cb5-0707bfd8578f">
+  <name>CreateOneCommandGatewayRoute</name>
+  <display>CreateOneCommandGatewayRoute</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</parentFolderId>
+  <packageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</packageId>
+  <packageName>Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+        <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="ones" isActive="true" />
+        <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="false" />
+        <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="false" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="6e2f3918-e2d7-466b-a5ad-568fad5541e3" type="Body Field" typeId="6b201f1e-03e3-4a9d-923f-ca3976c998c5">
+      <name>Body</name>
+      <display>Body: CreateOneCommand</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="cde6f4ac-eccd-4ea0-a340-1e3ea646fdf1">
+        <typeId>c092659f-d578-4518-8d49-533ccd022f34</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>ServiceOne.Services</typePackageName>
+        <typePackageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>b26c834c-8906-4eaf-8c32-34ddc383c4b6</parentFolderId>
+      <packageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</packageId>
+      <packageName>Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

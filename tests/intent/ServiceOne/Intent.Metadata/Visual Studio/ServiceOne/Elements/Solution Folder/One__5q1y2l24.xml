@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="63b1a452-a0ab-4755-b3d7-259bb9e1ade0" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>One</name>
+  <display>One</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4f2a6412-a07b-4d9a-900e-f1cbb51bb1d6</parentFolderId>
+  <packageId>4f2a6412-a07b-4d9a-900e-f1cbb51bb1d6</packageId>
+  <packageName>ServiceOne</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="bb59d570-80b6-4564-9016-f809d6eacbc5" name="Folder Options">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
+      <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+      <properties>
+        <property name="4bcd7fb5-54e5-4812-b80c-4176114086c4" display="Materialize Folder" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="c7aee60d-d7c1-4bd7-9699-0c6751c0a16d">
+  <sourceEnd id="d337ebd7-23db-479b-944d-d0bc5c427f3b" type="Query Entity Action Source End" typeId="32a65f26-2555-4616-8a2c-6a90805600bb">
+    <display>: GetTwoByIdQuery</display>
+    <order>0</order>
+    <typeReference id="34be80a7-f465-4f9f-9466-2769d6b2b43e">
+      <typeId>da896776-7d97-4089-a2ac-4761a2c2dd85</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceTwo.Services</typePackageName>
+      <typePackageId>4b4f41e7-93b6-44e1-8cd2-69b625dde244</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="c7aee60d-d7c1-4bd7-9699-0c6751c0a16d" type="Query Entity Action Target End" typeId="93ef6675-cba4-4998-adff-cb22d5343ed4">
+    <name>two</name>
+    <display>[query] two: Two</display>
+    <order>1</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="41d79116-cb5c-4842-8623-553f92f8fcd3">
+      <typeId>f1e1b5cf-da6c-4311-a7e4-526613b2d7a9</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceTwo.Domain</typePackageName>
+      <typePackageId>96a6cdea-f298-4371-9c33-8f10b09bd567</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="3bdd75bd-cce5-4d08-8a16-bd321ac8d403" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="da896776-7d97-4089-a2ac-4761a2c2dd85" location="[ServiceTwo].[Services].[GetTwoByIdQuery]" />
+        <target applicationId="3bdd75bd-cce5-4d08-8a16-bd321ac8d403" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="f1e1b5cf-da6c-4311-a7e4-526613b2d7a9" location="[ServiceTwo].[Services].[Two]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{Id}</expression>
+            <path>
+              <target id="f1e1b5cf-da6c-4311-a7e4-526613b2d7a9" name="Two" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
+              <target id="647faf05-77b8-40a5-886b-35efef908065" name="Id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
+            </path>
+            <sources>
+              <source identifier="Id" mappingType="Filter Mapping" mappingTypeId="01d09a7f-0e7c-4670-b7bc-395d7e893ef2">
+                <path>
+                  <target id="da896776-7d97-4089-a2ac-4761a2c2dd85" name="GetTwoByIdQuery" type="element" specialization="Query" specializationId="e71b0662-e29d-4db2-868b-8a12464b25d0" />
+                  <target id="b3d7499b-4f5a-4291-b4da-8b997de34d9d" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Query Entity Action</associationType>
+  <associationTypeId>47ab5888-a258-4bec-a9fc-a83de69eb79d</associationTypeId>
+  <stereotypes />
+</association>

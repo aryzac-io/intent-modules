@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="31aa73a5-26fa-43a8-b348-0a2a490bf70e">
+  <sourceEnd id="a6a4fef0-fcfa-4ac3-a8e1-c1b5686c6282" type="Query Entity Action Source End" typeId="32a65f26-2555-4616-8a2c-6a90805600bb">
+    <display>: GetThreeByIdQuery</display>
+    <order>0</order>
+    <typeReference id="5b15bb43-0d0f-4365-8e9e-7bb61ca92af3">
+      <typeId>d6286afd-d02a-4fe1-bf2d-b262d87e3d37</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Services</typePackageName>
+      <typePackageId>e0a2e675-41aa-4c84-9e6c-8ca1cab3b489</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="31aa73a5-26fa-43a8-b348-0a2a490bf70e" type="Query Entity Action Target End" typeId="93ef6675-cba4-4998-adff-cb22d5343ed4">
+    <name>three</name>
+    <display>[query] three: Three</display>
+    <order>1</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="a2cacc22-b8d6-4d9f-b7b9-99d3afeb8874">
+      <typeId>f80ba99a-dffb-4188-b800-9fe77b4b1eaf</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Domain</typePackageName>
+      <typePackageId>6f3d6177-489e-4b87-abd0-b5f683ffb257</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="d6286afd-d02a-4fe1-bf2d-b262d87e3d37" location="[ServiceThree].[Services].[GetThreeByIdQuery]" />
+        <target applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" location="[ServiceThree].[Services].[Three]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{Id}</expression>
+            <path>
+              <target id="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" name="Three" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
+              <target id="2c6a13ae-2768-4c88-bf80-120da343241f" name="Id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
+            </path>
+            <sources>
+              <source identifier="Id" mappingType="Filter Mapping" mappingTypeId="01d09a7f-0e7c-4670-b7bc-395d7e893ef2">
+                <path>
+                  <target id="d6286afd-d02a-4fe1-bf2d-b262d87e3d37" name="GetThreeByIdQuery" type="element" specialization="Query" specializationId="e71b0662-e29d-4db2-868b-8a12464b25d0" />
+                  <target id="e378c6ac-f8a0-493f-b48a-3e9097f1573e" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Query Entity Action</associationType>
+  <associationTypeId>47ab5888-a258-4bec-a9fc-a83de69eb79d</associationTypeId>
+  <stereotypes />
+</association>

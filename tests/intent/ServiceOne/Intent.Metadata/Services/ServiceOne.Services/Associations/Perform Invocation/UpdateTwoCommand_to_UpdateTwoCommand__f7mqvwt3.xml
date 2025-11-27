@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="2fcda9bf-19f6-443c-ac34-4ac597c7f4d7">
+  <sourceEnd id="39ea854c-42dc-474c-a365-fb1022071afa" type="Perform Invocation Source End" typeId="ee56bd48-8eff-4fff-8d3a-87731d002335">
+    <display>called by : ServiceOne.Services.UpdateTwoCommand</display>
+    <order>0</order>
+    <typeReference id="ac762b20-f4a2-412b-9929-7784a19fda65">
+      <typeId>5f6b5d31-780f-4705-96ed-b04f6b0d6a69</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceOne.Services</typePackageName>
+      <typePackageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="2fcda9bf-19f6-443c-ac34-4ac597c7f4d7" type="Perform Invocation Target End" typeId="093e5909-ffe4-4510-b3ea-532f30212f3c">
+    <display>[call] UpdateTwoCommand(...): void</display>
+    <order>2</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="8c31ad58-2fcd-4962-947b-4ea9dddb97f7">
+      <typeId>ffea961c-3b39-4d5b-b192-476eec0c911c</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceTwo.Services</typePackageName>
+      <typePackageId>4b4f41e7-93b6-44e1-8cd2-69b625dde244</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Invocation Mapping" typeId="a4c4c5cc-76df-48ed-9d4e-c35caf44b567">
+        <source applicationId="d00e5121-3963-43ff-bcbc-a12ed1c56328" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="5f6b5d31-780f-4705-96ed-b04f6b0d6a69" location="[ServiceOne].[Services].[UpdateTwoCommand]" />
+        <target applicationId="3bdd75bd-cce5-4d08-8a16-bd321ac8d403" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="ffea961c-3b39-4d5b-b192-476eec0c911c" location="[ServiceOne].[Services].[UpdateTwoCommand]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{UpdateTwoCommand}</expression>
+            <path>
+              <target id="ffea961c-3b39-4d5b-b192-476eec0c911c" name="UpdateTwoCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+            </path>
+            <sources>
+              <source identifier="UpdateTwoCommand" mappingType="Invocation Mapping" mappingTypeId="7ca5c18a-bdbe-434b-a68a-421899a077e7">
+                <path>
+                  <target id="5f6b5d31-780f-4705-96ed-b04f6b0d6a69" name="UpdateTwoCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{Id}</expression>
+            <path>
+              <target id="ffea961c-3b39-4d5b-b192-476eec0c911c" name="UpdateTwoCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="47601f57-dc5f-43ce-a29a-f339d238a294" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="Id" mappingType="Data Mapping" mappingTypeId="1ad97d12-2aa8-4f03-8cb0-3a8a4e71b4d9">
+                <path>
+                  <target id="5f6b5d31-780f-4705-96ed-b04f6b0d6a69" name="UpdateTwoCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                  <target id="9e2866cf-9375-4773-9a12-91abbacdbec4" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{Attribute}</expression>
+            <path>
+              <target id="ffea961c-3b39-4d5b-b192-476eec0c911c" name="UpdateTwoCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="dc867aa1-8a38-448e-b55a-3e20bb78c78a" name="Attribute" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="Attribute" mappingType="Data Mapping" mappingTypeId="1ad97d12-2aa8-4f03-8cb0-3a8a4e71b4d9">
+                <path>
+                  <target id="5f6b5d31-780f-4705-96ed-b04f6b0d6a69" name="UpdateTwoCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                  <target id="7cc956bf-a802-4fb0-b376-d4d0d2fde380" name="Attribute" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Perform Invocation</associationType>
+  <associationTypeId>3e69085c-fa2f-44bd-93eb-41075fd472f8</associationTypeId>
+  <stereotypes />
+</association>

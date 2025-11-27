@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="cb2de97e-19b9-4470-bd6c-e0009bae5ac7">
+  <sourceEnd id="24b02e66-07d1-4a44-8bdc-3fbbba8783ea" type="Query Entity Action Source End" typeId="32a65f26-2555-4616-8a2c-6a90805600bb">
+    <display>: GetThreesQuery</display>
+    <order>0</order>
+    <typeReference id="9198b2ca-dc30-44f1-8231-d8d82908c0f7">
+      <typeId>1100143a-a91a-412d-9ad2-9c73ba8828a6</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Services</typePackageName>
+      <typePackageId>e0a2e675-41aa-4c84-9e6c-8ca1cab3b489</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="cb2de97e-19b9-4470-bd6c-e0009bae5ac7" type="Query Entity Action Target End" typeId="93ef6675-cba4-4998-adff-cb22d5343ed4">
+    <name>threes</name>
+    <display>[query] threes: Three[*]</display>
+    <order>0</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="5cb42018-ef4a-42a0-a106-43aaa903369f">
+      <typeId>f80ba99a-dffb-4188-b800-9fe77b4b1eaf</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>true</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Domain</typePackageName>
+      <typePackageId>6f3d6177-489e-4b87-abd0-b5f683ffb257</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="1100143a-a91a-412d-9ad2-9c73ba8828a6" location="[ServiceThree].[Services].[GetThreesQuery]" />
+        <target applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" location="[ServiceThree].[Services].[Three]" />
+        <mappedEnds />
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Query Entity Action</associationType>
+  <associationTypeId>47ab5888-a258-4bec-a9fc-a83de69eb79d</associationTypeId>
+  <stereotypes />
+</association>

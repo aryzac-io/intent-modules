@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="04d96200-a6e3-478f-8a38-0ae3d9f57ee4">
+  <sourceEnd id="a3e084b4-b4c7-4f00-868c-2d6facd0e96c" type="Update Entity Action Source End" typeId="6bc95978-6def-4d0c-a4f5-25bdeda8a9f6">
+    <display>updated by : Threes.UpdateThreeCommand</display>
+    <order>0</order>
+    <typeReference id="a3b95e25-f758-46b9-b698-84573d65cece">
+      <typeId>053b3c32-4b02-49ce-a421-af8a54194886</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Services</typePackageName>
+      <typePackageId>e0a2e675-41aa-4c84-9e6c-8ca1cab3b489</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="04d96200-a6e3-478f-8a38-0ae3d9f57ee4" type="Update Entity Action Target End" typeId="516069f6-09cc-4de8-8e31-3c71ca823452">
+    <name>three</name>
+    <display>[update] three: Three</display>
+    <order>2</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="94788dd9-761c-4cc6-8a7a-41e5dd7cd304">
+      <typeId>f80ba99a-dffb-4188-b800-9fe77b4b1eaf</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Domain</typePackageName>
+      <typePackageId>6f3d6177-489e-4b87-abd0-b5f683ffb257</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="053b3c32-4b02-49ce-a421-af8a54194886" location="[ServiceThree].[Services].[UpdateThreeCommand]" />
+        <target applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" location="[ServiceThree].[Services].[Three]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{Id}</expression>
+            <path>
+              <target id="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" name="Three" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
+              <target id="2c6a13ae-2768-4c88-bf80-120da343241f" name="Id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
+            </path>
+            <sources>
+              <source identifier="Id" mappingType="Filter Mapping" mappingTypeId="01d09a7f-0e7c-4670-b7bc-395d7e893ef2">
+                <path>
+                  <target id="053b3c32-4b02-49ce-a421-af8a54194886" name="UpdateThreeCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                  <target id="ac92f910-7251-481d-a7e8-65b6554dabf6" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+      <mapping type="Update Entity Mapping" typeId="01721b1a-a85d-4320-a5cd-8bd39247196a">
+        <source applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="053b3c32-4b02-49ce-a421-af8a54194886" location="[ServiceThree].[Services].[UpdateThreeCommand]" />
+        <target applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" location="[ServiceThree].[Services].[Three]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{Attribute}</expression>
+            <path>
+              <target id="f80ba99a-dffb-4188-b800-9fe77b4b1eaf" name="Three" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
+              <target id="1d913b26-f0b9-4a5d-9025-68eb633a7b9c" name="Attribute" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
+            </path>
+            <sources>
+              <source identifier="Attribute" mappingType="Data Mapping" mappingTypeId="ca88649b-f20b-44db-a9c0-017c26155ba8">
+                <path>
+                  <target id="053b3c32-4b02-49ce-a421-af8a54194886" name="UpdateThreeCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                  <target id="83753dc1-bbaf-4c0f-9574-739ee934866b" name="Attribute" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Update Entity Action</associationType>
+  <associationTypeId>9ea0382a-4617-412a-a8c8-af987bbce226</associationTypeId>
+  <stereotypes />
+</association>

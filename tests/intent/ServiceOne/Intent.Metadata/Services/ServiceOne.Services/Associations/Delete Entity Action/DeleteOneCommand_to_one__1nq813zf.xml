@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="e9a32318-d91e-408c-84ae-e632c56994bc">
+  <sourceEnd id="cda56080-4cf8-4283-9edd-7d8533d80191" type="Delete Entity Action Source End" typeId="8c2d9fed-bd14-44b2-9f98-8a801aaf157e">
+    <display>deleted by : Ones.DeleteOneCommand</display>
+    <order>0</order>
+    <typeReference id="d4448876-f9de-4e43-87f7-9f510845fbef">
+      <typeId>ef524ab3-d432-4aad-96f3-1c40ca4a9a6c</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceOne.Services</typePackageName>
+      <typePackageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="e9a32318-d91e-408c-84ae-e632c56994bc" type="Delete Entity Action Target End" typeId="4a04cfc2-5841-438c-9c16-fb58b784b365">
+    <name>one</name>
+    <display>[delete] one: One</display>
+    <order>1</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="2d1bfdb7-20ba-4861-a335-4d6b2733a204">
+      <typeId>d5f98edc-5c48-4599-af9a-71b17b0a696e</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceOne.Domain</typePackageName>
+      <typePackageId>24675568-f61b-4f7d-ab40-e530dbc63597</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="d00e5121-3963-43ff-bcbc-a12ed1c56328" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="ef524ab3-d432-4aad-96f3-1c40ca4a9a6c" location="[ServiceOne].[Services].[DeleteOneCommand]" />
+        <target applicationId="d00e5121-3963-43ff-bcbc-a12ed1c56328" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="d5f98edc-5c48-4599-af9a-71b17b0a696e" location="[ServiceOne].[Services].[One]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{Id}</expression>
+            <path>
+              <target id="d5f98edc-5c48-4599-af9a-71b17b0a696e" name="One" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
+              <target id="6c294a67-3683-497d-900f-355da7d3558c" name="Id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
+            </path>
+            <sources>
+              <source identifier="Id" mappingType="Filter Mapping" mappingTypeId="01d09a7f-0e7c-4670-b7bc-395d7e893ef2">
+                <path>
+                  <target id="ef524ab3-d432-4aad-96f3-1c40ca4a9a6c" name="DeleteOneCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                  <target id="b71dbe9f-5f80-4f95-b8fe-0b6ead699b46" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Delete Entity Action</associationType>
+  <associationTypeId>bfc823fb-60ab-451d-ba62-12671fe7e28e</associationTypeId>
+  <stereotypes />
+</association>

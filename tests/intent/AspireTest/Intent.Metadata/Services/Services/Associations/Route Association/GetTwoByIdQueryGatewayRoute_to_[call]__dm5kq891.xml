@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="9ef194b6-b949-4411-901e-082c8e782dcb">
+  <sourceEnd id="761afe78-73db-4a5c-82e7-2d2c49dbd756" type="Upstream End" typeId="4143dbe5-12ce-4705-ba69-2683c46b1b96">
+    <display>: GetTwoByIdQueryGatewayRoute</display>
+    <order>0</order>
+    <typeReference id="89663ffc-a7e1-4e13-8ea9-80f21a3b0273">
+      <typeId>f14c317c-df9d-4bce-b9d3-9ed3ba02b47f</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Services</typePackageName>
+      <typePackageId>c2aee2f9-fbfc-4702-ae01-37674227a3b7</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="9ef194b6-b949-4411-901e-082c8e782dcb" type="Downstream End" typeId="17084378-a3d8-4233-b275-c856eea4dd61">
+    <name>[call]</name>
+    <display>[call]: GetTwoByIdQuery</display>
+    <order>1</order>
+    <typeReference id="5f8a976e-0bf6-4bf9-b230-741485562a3f">
+      <typeId>da896776-7d97-4089-a2ac-4761a2c2dd85</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceTwo.Services</typePackageName>
+      <typePackageId>4b4f41e7-93b6-44e1-8cd2-69b625dde244</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Route Association</associationType>
+  <associationTypeId>dd35ed32-76bb-4abf-a4e0-370f230765cf</associationTypeId>
+  <stereotypes />
+</association>

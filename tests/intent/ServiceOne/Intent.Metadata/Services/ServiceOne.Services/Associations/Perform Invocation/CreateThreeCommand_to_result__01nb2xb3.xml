@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="a5d4c500-ccb5-4868-b796-ab484960ec88">
+  <sourceEnd id="0cadb282-4e8b-4715-af01-07c3cd2b2d22" type="Perform Invocation Source End" typeId="ee56bd48-8eff-4fff-8d3a-87731d002335">
+    <display>called by : ServiceOne.Services.CreateThreeCommand</display>
+    <order>0</order>
+    <typeReference id="f759bde9-4a0d-4917-b43c-a27a0efaf318">
+      <typeId>0573c3e4-a843-48db-af94-240403709025</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceOne.Services</typePackageName>
+      <typePackageId>dc49cecf-ccf7-47ac-b027-f2b2c3604b0f</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="a5d4c500-ccb5-4868-b796-ab484960ec88" type="Perform Invocation Target End" typeId="093e5909-ffe4-4510-b3ea-532f30212f3c">
+    <name>result</name>
+    <display>[call] result = CreateThreeCommand(...): guid</display>
+    <order>1</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="03007591-50d2-4d20-9b75-fddaf0ef1930">
+      <typeId>889e95f4-4697-464e-94b8-cab723ae5802</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>ServiceThree.Services</typePackageName>
+      <typePackageId>e0a2e675-41aa-4c84-9e6c-8ca1cab3b489</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Invocation Mapping" typeId="a4c4c5cc-76df-48ed-9d4e-c35caf44b567">
+        <source applicationId="d00e5121-3963-43ff-bcbc-a12ed1c56328" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="0573c3e4-a843-48db-af94-240403709025" location="[ServiceOne].[Services].[CreateThreeCommand]" />
+        <target applicationId="37b7447b-2c75-4442-a5c4-41d9222f1d03" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="889e95f4-4697-464e-94b8-cab723ae5802" location="[ServiceOne].[Services].[CreateThreeCommand]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{CreateThreeCommand}</expression>
+            <path>
+              <target id="889e95f4-4697-464e-94b8-cab723ae5802" name="CreateThreeCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+            </path>
+            <sources>
+              <source identifier="CreateThreeCommand" mappingType="Invocation Mapping" mappingTypeId="7ca5c18a-bdbe-434b-a68a-421899a077e7">
+                <path>
+                  <target id="0573c3e4-a843-48db-af94-240403709025" name="CreateThreeCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{Attribute}</expression>
+            <path>
+              <target id="889e95f4-4697-464e-94b8-cab723ae5802" name="CreateThreeCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="48ae6e22-1241-4aba-ac5a-e428595905a4" name="Attribute" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="Attribute" mappingType="Data Mapping" mappingTypeId="1ad97d12-2aa8-4f03-8cb0-3a8a4e71b4d9">
+                <path>
+                  <target id="0573c3e4-a843-48db-af94-240403709025" name="CreateThreeCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+                  <target id="faf05adb-35b8-4ea9-bdba-fff6afc70d31" name="Attribute" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Perform Invocation</associationType>
+  <associationTypeId>3e69085c-fa2f-44bd-93eb-41075fd472f8</associationTypeId>
+  <stereotypes />
+</association>
