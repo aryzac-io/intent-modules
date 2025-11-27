@@ -6,11 +6,11 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Aryzac.Aspire.Application.Template" version="1.0.0-pre.2" />
+  <lastUsedApplicationTemplate id="Aryzac.Aspire.Application.Template" version="1.0.0" />
   <applications>
     <application id="d00e5121-3963-43ff-bcbc-a12ed1c56328" name="ServiceOne" relativePath="ServiceOne/ServiceOne.application.config" />
     <application id="3bdd75bd-cce5-4d08-8a16-bd321ac8d403" name="ServiceTwo" relativePath="ServiceTwo/ServiceTwo.application.config" />
     <application id="37b7447b-2c75-4442-a5c4-41d9222f1d03" name="ServiceThree" relativePath="ServiceThree/ServiceThree.application.config" />
-    <application id="3876298e-bd62-49ba-b86b-6bad997683b1" name="AspireTest" relativePath="AspireTest/AspireTest.application.config" />
+    <application id="3987b8e4-0cdb-40b0-a2d7-9be7d225e17f" name="AspireTest" relativePath="AspireTest/AspireTest.application.config" />
   </applications>
 </solution>

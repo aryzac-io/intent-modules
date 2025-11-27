@@ -272,7 +272,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 {
                     foreach (var targetApp in apps.Where(a => a.Id != app.Id))
                     {
-                        if (!GetServiceProxies(OutputTarget, app, targetApp))
+                        if (!HasServiceProxies(OutputTarget, app, targetApp))
                         {
                             continue;
                         }
@@ -280,6 +280,17 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                         var targetAppNameParts = targetApp.Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
                         var varTargetAppName = string.Join("", targetAppNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
 
+                        var serviceProxyPackageNames = GetServiceProxyPackageNames(OutputTarget, app, targetApp);
+
+                        foreach (var serviceProxyPackageName in serviceProxyPackageNames)
+                        {
+                            appApiStatement = appApiStatement.AddInvocation("WithEnvironment", config =>
+                            {
+                                config.OnNewLine();
+                                config.AddArgument($"\"HttpClients__{serviceProxyPackageName}__Uri\"");
+                                config.AddArgument($"{varTargetAppName}Api");
+                            });
+                        }
                         appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
                         {
                             config.OnNewLine();
@@ -377,7 +388,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
             return servicesDesigner.GetElementsOfType(apiGatewayRouteTypeId).Select(m => m.AsApiGatewayRouteModel());
         }
 
-        private bool GetServiceProxies(IOutputTarget outputTarget, IApplicationConfig source, IApplicationConfig target)
+        private bool HasServiceProxies(IOutputTarget outputTarget, IApplicationConfig source, IApplicationConfig target)
         {
             var servicesDesigner = outputTarget.ExecutionContext.MetadataManager.GetDesigner(source.Id, "Services");
 
@@ -389,6 +400,22 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
             var serviceProxies = servicesDesigner.GetAssociationsOfType("3e69085c-fa2f-44bd-93eb-41075fd472f8");
 
             return serviceProxies.Any(sp => sp.TargetEnd.TypeReference.Element.Package.ApplicationId == target.Id);
+        }
+
+        private IEnumerable<string> GetServiceProxyPackageNames(IOutputTarget outputTarget, IApplicationConfig source, IApplicationConfig target)
+        {
+            var servicesDesigner = outputTarget.ExecutionContext.MetadataManager.GetDesigner(source.Id, "Services");
+
+            if (servicesDesigner == null)
+            {
+                return [];
+            }
+
+            var serviceProxies = servicesDesigner.GetAssociationsOfType("3e69085c-fa2f-44bd-93eb-41075fd472f8");
+
+            return serviceProxies
+                .Where(sp => sp.TargetEnd.TypeReference.Element.Package.ApplicationId == target.Id)
+                .Select(sp => sp.TargetEnd.TypeReference.Element.Package.Name);
         }
 
         private bool HasApplicationInsights()

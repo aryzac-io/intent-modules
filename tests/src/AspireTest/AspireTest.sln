@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireTest.AppHost", "AspireTest.AppHost\AspireTest.AppHost.csproj", "{FBE76C0E-607E-4E5F-94C1-CE877DAB65CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBE76C0E-607E-4E5F-94C1-CE877DAB65CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE76C0E-607E-4E5F-94C1-CE877DAB65CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE76C0E-607E-4E5F-94C1-CE877DAB65CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE76C0E-607E-4E5F-94C1-CE877DAB65CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
