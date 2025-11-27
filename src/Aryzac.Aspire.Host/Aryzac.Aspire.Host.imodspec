@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Aryzac.Aspire.Host</id>
-  <version>1.0.0-pre.8</version>
+  <version>1.0.0-pre.9</version>
   <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
   <summary>A custom module for Aryzac</summary>
   <description>A custom module for Aryzac</description>
@@ -35,6 +35,13 @@
     <dependency id="Intent.Common.CSharp" version="3.8.0" />
     <dependency id="Intent.Common.Types" version="3.4.0" />
     <dependency id="Intent.EntityFrameworkCore" version="5.0.34-pre.0" />
+    <dependency id="Intent.Metadata.ApiGateway" version="1.0.0-beta.4" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.7.9" />
+    <dependency id="Intent.Metadata.Security" version="1.0.0" />
+    <dependency id="Intent.Metadata.WebApi" version="4.7.4-pre.0" />
+    <dependency id="Intent.Modelers.Domain" version="3.12.10" />
+    <dependency id="Intent.Modelers.Services" version="4.0.7" />
+    <dependency id="Intent.Modelers.Services.CQRS" version="5.0.1" />
     <dependency id="Intent.OutputManager.RoslynWeaver" version="4.5.1" />
   </dependencies>
   <files>

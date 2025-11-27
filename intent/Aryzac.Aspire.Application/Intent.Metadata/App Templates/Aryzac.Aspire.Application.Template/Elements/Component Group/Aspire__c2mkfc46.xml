@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="d87c63a0-eb81-4588-87b3-c047c472c2aa" type="Component Group" typeId="027f8bb9-9b28-4c1d-a516-8c3daa70e46d">
   <name>Aspire</name>
-  <display>Aspire (1)</display>
+  <display>Aspire (2)</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-manually</sort-children>
   <order>2</order>
@@ -68,7 +68,94 @@
               <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
               <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
               <properties>
-                <property name="8235e942-6dec-4576-be44-3543b35ca44c" display="Version" value="1.0.0-pre.8" isActive="true" />
+                <property name="8235e942-6dec-4576-be44-3543b35ca44c" display="Version" value="1.0.0-pre.9" isActive="true" />
+                <property name="860a2a3a-9812-4fff-acc6-b342ddb23f96" display="Include By Default" value="true" isActive="true" />
+                <property name="42e43cfe-4073-4f7f-8a7e-ef79c150c8c7" display="Is Required" value="true" isActive="true" />
+                <property name="4bdd0a51-5a47-4119-b0bb-cd1240ac7850" display="Include Assets" value="None" isActive="true" />
+                <property name="478326e2-5290-428e-aef9-10f2c67f24c2" display="Included Assets" value="[]" isActive="false" />
+                <property name="406cbf38-4267-4260-8abc-4842116639d3" display="Is New" value="false" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="fa308229-3dda-4ef1-bfe6-cb1fbdc39b27" type="Component" typeId="47064ef1-2295-4287-8301-c446910a1b1e">
+      <name>Gateway</name>
+      <display>Gateway (2)</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d87c63a0-eb81-4588-87b3-c047c472c2aa</parentFolderId>
+      <packageId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</packageId>
+      <packageName>Aryzac.Aspire.Application.Template</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="78da9b5b-428f-4b1e-a5e5-120c7b3d87d3" name="Component Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
+          <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
+          <properties>
+            <property name="004dc68b-f2c0-4859-9f03-fb2e29505437" display="Icon" value="{&quot;source&quot;:&quot;data:image/png;base64,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&quot;,&quot;type&quot;:0,&quot;absolutePathRelativeTo&quot;:null}" isActive="true" />
+            <property name="476744d2-a4bc-4750-a9db-7022edf576c5" display="Description" isActive="true" />
+            <property name="b928f640-5dfd-4676-b8c9-4aadac826d18" display="Include by Default" value="true" isActive="true" />
+            <property name="07af017d-20a4-4e73-978f-ca4a59351f70" display="Is Required" value="false" isActive="true" />
+            <property name="aafd8156-fffe-471f-96da-813239f1982a" display="Is New" value="false" isActive="true" />
+            <property name="ed4d09bb-52e7-43dc-91db-6244d5390e53" display="Dependencies" isActive="true" />
+            <property name="ab4e67f3-24c9-47c3-8a27-0589c9c6656f" display="Incompatibilities" isActive="true" />
+            <property name="dc6f3968-ed14-40d5-b5c5-7c722b93b4cc" display="Required License" value="None" isActive="true" />
+            <property name="25e2d8a3-0158-4823-842d-60773ff85edc" display="Documentation Url" isActive="true" />
+            <property name="8d427d1f-985c-47e7-b925-719dbcbc485c" display="Tags" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="bcc604e1-cbf6-4492-a2fa-a3776584ab10" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+          <name>Intent.Modelers.Services</name>
+          <display>Intent.Modelers.Services</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>fa308229-3dda-4ef1-bfe6-cb1fbdc39b27</parentFolderId>
+          <packageId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</packageId>
+          <packageName>Aryzac.Aspire.Application.Template</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="7033e6f4-2a22-4357-bd65-f0ec06c516d5" name="Module Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
+              <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
+              <properties>
+                <property name="8235e942-6dec-4576-be44-3543b35ca44c" display="Version" value="4.0.7" isActive="true" />
+                <property name="860a2a3a-9812-4fff-acc6-b342ddb23f96" display="Include By Default" value="true" isActive="true" />
+                <property name="42e43cfe-4073-4f7f-8a7e-ef79c150c8c7" display="Is Required" value="true" isActive="true" />
+                <property name="4bdd0a51-5a47-4119-b0bb-cd1240ac7850" display="Include Assets" value="All" isActive="true" />
+                <property name="478326e2-5290-428e-aef9-10f2c67f24c2" display="Included Assets" value="[]" isActive="false" />
+                <property name="406cbf38-4267-4260-8abc-4842116639d3" display="Is New" value="false" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="d601899f-18fe-4a13-a1b7-5414f10732a5" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+          <name>Intent.Metadata.ApiGateway</name>
+          <display>Intent.Metadata.ApiGateway</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>fa308229-3dda-4ef1-bfe6-cb1fbdc39b27</parentFolderId>
+          <packageId>28bdb8f5-831a-4be3-94d7-1d9cca5de596</packageId>
+          <packageName>Aryzac.Aspire.Application.Template</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="7033e6f4-2a22-4357-bd65-f0ec06c516d5" name="Module Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ApplicationTemplate.Builder</definitionPackageName>
+              <definitionPackageId>002e9a7f-e5b7-4392-a60f-b60ae4e86262</definitionPackageId>
+              <properties>
+                <property name="8235e942-6dec-4576-be44-3543b35ca44c" display="Version" value="1.0.0-beta.4" isActive="true" />
                 <property name="860a2a3a-9812-4fff-acc6-b342ddb23f96" display="Include By Default" value="true" isActive="true" />
                 <property name="42e43cfe-4073-4f7f-8a7e-ef79c150c8c7" display="Is Required" value="true" isActive="true" />
                 <property name="4bdd0a51-5a47-4119-b0bb-cd1240ac7850" display="Include Assets" value="All" isActive="true" />

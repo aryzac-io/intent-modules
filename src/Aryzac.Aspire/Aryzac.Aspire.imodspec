@@ -10,9 +10,7 @@
   <templates></templates>
   <decorators></decorators>
   <factoryExtensions>
-    <factoryExtension id="Aryzac.Aspire.ApiProgramFactoryExtension" externalReference="278a647e-8ea2-436c-b9df-5851354d8544" />
     <factoryExtension id="Aryzac.Aspire.InfrastructureDependencyInjectionFactoryExtension" externalReference="b6e465f8-b84e-4307-833c-91784d88f209" />
-    <factoryExtension id="Aryzac.Aspire.ProgramFactoryExtension" externalReference="cfeb15ee-5176-40b7-9ab8-fe08ac13bd10" />
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>

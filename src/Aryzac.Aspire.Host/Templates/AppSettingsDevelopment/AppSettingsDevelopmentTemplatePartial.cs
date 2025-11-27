@@ -28,9 +28,11 @@ namespace Aryzac.Aspire.Host.Templates.AppSettingsDevelopment
                 .WithRootObject(this, logging =>
                 {
                     logging
-                        .WithObject("Logging", logLevel => {
+                        .WithObject("Logging", logLevel =>
+                        {
                             logLevel
-                            .WithObject("LogLevel", logLevels => {
+                            .WithObject("LogLevel", logLevels =>
+                            {
                                 logLevels.WithValue("Default", "Information");
                                 logLevels.WithValue("Microsoft.AspNetCore", "Warning");
                             });

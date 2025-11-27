@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <deviationsLog>
-  <files />
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.CSharp.Templates.CSharpTemplatePartial#d7f0f970-4abe-43eb-a518-4999bf833ce6</correlationId>
+      <path>Aryzac.Aspire.Host/Templates/AppHost/AppHostTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2025-11-26T14:37:18.0022185Z</updatedAt>
+      <deviationsHash>4A2F0E9B251ED8178660D064318FF683F6A6243292233F9507C0C28089EC6A9F</deviationsHash>
+      <fileHash>050F27EB8E85E605AF156EF6E8A64FBC0935A8D0004C4155DFB0E547E75500A0</fileHash>
+    </file>
+  </files>
 </deviationsLog>
