@@ -62,8 +62,8 @@ namespace Aryzac.Aspire.FactoryExtensions
                     //    up this logic.
                     var dbContextConnectionStringStatement = method.FindStatement(s => s.HasMetadata("is-connection-string"));
                     var newStatement = UpdateAddDbContextStatement(
-                        dependencyInjectionTemplate, 
-                        dbContextInstance, 
+                        dependencyInjectionTemplate,
+                        dbContextInstance,
                         dbContextConnectionStringStatement.Parent,
                         dependencyInjectionTemplate.ExecutionContext);
 
@@ -74,13 +74,13 @@ namespace Aryzac.Aspire.FactoryExtensions
 
         // No need for this module at all if this is embedded in Intent.Modules.EntityFrameworkCore. 
         // In case this stays a custom module, we can extend this to support more providers as needed.
-        private static CSharpStatement UpdateAddDbContextStatement(
+        private static CSharpInvocationStatement UpdateAddDbContextStatement(
             ICSharpFileBuilderTemplate dependencyInjection,
             DbContextInstance dbContextInstance,
             IHasCSharpStatementsActual optionsStatement,
             ISoftwareFactoryExecutionContext executionContext)
         {
-            var statement = new CSharpStatementBlock();
+            CSharpInvocationStatement statement = null;
 
             var targetDbProvider = DbContextManager.GetDatabaseProviderForDbContext(dbContextInstance.DbProvider, executionContext);
             switch (targetDbProvider)
@@ -103,30 +103,33 @@ namespace Aryzac.Aspire.FactoryExtensions
                     // Cosmos requires some additional configuration when using the emulator.
                     // This needs to be disabled for production deployments, should maybe be 
                     // driven via a setting or wrapped up in a #if DEBUG directive.
-                    var cosmosOptionsStatements = new List<CSharpStatement>
-                    {
-                        new CSharpStatement("// Required for emulator"),
-                        new CSharpStatement("cosmosOptions.HttpClientFactory("),
-                        new CSharpStatement("            () =>"),
-                        new CSharpStatement("            {"),
-                        new CSharpStatement("                var httpMessageHandler = new HttpClientHandler();"),
-                        new CSharpStatement("                httpMessageHandler.ServerCertificateCustomValidationCallback ="),
-                        new CSharpStatement("                    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;"),
-                        new CSharpStatement("                return new HttpClient(httpMessageHandler);"),
-                        new CSharpStatement("            });"),
-                        new CSharpStatement("        cosmosOptions.ConnectionMode(ConnectionMode.Gateway);"),
-                        new CSharpStatement("        cosmosOptions.LimitToEndpoint();")
-                    };
 
-                    statement.AddStatement(new CSharpInvocationStatement("options.UseCosmos")
+                    statement = new CSharpInvocationStatement("options.UseCosmos")
                         .WithArgumentsOnNewLines()
-                        .AddArgument(@"configuration[""ConnectionStrings:cosmos-db""]", a => a.AddMetadata("is-connection-string", true))
+                        .AddArgument(
+                            @"configuration[""ConnectionStrings:cosmos-db""]",
+                            a => a.AddMetadata("is-connection-string", true))
                         .AddArgument(@"configuration[""Cosmos:DatabaseName""]")
-                        .AddLambdaBlock(@"cosmosOptions", block =>
-                        {
-                            block.AddStatements(cosmosOptionsStatements);
-                        })
-                    );
+                        .AddArgument(
+                            new CSharpLambdaBlock("cosmosOptions")
+                                .AddStatement("#if DEBUG")
+                                .AddStatement("// Required for emulator")
+                                .AddStatement(
+                                    new CSharpInvocationStatement("cosmosOptions.HttpClientFactory")
+                                        .AddArgument(
+                                            new CSharpLambdaBlock("()")
+                                                .AddStatement("var httpMessageHandler = new HttpClientHandler();")
+                                                .AddStatement(
+                                                    "httpMessageHandler.ServerCertificateCustomValidationCallback = " +
+                                                    "HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;")
+                                                .AddReturn(new CSharpStatement("new HttpClient(httpMessageHandler)"))
+                                        )
+                                )
+                                .AddStatement("cosmosOptions.ConnectionMode(ConnectionMode.Gateway);")
+                                .AddStatement("cosmosOptions.LimitToEndpoint();")
+                                .AddStatement("#endif")
+                        );
+
                     break;
 
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Oracle:
