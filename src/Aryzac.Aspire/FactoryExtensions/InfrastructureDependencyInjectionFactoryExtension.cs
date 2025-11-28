@@ -53,6 +53,7 @@ namespace Aryzac.Aspire.FactoryExtensions
             dependencyInjectionTemplate.CSharpFile.OnBuild(file =>
             {
                 file.AddUsing("Microsoft.EntityFrameworkCore");
+                file.AddUsing("Microsoft.Azure.Cosmos");
                 var method = file.Classes.First().FindMethod("AddInfrastructure");
                 foreach (var dbContextInstance in dbContexts)
                 {

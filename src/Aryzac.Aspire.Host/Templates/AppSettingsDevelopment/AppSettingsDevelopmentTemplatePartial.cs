@@ -23,7 +23,7 @@ namespace Aryzac.Aspire.Host.Templates.AppSettingsDevelopment
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public AppSettingsDevelopmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            DataFile = new DataFile($"appsettings.Development.json")
+            DataFile = new DataFile($"appsettings.Development")
                 .WithJsonWriter()
                 .WithRootObject(this, logging =>
                 {

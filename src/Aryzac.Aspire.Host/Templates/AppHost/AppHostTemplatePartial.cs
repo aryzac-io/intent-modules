@@ -95,12 +95,18 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
             AddCosmosDB(cSharpFile);
         }
 
+        public static readonly INugetPackageInfo AspireHostingApplicationInsights = new NugetPackageInfo("Aspire.Hosting.Azure.ApplicationInsights", "13.0.0");
+        public static readonly INugetPackageInfo AspireHostingCosmosDB = new NugetPackageInfo("Aspire.Hosting.Azure.CosmosDB", "13.0.0");
+        public static readonly INugetPackageInfo AspireHostingYarp = new NugetPackageInfo("Aspire.Hosting.Yarp", "13.0.0");
+
         private void AddApplicationInsights(CSharpFile cSharpFile)
         {
             if (!HasApplicationInsights())
             {
                 return;
             }
+
+            AddNugetDependency(AspireHostingApplicationInsights);
 
             cSharpFile.AfterBuild(config =>
             {
@@ -137,6 +143,8 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 return;
             }
 
+            AddNugetDependency(AspireHostingCosmosDB);
+
             cSharpFile.AfterBuild(config =>
             {
                 var statements = config.TopLevelStatements;
@@ -155,7 +163,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                 CSharpStatement addAzureCosmosDbStatement = new CSharpAssignmentStatement(
                         new CSharpVariableDeclaration($"cosmos"),
-                        new CSharpStatement($"builder.AddAzureCosmosDB(\"cosmos-db\");")
+                        new CSharpStatement($"builder.AddAzureCosmosDB(\"cosmos-db\")")
                     );
 
                 addAzureCosmosDbStatement = addAzureCosmosDbStatement.AddInvocation("RunAsPreviewEmulator", config =>
@@ -203,7 +211,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                     var appServiceRegistrationStatement = new CSharpAssignmentStatement(
                         new CSharpVariableDeclaration($"{varAppName}Api"),
-                        new CSharpStatement($"builder.AddProject<Projects.{projectReferenceAppName}_Api>(\"{app.Name.ToKebabCase()}\");")
+                        new CSharpStatement($"builder.AddProject<Projects.{projectReferenceAppName}_Api>(\"{FormatProjectName(app.Name)}\");")
                     );
 
                     lastStatement.InsertBelow(appServiceRegistrationStatement);
@@ -211,6 +219,19 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     lastStatement = appServiceRegistrationStatement;
                 }
             });
+        }
+
+        private static string FormatProjectName(string Name)
+        {
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                return string.Empty;
+            }
+
+            var kebab = Name.ToKebabCase();
+
+            // Remove anything that isn't an ASCII letter, digit, or hyphen
+            return System.Text.RegularExpressions.Regex.Replace(kebab, "[^A-Za-z0-9-]", "");
         }
 
         private void AddApplicationConfiguration(CSharpFile cSharpFile, IApplicationConfig app)
@@ -288,7 +309,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                             {
                                 config.OnNewLine();
                                 config.AddArgument($"\"HttpClients__{serviceProxyPackageName}__Uri\"");
-                                config.AddArgument($"{varTargetAppName}Api");
+                                config.AddArgument($"{varTargetAppName}Api.GetEndpoint(\"https\")");
                             });
                         }
                         appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
@@ -309,8 +330,6 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 lastStatement.InsertBelow(serviceStatements.ToArray());
             });
         }
-
-        public static readonly INugetPackageInfo AspireHostingYarp = new NugetPackageInfo("Aspire.Hosting.Yarp", "13.0.0");
 
         private void AddYarp(CSharpFile cSharpFile)
         {
