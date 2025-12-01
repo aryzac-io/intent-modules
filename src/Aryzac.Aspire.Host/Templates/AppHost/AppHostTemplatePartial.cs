@@ -93,10 +93,12 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
         {
             AddApplicationInsights(cSharpFile);
             AddCosmosDB(cSharpFile);
+            AddAzureBlobStorage(cSharpFile);
         }
 
-        public static readonly INugetPackageInfo AspireHostingApplicationInsights = new NugetPackageInfo("Aspire.Hosting.Azure.ApplicationInsights", "13.0.0");
-        public static readonly INugetPackageInfo AspireHostingCosmosDB = new NugetPackageInfo("Aspire.Hosting.Azure.CosmosDB", "13.0.0");
+        public static readonly INugetPackageInfo AspireHostingAzureApplicationInsights = new NugetPackageInfo("Aspire.Hosting.Azure.ApplicationInsights", "13.0.0");
+        public static readonly INugetPackageInfo AspireHostingAzureCosmosDB = new NugetPackageInfo("Aspire.Hosting.Azure.CosmosDB", "13.0.0");
+        public static readonly INugetPackageInfo AspireHostingAzureStorage = new NugetPackageInfo("Aspire.Hosting.Azure.Storage", "13.0.0");
         public static readonly INugetPackageInfo AspireHostingYarp = new NugetPackageInfo("Aspire.Hosting.Yarp", "13.0.0");
 
         private void AddApplicationInsights(CSharpFile cSharpFile)
@@ -106,7 +108,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 return;
             }
 
-            AddNugetDependency(AspireHostingApplicationInsights);
+            AddNugetDependency(AspireHostingAzureApplicationInsights);
 
             cSharpFile.AfterBuild(config =>
             {
@@ -133,6 +135,59 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 {
                     s.AddMetadata("is-application-insights", true);
                 });
+
+                lastStatement = appInsightsRegistrationStatement;
+
+                var applicationInsightsConnectionString = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration($"applicationInsightsConnectionString"),
+                    new CSharpStatement($"new ConnectionStringReference(insights.Resource, optional: false);")
+                );
+
+                lastStatement.InsertBelow(applicationInsightsConnectionString, stmt => {
+                    stmt.SeparatedFromPrevious();
+                });
+            });
+        }
+
+        private void AddAzureBlobStorage(CSharpFile cSharpFile)
+        {
+            if (!HasBlobStorage())
+            {
+                return;
+            }
+
+            AddNugetDependency(AspireHostingAzureStorage);
+
+            cSharpFile.AfterBuild(config =>
+            {
+                var statements = config.TopLevelStatements;
+
+                var lastStatement = statements.FindStatement(s => s.HasMetadata("is-add-services-to-container-comment"));
+
+                var azureStorageComment = new CSharpStatement("// Provision Azure Storage resource");
+
+                lastStatement.InsertAbove(azureStorageComment, s =>
+                {
+                    s.SeparatedFromPrevious();
+                    s.AddMetadata("is-azure-storage-comment", true);
+                });
+
+                lastStatement = azureStorageComment;
+
+                CSharpStatement addAzureStorageStatement = new CSharpAssignmentStatement(
+                        new CSharpVariableDeclaration($"azureStorage"),
+                        new CSharpStatement($"builder.AddAzureStorage(\"storage\")")
+                    );
+
+                addAzureStorageStatement = addAzureStorageStatement.AddInvocation("RunAsEmulator", config =>
+                {
+                    config.OnNewLine();
+                    config.AddArgument(new CSharpLambdaBlock("azurite")
+                        .AddStatement("azurite.WithLifetime(ContainerLifetime.Persistent);")
+                        .AddStatement("azurite.WithDataVolume();"));
+                });
+
+                lastStatement.InsertBelow([addAzureStorageStatement]);
             });
         }
 
@@ -143,7 +198,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 return;
             }
 
-            AddNugetDependency(AspireHostingCosmosDB);
+            AddNugetDependency(AspireHostingAzureCosmosDB);
 
             cSharpFile.AfterBuild(config =>
             {
@@ -151,15 +206,15 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                 var lastStatement = statements.FindStatement(s => s.HasMetadata("is-add-services-to-container-comment"));
 
-                var applicationInsightsComment = new CSharpStatement("// Provision Cosmos Db resource");
+                var cosmosDbComment = new CSharpStatement("// Provision Cosmos Db resource");
 
-                lastStatement.InsertAbove(applicationInsightsComment, s =>
+                lastStatement.InsertAbove(cosmosDbComment, s =>
                 {
                     s.SeparatedFromPrevious();
                     s.AddMetadata("is-cosmos-db-comment", true);
                 });
 
-                lastStatement = applicationInsightsComment;
+                lastStatement = cosmosDbComment;
 
                 CSharpStatement addAzureCosmosDbStatement = new CSharpAssignmentStatement(
                         new CSharpVariableDeclaration($"cosmos"),
@@ -171,17 +226,25 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     config.OnNewLine();
                     config.AddArgument(new CSharpLambdaBlock("emulator")
                         .AddStatement("emulator.WithDataExplorer();")
-                        .AddStatement("emulator.WithLifetime(ContainerLifetime.Persistent);"));
+                        .AddStatement("emulator.WithLifetime(ContainerLifetime.Persistent);")
+                        .AddStatement("emulator.WithDataVolume();"));
                 });
 
-                var cosmosDbRegistrationStatements = new List<CSharpStatement>
-                {
-                        new CSharpStatement("#pragma warning disable ASPIRECOSMOSDB001"),
-                        addAzureCosmosDbStatement,
-                        new CSharpStatement("#pragma warning restore ASPIRECOSMOSDB001"),
-                };
+                var pragmaDisabled = new CSharpStatement("#pragma warning disable ASPIRECOSMOSDB001");
+                var pragmaRestored = new CSharpStatement("#pragma warning restore ASPIRECOSMOSDB001");
 
-                lastStatement.InsertBelow(cosmosDbRegistrationStatements.ToArray());
+                lastStatement.InsertBelow([pragmaDisabled, addAzureCosmosDbStatement, pragmaRestored]);
+
+                lastStatement = pragmaRestored;
+
+                var cosmosConnectionString = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration($"cosmosConnectionString"),
+                    new CSharpStatement($"new ConnectionStringReference(cosmos.Resource, optional: false);")
+                );
+
+                lastStatement.InsertBelow(cosmosConnectionString, stmt => {
+                    stmt.SeparatedFromPrevious();
+                });
             });
         }
 
@@ -260,16 +323,47 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                 if (HasCosmosDb(app))
                 {
-                    serviceStatements.Add(new CSharpAssignmentStatement(
+                    var cosmosDbStatement = new CSharpAssignmentStatement(
                         new CSharpVariableDeclaration($"{varAppName}DB"),
-                        new CSharpStatement($"cosmos.AddCosmosDatabase(\"{varAppName.ToKebabCase()}-db\", \"{app.Name}DB\");"))
+                        new CSharpStatement($"cosmos.AddCosmosDatabase(\"{varAppName.ToKebabCase()}-db\", \"{app.Name}DB\");"));
+
+                    lastStatement.InsertBelow(cosmosDbStatement, stmt => { stmt.SeparatedFromNext(); });
+
+                    lastStatement = cosmosDbStatement;
+                }
+
+                if (HasBlobStorage(app))
+                {
+                    var blobStorageStatement = new CSharpAssignmentStatement(
+                        new CSharpVariableDeclaration($"{varAppName}Storage"),
+                        new CSharpStatement($"azureStorage.AddBlobContainer(\"{varAppName.ToKebabCase()}-blobs\");"));
+
+                    lastStatement.InsertBelow(blobStorageStatement);
+
+                    lastStatement = blobStorageStatement;
+
+                    var azureStorageConnectionString = new CSharpAssignmentStatement(
+                        new CSharpVariableDeclaration($"{varAppName}StorageConnectionString"),
+                        new CSharpStatement($"new ConnectionStringReference({varAppName}Storage.Resource, optional: false);")
                     );
+
+                    lastStatement.InsertBelow(azureStorageConnectionString, stmt => {
+                        stmt.SeparatedFromNext();
+                    });
+
+                    lastStatement = azureStorageConnectionString;
                 }
 
                 var appApiStatement = new CSharpStatement($"{varAppName}Api");
 
                 if (HasApplicationInsights())
                 {
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", config =>
+                    {
+                        config.OnNewLine();
+                        config.AddArgument($"\"ApplicationInsights__ConnectionString\"");
+                        config.AddArgument($"applicationInsightsConnectionString");
+                    });
                     appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
                     {
                         config.OnNewLine();
@@ -278,6 +372,12 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 }
                 if (HasCosmosDb(app))
                 {
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", config =>
+                    {
+                        config.OnNewLine();
+                        config.AddArgument($"\"Cosmos__ConnectionString\"");
+                        config.AddArgument($"cosmosConnectionString");
+                    });
                     appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
                     {
                         config.OnNewLine();
@@ -287,6 +387,25 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     {
                         config.OnNewLine();
                         config.AddArgument($"{varAppName}DB");
+                    });
+                }
+                if (HasBlobStorage(app))
+                {
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", config =>
+                    {
+                        config.OnNewLine();
+                        config.AddArgument($"\"AzureBlobStorage\"");
+                        config.AddArgument($"{varAppName}StorageConnectionString");
+                    });
+                    appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
+                    {
+                        config.OnNewLine();
+                        config.AddArgument($"{varAppName}Storage");
+                    });
+                    appApiStatement = appApiStatement.AddInvocation("WaitFor", config =>
+                    {
+                        config.OnNewLine();
+                        config.AddArgument($"{varAppName}Storage");
                     });
                 }
                 if (HasServiceProxy(app))
@@ -325,9 +444,9 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     }
                 }
 
-                serviceStatements.Add(appApiStatement);
+                lastStatement.InsertBelow(appApiStatement, stmt => { stmt.SeparatedFromNext(); });
 
-                lastStatement.InsertBelow(serviceStatements.ToArray());
+                lastStatement = appApiStatement;
             });
         }
 
@@ -368,11 +487,16 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 lastStatement = gatewayStatement;
 
                 var yarpLambdaConfigurationStatement = new CSharpLambdaBlock("yarp");
+                var lastApplicationName = string.Empty;
+                var lastPackageName = string.Empty;
 
-                foreach (var apiGatewayRoute in apiGatewayRoutes)
+                foreach (var apiGatewayRoute in apiGatewayRoutes
+                    .OrderBy(r => r.DownstreamEndpoints()[0].Package.ApplicationId)
+                    .ThenBy(r => r.DownstreamEndpoints()[0].Package))
                 {
                     var route = apiGatewayRoute.GetUpstreamRouteInfo().Route;
-                    var serviceApplicationId = apiGatewayRoute.DownstreamEndpoints()[0].Package.ApplicationId;
+                    var package = apiGatewayRoute.DownstreamEndpoints()[0].Package;
+                    var serviceApplicationId = package.ApplicationId;
                     var serviceApplication = apps.FirstOrDefault(app => app.Id == serviceApplicationId);
 
                     if (serviceApplication == null)
@@ -383,7 +507,32 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     var appNameParts = serviceApplication.Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
                     var varAppName = string.Join("", appNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
 
-                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName});");
+                    if (lastApplicationName != serviceApplication.Name)
+                    {
+                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to {serviceApplication.Name} ({package.Name})", stmt => { 
+                            if (lastApplicationName != string.Empty)
+                            {
+                                stmt.SeparatedFromPrevious();
+                            }
+                        });
+
+                        yarpLambdaConfigurationStatement.AddStatement(
+                            new CSharpAssignmentStatement(
+                                new CSharpVariableDeclaration($"{varAppName}Cluster"),
+                                new CSharpInvocationStatement("yarp.AddCluster").AddArgument("resource", $"{varAppName}Api")
+                            )
+                        );
+
+                        lastApplicationName = serviceApplication.Name;
+                        lastPackageName = package.Name;
+                    }
+                    else if (lastPackageName != package.Name)
+                    {
+                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to package {package.Name}");
+                        lastPackageName = package.Name;
+                    }
+
+                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName}Cluster);");
                 }
 
                 var yarpConfigurationStatement = new CSharpInvocationStatement("gateway.WithConfiguration");
@@ -440,6 +589,16 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
         private bool HasApplicationInsights()
         {
             return HasModule("Intent.OpenTelemetry");
+        }
+
+        private bool HasBlobStorage()
+        {
+            return HasModule("Intent.Azure.BlobStorage");
+        }
+
+        private bool HasBlobStorage(IApplicationConfig app)
+        {
+            return app.Modules.FirstOrDefault(m => m.ModuleId == "Intent.Azure.BlobStorage") != null;
         }
 
         private bool HasApiGateway()

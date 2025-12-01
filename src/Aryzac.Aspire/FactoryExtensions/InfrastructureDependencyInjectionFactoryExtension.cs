@@ -104,10 +104,22 @@ namespace Aryzac.Aspire.FactoryExtensions
                     // This needs to be disabled for production deployments, should maybe be 
                     // driven via a setting or wrapped up in a #if DEBUG directive.
 
+                    // Ideally we should use the 'ConnectionStrings:{varAppName.ToKebabCase()}-db' connection string
+                    // because it is already being passed in with Aspire. For some reason this doesn't work as expected, 
+                    // the Cosmos client fails to connect, even though the connection string is correct.
+
+                    // TODO: Resolve why the Aspire provided connection string ('ConnectionStrings:{varAppName.ToKebabCase()}-db')
+                    // doesn't work here.
+                    //var appNameParts = executionContext.GetApplicationConfig().Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
+                    //var varAppName = string.Join("", appNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
+
                     statement = new CSharpInvocationStatement("options.UseCosmos")
                         .WithArgumentsOnNewLines()
+                        //.AddArgument(
+                        //    $"configuration[\"ConnectionStrings:{varAppName.ToKebabCase()}-db\"]",
+                        //    a => a.AddMetadata("is-connection-string", true))
                         .AddArgument(
-                            @"configuration[""ConnectionStrings:cosmos-db""]",
+                            $"configuration[\"Cosmos:ConnectionString\"]",
                             a => a.AddMetadata("is-connection-string", true))
                         .AddArgument(@"configuration[""Cosmos:DatabaseName""]")
                         .AddArgument(
@@ -119,14 +131,16 @@ namespace Aryzac.Aspire.FactoryExtensions
                                         .AddArgument(
                                             new CSharpLambdaBlock("()")
                                                 .AddStatement("var httpMessageHandler = new HttpClientHandler();")
-                                                .AddStatement(
-                                                    "httpMessageHandler.ServerCertificateCustomValidationCallback = " +
-                                                    "HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;")
+                                                .AddStatement(new CSharpAssignmentStatement(
+                                                    new CSharpStatement("httpMessageHandler.ServerCertificateCustomValidationCallback"),
+                                                    new CSharpStatement("HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;"))
+                                                )
                                                 .AddReturn(new CSharpStatement("new HttpClient(httpMessageHandler)"))
                                         )
                                 )
-                                .AddStatement("cosmosOptions.ConnectionMode(ConnectionMode.Gateway);")
-                                .AddStatement("cosmosOptions.LimitToEndpoint();")
+                                .AddStatement(new CSharpInvocationStatement("cosmosOptions.ConnectionMode")
+                                    .AddArgument("connectionMode", "ConnectionMode.Gateway"))
+                                .AddStatement(new CSharpInvocationStatement("cosmosOptions.LimitToEndpoint"))
                                 .AddStatement("#endif")
                         );
 
