@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="3.1.1">
+  <id>db303392-632a-499c-a961-93deb128cd95</id>
+  <name>Security Extensions</name>
+  <designerReferences />
+  <packageSettings />
+  <packageExtensions>
+    <packageExtension type="Services Package" typeId="df45eaf6-9202-4c25-8dd5-677e9ba1e906">
+      <requiredPackages />
+      <contextMenuOptions>
+        <createElement type="element">
+          <text>New Scope Configuration</text>
+          <icon type="UrlImagePath" source="data:image/png;base64,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" />
+          <specializationType>Scope Configuration</specializationType>
+          <specializationTypeId>9e98940e-f2f5-4431-b8b5-e4c547eefe78</specializationTypeId>
+          <defaultName>Scopes</defaultName>
+          <allowMultiple>false</allowMultiple>
+        </createElement>
+      </contextMenuOptions>
+      <creationOptions>
+        <option type="element">
+          <text>New Scope Configuration</text>
+          <icon type="UrlImagePath" source="data:image/png;base64,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" />
+          <specializationType>Scope Configuration</specializationType>
+          <specializationTypeId>9e98940e-f2f5-4431-b8b5-e4c547eefe78</specializationTypeId>
+          <defaultName>Scopes</defaultName>
+          <allowMultiple>false</allowMultiple>
+        </option>
+      </creationOptions>
+      <scriptOptions />
+      <typeOrder>
+        <type type="Scope Configuration" typeId="9e98940e-f2f5-4431-b8b5-e4c547eefe78" />
+      </typeOrder>
+    </packageExtension>
+  </packageExtensions>
+  <elementSettings>
+    <elementSetting type="Scope" typeId="33256cb2-6ac1-48e5-b3dd-75c8e83f156e">
+      <icon type="UrlImagePath" source="data:image/png;base64,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" />
+      <saveAsOwnFile>true</saveAsOwnFile>
+      <allowRename>true</allowRename>
+      <nameMustBeUnique>true</nameMustBeUnique>
+      <allowAbstract>false</allowAbstract>
+      <allowStatic>false</allowStatic>
+      <allowGenericTypes>false</allowGenericTypes>
+      <allowMapping>false</allowMapping>
+      <allowSorting>true</allowSorting>
+      <sortChildren>by-type-then-by-name</sortChildren>
+      <allowFindInView>false</allowFindInView>
+      <allowTypeReference>false</allowTypeReference>
+      <allowConvertToType p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+      <allowSetValue>false</allowSetValue>
+      <contextMenuOptions />
+      <mappingSettings />
+    </elementSetting>
+    <elementSetting type="Scope Configuration" typeId="9e98940e-f2f5-4431-b8b5-e4c547eefe78">
+      <icon type="UrlImagePath" source="data:image/png;base64,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" />
+      <saveAsOwnFile>true</saveAsOwnFile>
+      <allowRename>false</allowRename>
+      <nameMustBeUnique>false</nameMustBeUnique>
+      <allowAbstract>false</allowAbstract>
+      <allowStatic>false</allowStatic>
+      <allowGenericTypes>false</allowGenericTypes>
+      <allowMapping>false</allowMapping>
+      <allowSorting>true</allowSorting>
+      <sortChildren>by-type-then-by-name</sortChildren>
+      <allowFindInView>false</allowFindInView>
+      <allowTypeReference>false</allowTypeReference>
+      <allowConvertToType p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+      <allowSetValue>false</allowSetValue>
+      <typeOrder>
+        <type order="0" type="Scope" typeId="33256cb2-6ac1-48e5-b3dd-75c8e83f156e" />
+        <type order="1" type="Scope Verb" typeId="561f871a-ac3f-4e82-b2ce-4cc129d7f264" />
+      </typeOrder>
+      <contextMenuOptions>
+        <createElement type="element">
+          <text>Add Scope</text>
+          <icon type="UrlImagePath" source="data:image/png;base64,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" />
+          <specializationType>Scope</specializationType>
+          <specializationTypeId>33256cb2-6ac1-48e5-b3dd-75c8e83f156e</specializationTypeId>
+          <defaultName>NewScope</defaultName>
+          <allowMultiple>true</allowMultiple>
+        </createElement>
+        <createElement type="element">
+          <text>Add Verb</text>
+          <icon type="UrlImagePath" source="data:image/png;base64,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" />
+          <specializationType>Scope Verb</specializationType>
+          <specializationTypeId>561f871a-ac3f-4e82-b2ce-4cc129d7f264</specializationTypeId>
+          <defaultName>NewScopeVerb</defaultName>
+          <allowMultiple>true</allowMultiple>
+        </createElement>
+      </contextMenuOptions>
+      <mappingSettings />
+      <macros>
+        <macro trigger="on-created">
+          <script>const scopeVerbTypeId = "561f871a-ac3f-4e82-b2ce-4cc129d7f264";
+
+createElement(scopeVerbTypeId, "read", element.id);
+createElement(scopeVerbTypeId, "read-all", element.id);
+createElement(scopeVerbTypeId, "create", element.id);
+createElement(scopeVerbTypeId, "update", element.id);
+createElement(scopeVerbTypeId, "delete", element.id);</script>
+        </macro>
+      </macros>
+    </elementSetting>
+    <elementSetting type="Scope Verb" typeId="561f871a-ac3f-4e82-b2ce-4cc129d7f264">
+      <icon type="UrlImagePath" source="data:image/png;base64,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" />
+      <saveAsOwnFile>true</saveAsOwnFile>
+      <allowRename>true</allowRename>
+      <nameMustBeUnique>true</nameMustBeUnique>
+      <allowAbstract>false</allowAbstract>
+      <allowStatic>false</allowStatic>
+      <allowGenericTypes>false</allowGenericTypes>
+      <allowMapping>false</allowMapping>
+      <allowSorting>true</allowSorting>
+      <sortChildren>by-type-then-by-name</sortChildren>
+      <allowFindInView>false</allowFindInView>
+      <allowTypeReference>false</allowTypeReference>
+      <allowConvertToType p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+      <allowSetValue>false</allowSetValue>
+      <contextMenuOptions />
+      <mappingSettings />
+    </elementSetting>
+  </elementSettings>
+  <elementExtensions />
+  <associationSettings />
+  <associationExtensions />
+  <mappingSettings />
+  <mappableElementPackages />
+  <mappableElementPackageExtensions />
+  <scripts>
+    <script name="Scope Element Script" id="789ae98c-4b16-49a2-9e77-b15d41eabbb2">
+      <script>const commandQueryScopeSettingsStereoTypeId = "59f81e19-6e8d-4da2-a8e6-ec72878d7f42";
+const scopeScopeSettingsStereoTypeId = "effde114-12bd-498a-bf44-42f90df0e1ba";
+const scopeConfigurationTypeId = "9e98940e-f2f5-4431-b8b5-e4c547eefe78";
+const scopeTypeId = "33256cb2-6ac1-48e5-b3dd-75c8e83f156e";
+const classTypeId = "04e12b51-ed12-42a3-9667-a6aa81bb6d10";
+const scopeVerbTypeId = "561f871a-ac3f-4e82-b2ce-4cc129d7f264";
+const queryTypeId = "e71b0662-e29d-4db2-868b-8a12464b25d0";
+const commandTypeId = "ccf14eb6-3a55-4d81-b5b9-d27311c70cb9";
+const httpSettingsStereoTypeId = "b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6";
+const pagedResultsTypeId = "9d3fa7ac-3146-4995-8af1-c3b204065b4e";
+
+function addScopeElement(element) {
+    if (!element.hasStereotype(commandQueryScopeSettingsStereoTypeId)) {
+        const commandQueryScopeSettingsStereoType = element.addStereotype(
+            commandQueryScopeSettingsStereoTypeId
+        );
+
+        const pkg = element.getPackage();
+
+        const scopeConfiguration =
+            pkg.getChildren(scopeConfigurationTypeId)[0] ||
+            createElement(scopeConfigurationTypeId, "Scopes", pkg);
+
+        const scopeVerbs = scopeConfiguration.getChildren(scopeVerbTypeId);
+        const readScopeVerb = scopeVerbs.filter(m =&gt; m.getName() === "read")[0];
+        const readAllScopeVerb = scopeVerbs.filter(m =&gt; m.getName() === "read-all")[0];
+        const createScopeVerb = scopeVerbs.filter(m =&gt; m.getName() === "create")[0];
+        const updateScopeVerb = scopeVerbs.filter(m =&gt; m.getName() === "update")[0];
+        const deleteScopeVerb = scopeVerbs.filter(m =&gt; m.getName() === "delete")[0];
+
+        const elementAssociations = element.getAssociations();
+        if (!elementAssociations || elementAssociations.length === 0) {
+            return;
+        }
+
+        const associationTarget = elementAssociations[0].typeReference.getType();
+
+        const domainClass =
+            associationTarget.specializationId === classTypeId
+                ? associationTarget
+                : associationTarget.getParent();
+
+        const scopeName = domainClass.getName() || element.getName();
+        const scopeKey = toKebabCase(scopeName);
+
+        const scope =
+            scopeConfiguration
+                .getChildren("Scope")
+                .find(m =&gt; toKebabCase(m.getName()) === scopeKey) ||
+            createElement(scopeTypeId, scopeKey, scopeConfiguration.id);
+
+        const scopeScopeSettingsStereoType = scope.getStereotype(
+            scopeScopeSettingsStereoTypeId
+        );
+
+        const resourceProperty = scopeScopeSettingsStereoType.getProperty("Resource");
+        resourceProperty.setValue(domainClass.id);
+
+        const scopesProperty = commandQueryScopeSettingsStereoType.getProperty("Scopes");
+        let currentScopes = scopesProperty.getValue();
+
+        // Only add this scope if it's not already in the list
+        if (!currentScopes.some(s =&gt; s.id === scope.id)) {
+            currentScopes.push(scope.id);
+        }
+
+        scopesProperty.setValue(JSON.stringify(currentScopes));
+
+        const verbProperty = commandQueryScopeSettingsStereoType.getProperty("Verb");
+        if (element.specializationId === commandTypeId) {
+            const httpStereotype = element.getStereotype(httpSettingsStereoTypeId);
+
+            const httpVerbProperty = httpStereotype.getProperty("Verb");
+            const httpVerb = httpVerbProperty.getValue();
+
+            if (httpVerb === "POST") {
+                console.log(JSON.stringify(createScopeVerb));
+                verbProperty.setValue(createScopeVerb.id);
+            } else if (httpVerb === "PUT" || httpVerb === "PATCH") {
+                verbProperty.setValue(updateScopeVerb.id);
+            } else if (httpVerb === "DELETE") {
+                verbProperty.setValue(deleteScopeVerb.id);
+            }
+        } else if (element.specializationId === queryTypeId) {
+            if (element.typeReference.isCollection || element.typeReference.getType().id === pagedResultsTypeId) {
+                verbProperty.setValue(readAllScopeVerb.id);
+            } else {
+                verbProperty.setValue(readScopeVerb.id);
+            }
+        }
+        verbProperty.focus();
+    }
+}
+</script>
+    </script>
+  </scripts>
+</settings>

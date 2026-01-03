@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="985dcd6b-bd87-4578-bd8b-049b6694dee7" type="Element Extension" typeId="e3c7b1ca-f080-45c1-b56f-8d44226c8e20">
+  <name>Query Extension</name>
+  <display>Query Extension: Query</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <typeReference id="84d24de3-e8ee-4283-96f2-beddc9ba4122">
+    <typeId>e71b0662-e29d-4db2-868b-8a12464b25d0</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Modelers.Services.CQRS</typePackageName>
+    <typePackageId>45fb22e9-f493-4de5-9fe0-845f783aa9d4</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>06f9a529-0310-4a43-99f0-5f254edc7615</parentFolderId>
+  <packageId>b03410a6-8af0-4dad-a18c-1f6d5490612c</packageId>
+  <packageName>Aryzac.Security</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="159cbc8e-a910-40f7-8e45-3edadbb863c2" name="Type Reference Extension Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="35226a83-3965-4224-8aef-20c68a0c5180" display="Mode" value="Inherit" isActive="true" />
+        <property name="7d3859d4-084d-4ff0-8b31-850b4a8f8cd0" display="Display Name" isActive="false" />
+        <property name="17223dbd-8df0-4700-8b81-02274ca3ed7f" display="Hint" isActive="false" />
+        <property name="b2cef034-5706-45d2-8554-f4dc582a18ff" display="Target Types" value="null" isActive="false" />
+        <property name="08ec0581-c90a-489b-858f-ee265327c948" display="Target Traits" value="[]" isActive="true" />
+        <property name="93e4efa9-186d-4e88-ae0a-491bcd6e6f5e" display="Default Type Id" isActive="false" />
+        <property name="7a0c4185-1c08-4d3e-9185-14683d7a3bd0" display="Allow Collection" value="Inherit" isActive="false" />
+        <property name="e3dc90ec-4f5f-4f20-b271-e28a5094dc91" display="Allow Nullable" value="Inherit" isActive="false" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="312eab00-f6db-492e-bbb4-e41383c8d3d8" name="Extension Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="8c964307-9d03-4a14-9fd3-40ea2607955a" display="Display Text Function" isActive="true" />
+        <property name="996ed45f-2318-4587-9618-73db3d7cfed0" display="Validate Function" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="00ec10b0-c944-4700-b735-ef8242784c35" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
+      <name>[context menu]</name>
+      <display>[context menu]</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>985dcd6b-bd87-4578-bd8b-049b6694dee7</parentFolderId>
+      <packageId>b03410a6-8af0-4dad-a18c-1f6d5490612c</packageId>
+      <packageName>Aryzac.Security</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="9fa20918-5c13-4705-88fd-c35ff58c09bf" type="Run Script Option" typeId="345d46fb-c500-409a-88c7-26720572c9af">
+          <name>Add scopes</name>
+          <display>Add scopes: Inline Script</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="ad84af78-da2c-4033-845d-6bdf8c508ff6">
+            <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.ModuleBuilder</typePackageName>
+            <typePackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>00ec10b0-c944-4700-b735-ef8242784c35</parentFolderId>
+          <packageId>b03410a6-8af0-4dad-a18c-1f6d5490612c</packageId>
+          <packageName>Aryzac.Security</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="56bc0465-c1fe-4bca-9493-2a3ce88a4047" name="Script Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="addScopeElement(element);" isActive="true" />
+                <property name="7df9c3b9-91a0-4cb7-bc3a-15d72f160054" display="Dependencies" value="[&quot;789ae98c-4b16-49a2-9e77-b15d41eabbb2&quot;]" isActive="true" />
+              </properties>
+            </stereotype>
+            <stereotype stereotypeDefinitionId="cbe77364-d1d0-400b-a8c4-646a4c869612" name="Option Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="b2c3a117-23d3-47e5-8b83-5b902c55a226" display="Icon" value="{&quot;source&quot;:&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAGMUlEQVR4Aeybb4hUVRTAf/fN7traVpaGpeQHs4QULEj6oF9Cif7gtjvjru3srJEKghmaCUFEliFEUKFfsqCs3ZlVd3ZncVUqRLIvYX4o8E8ofigIlSTNUnd1Zmdu57lIKIr3zZ0/763vcM+8eW/uOfec3zvvvrtvZh1CsSIQArTCByHAEKAlAUvzsAJDgJYELM19XIFatdDzwDN03omPxRcAW+ipi5J8LUrXB80kj8h7HSVVyJM91UBkrbxf52qM1ErZzo+SnN1CTwQfSNUAvkDq3ka2TorSdUBAXRYWm0C9qeAxbiIaxstHc0A9nyf3dpTuZY18cVcLPfVUSSoOMEqqQ3RgDPpQDfkToGZTtOjJNdyxJk92RYyuthhbn6DC4pR7vDa6J8ToXNBM18dRklJEuhP0AmCyaImaatA4j2oKjTGS70RJzY+ReqSlApXpUCZpoWtajOTRyxSOSnIDCvV6mYa6xq1GKTkwR0O8wPDKGKlVTWwZJ8fK0koKMCpnXnRDlOTJPOq4JDEdrsxbsql80+ixEsM4h7pVUZJvLCQ5L0pqKiUUS4BaNdI9MUpykajEqvfI5fkW8KCoz5pqKKDmSlDuHLwuRveMjitLJK2wkKIBxuh8qpnU7hoKv8n420QD1aQ6Fw7irG6mO/4iWx8qNnjHq2EznTOjdPVrnP1y6p4D6kUD2TSqRnKYFqGwJEYy0ULP/XgUTwAFXKMScKCaGGUiMB/Ok13WRM/jXlIzBhglJZOvI0sQfP2nFVai6iJkn43LIt/UjTFARX4G6HtMHQe1n1TimCEixpeyMUBxPDGoULzGrcg1mNoYAxSH80Rvi6ZgimmixgAV6klTp0HvJ1fbJNMcjAFqD2fFdHD/9lP3mcZmDFAc1oneLi1imqgXgKY+b6t+AQHo33MSArQ8NyHAEKAlAUvzsAJDgJYELM3DCgwBWhKwNA8rMARoScDSPKzAEKAlAUvzsAJ9C9AysKCYhxVoeaZCgCFASwKW5mEFVhDgoOVYQTLPmQbroQL1XlOnQe+nRn5xZpSGB4AMGHkcBZ3kK9xjpmkYA1ToP02dBr2fpvaCaQ4eAKpz4tR4bpC+AW2FgiLv/tuFUfweAI75STyeER3lLTJ4lkknTJM0BpimNStOjUtb+gayORSy+3h62DR4Y4AjDvWike3ofVUUdnnJ7hqAtzLM0PEzaOP54Vb+/Pd5IZdmsfujeePQPAEc8ao2jmxH46tzwGtWRQDU270OEpz+hSNeY/UM0L2MZaGZ9jqQ3/tr8r9Kbqe8xukZoDvAMM4KmQvddaG7G3iVgrg0zNDuYhIpCuBO4mcUzh5GiSic33eyvKiHJUUBRMrPobZNNocJuCg4naGt6Hm9WICkac07qNWgjBed+E8KDrXfYiGOhS29JPbK/LHUxkc1bRXOLikET+s+rhMrgK6vfto7FXztvg+SKtThPtp+sY3ZGqAbQJaLcldWJ933QVCBNzie8yV5vlkSgDvlDhahdjqog/hclDzXdKjZ+DnLS/JoriQAEUnTeiFD+ywFxk9zxayizUH900dis8SavTqw7daxdXC9fRZnrtxYdlx/vPr7+qii5rNSx1FygLLI/qufRJMEulbUF82RRX+GxPY0rUOlDqjkAK8GmCHxkcKZBarkQWMoMt8ND6M299L2o6GJ525lA+hG0kf8YIT8DLmkk7IvG3mtWNMHc1zeNEC8rF+GlRWgy8p9QCmXdAfk58kN5m/3WDlVztKlOpwvMyT6B1h6vpxjub7LDtAdxNUML3+fIzJT5qMloMrxVDuvUP1j0Z9uo+0PKiQVA+jmM0DbyV7iWyKcmyD77kL2omytmiSQEz0WofbDPpkyUiT+tXLo0VjG9mhRgu5pXnXXjE2awlQF64p1qVH76slv7KV9W3rkW8NiXRVtVxWAI9Eq3c/i030k1t9Nrl5grJHj20XzojdrBQ2HQH93luMb+on/0MVi6yq+2WAmx6sI8P/wvuKVS/20f5Ih8ZJojaiKUDc2T2TKEFqOx9dnaH9P9H3pl5HP9+/j3WF8IL4AeCMOaVn07pCbwTdX5jQlhXejXtU/5luA1UdjFkEQAZplVqFeIUBL0CHAEKAlAUvz/wAAAP//ErAIZwAAAAZJREFUAwAJ+4uwYe1K2QAAAABJRU5ErkJggg==&quot;,&quot;type&quot;:0,&quot;absolutePathRelativeTo&quot;:null}" isActive="true" />
+                <property name="0abff08a-3986-40b1-a28f-4cc03c4fc1ec" display="Shortcut" isActive="true" />
+                <property name="79f6973f-5e3a-4618-9d4c-d7cc604bffe0" display="Shortcut (macOS)" isActive="true" />
+                <property name="6087e660-9599-47fb-9ff4-1ad901ce2a00" display="Trigger On Double-Click" value="false" isActive="true" />
+                <property name="c03841e5-a1e9-4e95-b699-5a466dde7d7d" display="Is Option Visible Function" isActive="true" />
+                <property name="e034a0ca-0101-4594-8384-43048b714578" display="Order" value="10" isActive="true" />
+                <property name="c37d8704-0003-4886-b6c2-4e51aa22a8f9" display="Menu Group" value="5" isActive="true" />
+                <property name="3e93529e-2110-414e-aec1-2656e1a99b22" display="Top Divider" value="true" isActive="true" />
+                <property name="d2572c08-f02e-40b2-8a06-4d5251bb3352" display="Bottom Divider" value="true" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="59f81e19-6e8d-4da2-a8e6-ec72878d7f42" version="3.1.0">
+  <name>Scope Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9">Command</type>
+    <type id="e71b0662-e29d-4db2-868b-8a12464b25d0">Query</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>manually</applyMode>
+  <icon type="UrlImagePath" source="data:image/png;base64,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" />
+  <displayIcon>false</displayIcon>
+  <displayIconFunction>return true;</displayIconFunction>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>true</allowMultipleApplies>
+  <parentFolderId>b03410a6-8af0-4dad-a18c-1f6d5490612c</parentFolderId>
+  <order>0</order>
+  <packageId>b03410a6-8af0-4dad-a18c-1f6d5490612c</packageId>
+  <packageName>Aryzac.Security</packageName>
+  <properties>
+    <property id="cf16ef1b-f9da-40db-87ec-400c7fbd2e8d">
+      <name>Scopes</name>
+      <type>string</type>
+      <controlType>multi-select</controlType>
+      <optionsSource>lookup-element</optionsSource>
+      <lookupTypes>
+        <type>33256cb2-6ac1-48e5-b3dd-75c8e83f156e</type>
+      </lookupTypes>
+    </property>
+    <property id="5faa6bed-b26d-4a68-9585-c5306d4e40ea">
+      <name>Verb</name>
+      <type>string</type>
+      <controlType>select</controlType>
+      <optionsSource>lookup-element</optionsSource>
+      <lookupTypes>
+        <type>561f871a-ac3f-4e82-b2ce-4cc129d7f264</type>
+      </lookupTypes>
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
+  </properties>
+</stereotypeDefinition>

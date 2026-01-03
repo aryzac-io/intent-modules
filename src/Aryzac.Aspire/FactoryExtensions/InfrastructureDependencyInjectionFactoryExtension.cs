@@ -119,7 +119,7 @@ namespace Aryzac.Aspire.FactoryExtensions
                         //    $"configuration[\"ConnectionStrings:{varAppName.ToKebabCase()}-db\"]",
                         //    a => a.AddMetadata("is-connection-string", true))
                         .AddArgument(
-                            $"configuration[\"Cosmos:ConnectionString\"]",
+                            $"configuration[\"ConnectionStrings:cosmos-db\"]",
                             a => a.AddMetadata("is-connection-string", true))
                         .AddArgument(@"configuration[""Cosmos:DatabaseName""]")
                         .AddArgument(

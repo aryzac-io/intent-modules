@@ -8,6 +8,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.Aspire.Application",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.Aspire", "Aryzac.Aspire\Aryzac.Aspire.csproj", "{EBC0765A-297F-4732-9A79-4393A19C1E14}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.Security", "Aryzac.Security\Aryzac.Security.csproj", "{D6257D5C-437C-4B7E-8955-81528181567B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac", "Aryzac\Aryzac.csproj", "{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.VueJS", "Aryzac.VueJS\Aryzac.VueJS.csproj", "{51AFEA42-AD27-458C-8F56-EB17127A24E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +35,17 @@ Global
 		{EBC0765A-297F-4732-9A79-4393A19C1E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBC0765A-297F-4732-9A79-4393A19C1E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBC0765A-297F-4732-9A79-4393A19C1E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

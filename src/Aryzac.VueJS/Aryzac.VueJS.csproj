@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		
+		<None Update="Templates\Composable\ComposableTemplate.tt">
+			<Generator>TextTemplatingFilePreprocessor</Generator>
+			<LastGenOutput>ComposableTemplate.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Templates\Composable\ComposableTemplate.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ComposableTemplate.tt</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Intent.Modules.Common" Version="3.9.2" />
+	  <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.1.2" />
+	  <PackageReference Include="Intent.Modules.Metadata.ApiGateway" Version="1.0.0-beta.4" />
+	  <PackageReference Include="Intent.Modules.Modelers.Services" Version="4.0.8" />
+	  <PackageReference Include="Intent.Packager" Version="3.6.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	  <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
+	  <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.0-pre.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+</Project>

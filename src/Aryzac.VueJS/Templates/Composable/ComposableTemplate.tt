@@ -1,0 +1,329 @@
+<#@ template language="C#" inherits="TypeScriptTemplateBase<Aryzac.VueJS.Api.ComposableModel>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
+<#@ import namespace="Intent.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="Aryzac.VueJS.Api" #>
+
+import type * from "~/types/dto/<#= Model.Name.ToKebabCase() #>";
+<#
+    var services = GetServices().ToList();
+#>
+
+export function use<#= Model.Name #>() {
+
+<#
+    foreach (var service in services)
+    {
+        var scopes = GetScopes(service);
+        var route = GetRoute(service);
+        var isGet = string.Equals(route.Method, "GET", StringComparison.OrdinalIgnoreCase);
+        var isVersioned = route.Versioned;
+
+        var routeRequestType = GetRouteRequestType(service);
+        var hasRequest = routeRequestType != null && routeRequestType.Fields.Any();
+
+        var requestTypeName = routeRequestType?.Name ?? "UNKNOWN";
+        
+        var routeResponseType = GetRouteResponseType(service);
+        var hasResponse = routeResponseType != null && routeResponseType.Fields.Any();
+
+        var responseTypeName = routeResponseType.Name;
+
+        // Split request props into path vs query based on Express-style :placeholders in the route
+        var placeholderMatches = Regex.Matches(route.Path, ":([^/]+)")
+            .Cast<Match>()
+            .ToList();
+
+        var placeholderMap = placeholderMatches
+            .GroupBy(m => m.Groups[1].Value, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => g.First().Groups[1].Value, StringComparer.OrdinalIgnoreCase);
+
+        var pathProps = hasRequest
+            ? routeRequestType.Fields
+                .Where(p => placeholderMap.ContainsKey(p.Name))
+                .ToList()
+            : new List<Intent.Modelers.Services.Api.DTOFieldModel>();
+
+        var queryProps = hasRequest
+            ? routeRequestType.Fields
+                .Where(p => !placeholderMap.ContainsKey(p.Name))
+                .ToList()
+            : new List<Intent.Modelers.Services.Api.DTOFieldModel>();
+
+        // Signature
+        var paramParts = new List<string>();
+
+        if (isVersioned)
+        {
+            // version is not part of the request DTO
+            paramParts.Add("version: string");
+        }
+
+        if (hasRequest)
+        {
+            if (isGet)
+            {
+                // GET: keep single request DTO
+                paramParts.Add($"request: {requestTypeName}");
+            }
+            else
+            {
+                // non-GET: lift only path props; everything else stays in body
+                foreach (var prop in pathProps)
+                {
+                    var tsName = prop.Name.ToCamelCase();
+                    var tsType = GetTypeName(prop.TypeReference);
+                    paramParts.Add($"{tsName}: {tsType}");
+                }
+
+                // full body still passed
+                paramParts.Add($"body: {requestTypeName}");
+            }
+        }
+
+        paramParts.Add("options?: any");
+
+        var paramSignature = string.Join(", ", paramParts);
+#>
+    const <#= service.Name.ToCamelCase() #> = async (<#= paramSignature #>) => {
+<#
+        if (hasResponse)
+        {
+#>
+        const result = await useApi<<#= responseTypeName #>>(
+            '<#= route.Path #>',
+            {
+                ...(options || {}),
+                method: '<#= route.Method #>',
+<#
+            if (isGet)
+            {
+                var hasPathProps = hasRequest && pathProps.Any();
+                var needsParams = isVersioned || hasPathProps;
+
+                if (needsParams)
+                {
+#>
+                params: {
+<#
+                    if (isVersioned)
+                    {
+#>
+                    version: version<#= hasPathProps ? "," : "" #>
+<#
+                    }
+                    if (hasPathProps)
+                    {
+                        for (var i = 0; i < pathProps.Count; i++)
+                        {
+                            var prop = pathProps[i];
+                            var tsName = prop.Name.ToCamelCase();
+                            var placeholderName = placeholderMap[prop.Name];
+#>
+                    <#= placeholderName #>: request.<#= tsName #><#= i < pathProps.Count - 1 ? "," : "" #>
+<#
+                        }
+                    }
+#>
+                },
+<#
+                }
+
+                if (hasRequest && queryProps.Any())
+                {
+#>
+                query: {
+<#
+                    for (var i = 0; i < queryProps.Count; i++)
+                    {
+                        var prop = queryProps[i];
+                        var tsName = prop.Name.ToCamelCase();
+#>
+                    <#= tsName #>: request.<#= tsName #><#= i < queryProps.Count - 1 ? "," : "" #>
+<#
+                    }
+#>
+                },
+<#
+                }
+            }
+            else
+            {
+                // non-GET
+                if (hasRequest)
+                {
+#>
+                body,
+<#
+                }
+
+                var nonGetHasPathProps = hasRequest && pathProps.Any();
+                var nonGetNeedsParams = isVersioned || nonGetHasPathProps;
+
+                if (nonGetNeedsParams)
+                {
+#>
+                params: {
+<#
+                    if (isVersioned)
+                    {
+#>
+                    version: version<#= nonGetHasPathProps ? "," : "" #>
+<#
+                    }
+                    if (nonGetHasPathProps)
+                    {
+                        for (var i = 0; i < pathProps.Count; i++)
+                        {
+                            var prop = pathProps[i];
+                            var tsName = prop.Name.ToCamelCase();
+                            var placeholderName = placeholderMap[prop.Name];
+#>
+                    <#= placeholderName #>: <#= tsName #><#= i < pathProps.Count - 1 ? "," : "" #>
+<#
+                        }
+                    }
+#>
+                },
+<#
+                }
+                // no query for non-GET; non-path properties stay in body
+            }
+#>
+                scopes: [<#= scopes #>],
+            }
+        );
+        return result.data.value;
+<#
+        }
+        else
+        {
+#>
+        await useApi(
+            '<#= route.Path #>',
+            {
+                ...(options || {}),
+                method: '<#= route.Method #>',
+<#
+            if (isGet)
+            {
+                var hasPathProps = hasRequest && pathProps.Any();
+                var needsParams = isVersioned || hasPathProps;
+
+                if (needsParams)
+                {
+#>
+                params: {
+<#
+                    if (isVersioned)
+                    {
+#>
+                    version: version<#= hasPathProps ? "," : "" #>
+<#
+                    }
+                    if (hasPathProps)
+                    {
+                        for (var i = 0; i < pathProps.Count; i++)
+                        {
+                            var prop = pathProps[i];
+                            var tsName = prop.Name.ToCamelCase();
+                            var placeholderName = placeholderMap[prop.Name];
+#>
+                    <#= placeholderName #>: request.<#= tsName #><#= i < pathProps.Count - 1 ? "," : "" #>
+<#
+                        }
+                    }
+#>
+                },
+<#
+                }
+
+                if (hasRequest && queryProps.Any())
+                {
+#>
+                query: {
+<#
+                    for (var i = 0; i < queryProps.Count; i++)
+                    {
+                        var prop = queryProps[i];
+                        var tsName = prop.Name.ToCamelCase();
+#>
+                    <#= tsName #>: request.<#= tsName #><#= i < queryProps.Count - 1 ? "," : "" #>
+<#
+                    }
+#>
+                },
+<#
+                }
+            }
+            else
+            {
+                // non-GET
+                if (hasRequest)
+                {
+#>
+                body,
+<#
+                }
+
+                var nonGetHasPathProps = hasRequest && pathProps.Any();
+                var nonGetNeedsParams = isVersioned || nonGetHasPathProps;
+
+                if (nonGetNeedsParams)
+                {
+#>
+                params: {
+<#
+                    if (isVersioned)
+                    {
+#>
+                    version: version<#= nonGetHasPathProps ? "," : "" #>
+<#
+                    }
+                    if (nonGetHasPathProps)
+                    {
+                        for (var i = 0; i < pathProps.Count; i++)
+                        {
+                            var prop = pathProps[i];
+                            var tsName = prop.Name.ToCamelCase();
+                            var placeholderName = placeholderMap[prop.Name];
+#>
+                    <#= placeholderName #>: <#= tsName #><#= i < pathProps.Count - 1 ? "," : "" #>
+<#
+                        }
+                    }
+#>
+                },
+<#
+                }
+                // no query for non-GET; non-path properties stay in body
+            }
+#>
+                scopes: [<#= scopes #>],
+            }
+        );
+<#
+        }
+#>
+    }
+<#
+    }
+#>
+
+    return {
+<#
+    foreach (var service in services)
+    {
+#>
+        <#= service.Name.ToCamelCase() #>,
+<#
+    }
+#>
+    }
+}

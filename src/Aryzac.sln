@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.Security", "Aryzac.Security\Aryzac.Security.csproj", "{D6257D5C-437C-4B7E-8955-81528181567B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac", "Aryzac\Aryzac.csproj", "{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6257D5C-437C-4B7E-8955-81528181567B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED3ACCD-4A4F-467D-96B1-E2F4648CFEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

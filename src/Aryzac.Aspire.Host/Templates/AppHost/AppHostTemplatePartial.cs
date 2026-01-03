@@ -82,6 +82,9 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
             // Add builder projects
             AddYarp(CSharpFile);
 
+            // Finalize with local run overrides
+            AddLocalRunOverrides(CSharpFile);
+
             // Cleanup unused comments
             CSharpFile.AfterBuild(file =>
             {
@@ -92,14 +95,19 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
         private void AddApplicationServices(CSharpFile cSharpFile)
         {
             AddApplicationInsights(cSharpFile);
+            AddAzureKeyVault(cSharpFile);
+            AddRabbitMq(cSharpFile);
             AddCosmosDB(cSharpFile);
             AddAzureBlobStorage(cSharpFile);
         }
 
-        public static readonly INugetPackageInfo AspireHostingAzureApplicationInsights = new NugetPackageInfo("Aspire.Hosting.Azure.ApplicationInsights", "13.0.0");
-        public static readonly INugetPackageInfo AspireHostingAzureCosmosDB = new NugetPackageInfo("Aspire.Hosting.Azure.CosmosDB", "13.0.0");
-        public static readonly INugetPackageInfo AspireHostingAzureStorage = new NugetPackageInfo("Aspire.Hosting.Azure.Storage", "13.0.0");
-        public static readonly INugetPackageInfo AspireHostingYarp = new NugetPackageInfo("Aspire.Hosting.Yarp", "13.0.0");
+        public static readonly INugetPackageInfo AspireHostingAzureApplicationInsights = new NugetPackageInfo("Aspire.Hosting.Azure.ApplicationInsights", "13.1.0");
+        public static readonly INugetPackageInfo AspireHostingAzureCosmosDB = new NugetPackageInfo("Aspire.Hosting.Azure.CosmosDB", "13.1.0");
+        public static readonly INugetPackageInfo AspireHostingAzureStorage = new NugetPackageInfo("Aspire.Hosting.Azure.Storage", "13.1.0");
+        public static readonly INugetPackageInfo AspireHostingYarp = new NugetPackageInfo("Aspire.Hosting.Yarp", "13.1.0");
+        public static readonly INugetPackageInfo AspireHostingAzureKeyVault = new NugetPackageInfo("Aspire.Hosting.Azure.KeyVault", "13.1.0");
+        public static readonly INugetPackageInfo AspireHostingRabbitMQ = new NugetPackageInfo("Aspire.Hosting.RabbitMQ", "13.1.0");
+
 
         private void AddApplicationInsights(CSharpFile cSharpFile)
         {
@@ -143,9 +151,134 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     new CSharpStatement($"new ConnectionStringReference(insights.Resource, optional: false);")
                 );
 
-                lastStatement.InsertBelow(applicationInsightsConnectionString, stmt => {
+                lastStatement.InsertBelow(applicationInsightsConnectionString, stmt =>
+                {
                     stmt.SeparatedFromPrevious();
                 });
+            });
+        }
+
+        private void AddAzureKeyVault(CSharpFile cSharpFile)
+        {
+            if (!HasKeyVault())
+            {
+                return;
+            }
+
+            AddNugetDependency(AspireHostingAzureKeyVault);
+
+            // Needed for KeyVaultBuiltInRole and kv.Resource.UriExpression usage
+            AddUsing("Azure.Provisioning.KeyVault");
+
+            cSharpFile.AfterBuild(config =>
+            {
+                var statements = config.TopLevelStatements;
+                var lastStatement = statements.FindStatement(s => s.HasMetadata("is-add-services-to-container-comment"));
+
+                var keyVaultComment = new CSharpStatement("// Provision Azure Key Vault resource (shared)");
+
+                lastStatement.InsertAbove(keyVaultComment, s =>
+                {
+                    s.SeparatedFromPrevious();
+                    s.AddMetadata("is-keyvault-comment", true);
+                });
+
+                lastStatement = keyVaultComment;
+
+                var kvStatement = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("kv"),
+                    new CSharpStatement("builder.AddAzureKeyVault(\"shared-kv\");")
+                );
+
+                lastStatement.InsertBelow(kvStatement, s => s.AddMetadata("is-keyvault", true));
+                lastStatement = kvStatement;
+
+                var commonComment = new CSharpStatement("// Common Key Vault settings");
+                lastStatement.InsertBelow(commonComment, s =>
+                {
+                    s.SeparatedFromPrevious();
+                    s.AddMetadata("is-keyvault-common-comment", true);
+                });
+                lastStatement = commonComment;
+
+                var keyVaultEnabled = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("keyVaultEnabled"),
+                    new CSharpStatement("builder.ExecutionContext.IsRunMode ? \"false\" : \"true\";")
+                );
+
+                lastStatement.InsertBelow(keyVaultEnabled);
+                lastStatement = keyVaultEnabled;
+
+                var keyVaultEndpointExpr = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("keyVaultEndpointExpr"),
+                    new CSharpStatement("kv.Resource.UriExpression;")
+                );
+
+                lastStatement.InsertBelow(keyVaultEndpointExpr, s => s.SeparatedFromPrevious());
+            });
+        }
+
+        private void AddRabbitMq(CSharpFile cSharpFile)
+        {
+            if (!HasRabbitMqServiceBus())
+            {
+                return;
+            }
+
+            AddNugetDependency(AspireHostingRabbitMQ);
+
+            cSharpFile.AfterBuild(config =>
+            {
+                var statements = config.TopLevelStatements;
+                var lastStatement = statements.FindStatement(s => s.HasMetadata("is-add-services-to-container-comment"));
+
+                var rabbitComment = new CSharpStatement("// Provision RabbitMQ resource");
+
+                lastStatement.InsertAbove(rabbitComment, s =>
+                {
+                    s.SeparatedFromPrevious();
+                    s.AddMetadata("is-rabbitmq-comment", true);
+                });
+
+                lastStatement = rabbitComment;
+
+                // var rabbitMq = builder.AddRabbitMQ("messaging")
+                //     .WithManagementPlugin();
+                CSharpStatement rabbitMqStatement = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("rabbitMq"),
+                    new CSharpStatement("builder.AddRabbitMQ(\"messaging\")")
+                );
+
+                rabbitMqStatement = rabbitMqStatement.AddInvocation("WithManagementPlugin", cfg =>
+                {
+                    cfg.OnNewLine();
+                });
+
+                lastStatement.InsertBelow(rabbitMqStatement, s => s.AddMetadata("is-rabbitmq", true));
+                lastStatement = rabbitMqStatement;
+
+                var rabbitMqHostString = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("rabbitMqHostString"),
+                    new CSharpStatement("rabbitMq.Resource.Host;")
+                );
+
+                lastStatement.InsertBelow(rabbitMqHostString);
+                lastStatement = rabbitMqHostString;
+
+                var rabbitMqPortString = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("rabbitMqPortString"),
+                    new CSharpStatement("rabbitMq.Resource.Port;")
+                );
+
+                lastStatement.InsertBelow(rabbitMqPortString);
+                lastStatement = rabbitMqPortString;
+
+                var rabbitMqPasswordString = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("rabbitMqPasswordString"),
+                    new CSharpStatement("rabbitMq.Resource.PasswordParameter;")
+                );
+
+                lastStatement.InsertBelow(rabbitMqPasswordString, s => s.SeparatedFromPrevious());
             });
         }
 
@@ -199,32 +332,59 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
             }
 
             AddNugetDependency(AspireHostingAzureCosmosDB);
+            AddUsing("Azure.Provisioning.CosmosDB");
+            AddUsing("System.Linq"); // for Single()
 
             cSharpFile.AfterBuild(config =>
             {
                 var statements = config.TopLevelStatements;
-
                 var lastStatement = statements.FindStatement(s => s.HasMetadata("is-add-services-to-container-comment"));
 
                 var cosmosDbComment = new CSharpStatement("// Provision Cosmos Db resource");
-
                 lastStatement.InsertAbove(cosmosDbComment, s =>
                 {
                     s.SeparatedFromPrevious();
                     s.AddMetadata("is-cosmos-db-comment", true);
                 });
-
                 lastStatement = cosmosDbComment;
 
                 CSharpStatement addAzureCosmosDbStatement = new CSharpAssignmentStatement(
-                        new CSharpVariableDeclaration($"cosmos"),
-                        new CSharpStatement($"builder.AddAzureCosmosDB(\"cosmos-db\")")
-                    );
+                    new CSharpVariableDeclaration("cosmos"),
+                    new CSharpStatement("builder.AddAzureCosmosDB(\"cosmos-db\")")
+                );
 
-                addAzureCosmosDbStatement = addAzureCosmosDbStatement.AddInvocation("RunAsPreviewEmulator", config =>
+                if (HasKeyVault())
                 {
-                    config.OnNewLine();
-                    config.AddArgument(new CSharpLambdaBlock("emulator")
+                    addAzureCosmosDbStatement = addAzureCosmosDbStatement.AddInvocation("WithAccessKeyAuthentication", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument("kv");
+                    });
+                }
+
+                addAzureCosmosDbStatement = addAzureCosmosDbStatement.AddInvocation("ConfigureInfrastructure", cfg =>
+                {
+                    cfg.OnNewLine();
+
+                    var infraLambda = new CSharpLambdaBlock("infra")
+                        .AddStatement("var cosmosDbAccount = infra.GetProvisionableResources()")
+                        .AddStatement("    .OfType<CosmosDBAccount>()")
+                        .AddStatement("    .Single();")
+                        .AddStatement(string.Empty)
+                        .AddStatement("cosmosDbAccount.DisableLocalAuth = false;")
+                        .AddStatement(string.Empty)
+                        .AddStatement("cosmosDbAccount.BackupPolicy = new ContinuousModeBackupPolicy()")
+                        .AddStatement("{")
+                        .AddStatement("    ContinuousModeTier = ContinuousTier.Continuous7Days")
+                        .AddStatement("};");
+
+                    cfg.AddArgument(infraLambda);
+                });
+
+                addAzureCosmosDbStatement = addAzureCosmosDbStatement.AddInvocation("RunAsPreviewEmulator", cfg =>
+                {
+                    cfg.OnNewLine();
+                    cfg.AddArgument(new CSharpLambdaBlock("emulator")
                         .AddStatement("emulator.WithDataExplorer();")
                         .AddStatement("emulator.WithLifetime(ContainerLifetime.Persistent);")
                         .AddStatement("emulator.WithDataVolume();"));
@@ -234,17 +394,19 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 var pragmaRestored = new CSharpStatement("#pragma warning restore ASPIRECOSMOSDB001");
 
                 lastStatement.InsertBelow([pragmaDisabled, addAzureCosmosDbStatement, pragmaRestored]);
-
                 lastStatement = pragmaRestored;
 
-                var cosmosConnectionString = new CSharpAssignmentStatement(
-                    new CSharpVariableDeclaration($"cosmosConnectionString"),
-                    new CSharpStatement($"new ConnectionStringReference(cosmos.Resource, optional: false);")
-                );
+                // non Key Vault mode: emit cosmosConnectionString (original way)
+                if (!HasKeyVault())
+                {
+                    var cosmosConnectionString = new CSharpAssignmentStatement(
+                        new CSharpVariableDeclaration("cosmosConnectionString"),
+                        new CSharpStatement("new ConnectionStringReference(cosmos.Resource, optional: false);")
+                    );
 
-                lastStatement.InsertBelow(cosmosConnectionString, stmt => {
-                    stmt.SeparatedFromPrevious();
-                });
+                    lastStatement.InsertBelow(cosmosConnectionString, stmt => stmt.SeparatedFromPrevious());
+                    lastStatement = cosmosConnectionString;
+                }
             });
         }
 
@@ -347,7 +509,8 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                         new CSharpStatement($"new ConnectionStringReference({varAppName}Storage.Resource, optional: false);")
                     );
 
-                    lastStatement.InsertBelow(azureStorageConnectionString, stmt => {
+                    lastStatement.InsertBelow(azureStorageConnectionString, stmt =>
+                    {
                         stmt.SeparatedFromNext();
                     });
 
@@ -355,6 +518,12 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 }
 
                 var appApiStatement = new CSharpStatement($"{varAppName}Api");
+
+                appApiStatement = appApiStatement.AddInvocation("WithReferenceEnvironment", config =>
+                {
+                    config.OnNewLine();
+                    config.AddArgument("ReferenceEnvironmentInjectionFlags.None");
+                });
 
                 if (HasApplicationInsights())
                 {
@@ -370,25 +539,90 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                         config.AddArgument("insights");
                     });
                 }
-                if (HasCosmosDb(app))
+                if (HasKeyVault())
                 {
-                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", config =>
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", cfg =>
                     {
-                        config.OnNewLine();
-                        config.AddArgument($"\"Cosmos__ConnectionString\"");
-                        config.AddArgument($"cosmosConnectionString");
+                        cfg.OnNewLine();
+                        cfg.AddArgument("\"KeyVault__Enabled\"");
+                        cfg.AddArgument("keyVaultEnabled");
                     });
+
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument("\"KeyVault__Endpoint\"");
+                        cfg.AddArgument("keyVaultEndpointExpr");
+                    });
+
+                    appApiStatement = appApiStatement.AddInvocation("WithRoleAssignments", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument("kv");
+                        cfg.AddArgument("KeyVaultBuiltInRole.KeyVaultReader");
+                        cfg.AddArgument("KeyVaultBuiltInRole.KeyVaultSecretsUser");
+                    });
+                }
+                if (HasRabbitMqServiceBus())
+                {
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument("name", "\"RabbitMq__Host\"");
+                        cfg.AddArgument("value", "rabbitMqHostString");
+                    });
+
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument("name", "\"RabbitMq__Port\"");
+                        cfg.AddArgument("value", "rabbitMqPortString");
+                    });
+
+                    appApiStatement = appApiStatement.AddInvocation("WithEnvironment", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument("name", "\"RabbitMq__Password\"");
+                        cfg.AddArgument("value", "rabbitMqPasswordString");
+                    });
+
                     appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
                     {
                         config.OnNewLine();
-                        config.AddArgument($"{varAppName}DB");
+                        config.AddArgument($"rabbitMq");
                     });
+
                     appApiStatement = appApiStatement.AddInvocation("WaitFor", config =>
                     {
                         config.OnNewLine();
-                        config.AddArgument($"{varAppName}DB");
+                        config.AddArgument($"rabbitMq");
                     });
                 }
+                if (HasCosmosDb(app))
+                {
+                    if (!HasKeyVault())
+                    {
+                        appApiStatement = appApiStatement.AddInvocation("WithEnvironment", cfg =>
+                        {
+                            cfg.OnNewLine();
+                            cfg.AddArgument("\"Cosmos__ConnectionString\"");
+                            cfg.AddArgument("cosmosConnectionString");
+                        });
+
+                        appApiStatement = appApiStatement.AddInvocation("WithReference", cfg =>
+                        {
+                            cfg.OnNewLine();
+                            cfg.AddArgument($"{varAppName}DB");
+                        });
+                    }
+
+                    appApiStatement = appApiStatement.AddInvocation("WaitFor", cfg =>
+                    {
+                        cfg.OnNewLine();
+                        cfg.AddArgument($"{varAppName}DB");
+                    });
+                }
+
                 if (HasBlobStorage(app))
                 {
                     appApiStatement = appApiStatement.AddInvocation("WithEnvironment", config =>
@@ -477,25 +711,18 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                 var apiGatewayRoutes = GetApiGatewayRoutes(OutputTarget);
 
-                var gatewayStatement = new CSharpAssignmentStatement(
-                    new CSharpVariableDeclaration("gateway"),
-                    new CSharpStatement("builder.AddYarp(\"gateway\");")
-                );
-
-                lastStatement.InsertBelow(gatewayStatement);
-
-                lastStatement = gatewayStatement;
-
+                // Build yarp configuration lambda first (unchanged logic, just moved up)
                 var yarpLambdaConfigurationStatement = new CSharpLambdaBlock("yarp");
                 var lastApplicationName = string.Empty;
                 var lastPackageName = string.Empty;
 
                 foreach (var apiGatewayRoute in apiGatewayRoutes
-                    .OrderBy(r => r.DownstreamEndpoints()[0].Package.ApplicationId)
-                    .ThenBy(r => r.DownstreamEndpoints()[0].Package))
+                    .OrderBy(r => r.DownstreamEndpoints().FirstOrDefault()?.Package?.ApplicationId ?? string.Empty)
+                    .ThenBy(r => r.DownstreamEndpoints().FirstOrDefault()?.Package?.Name ?? string.Empty))
                 {
                     var route = apiGatewayRoute.GetUpstreamRouteInfo().Route;
                     var package = apiGatewayRoute.DownstreamEndpoints()[0].Package;
+                    var method = apiGatewayRoute.GetUpstreamRouteInfo().Verb;
                     var serviceApplicationId = package.ApplicationId;
                     var serviceApplication = apps.FirstOrDefault(app => app.Id == serviceApplicationId);
 
@@ -509,7 +736,8 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                     if (lastApplicationName != serviceApplication.Name)
                     {
-                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to {serviceApplication.Name} ({package.Name})", stmt => { 
+                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to {serviceApplication.Name} ({package.Name})", stmt =>
+                        {
                             if (lastApplicationName != string.Empty)
                             {
                                 stmt.SeparatedFromPrevious();
@@ -532,13 +760,65 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                         lastPackageName = package.Name;
                     }
 
-                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName}Cluster);");
+                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName}Cluster).WithMatchMethods(\"{method.ToString().ToUpper()}\");");
                 }
 
-                var yarpConfigurationStatement = new CSharpInvocationStatement("gateway.WithConfiguration");
-                yarpConfigurationStatement.AddArgument(yarpLambdaConfigurationStatement);
+                // Create gateway with chained method calls
+                CSharpStatement gatewayStatement = new CSharpAssignmentStatement(
+                    new CSharpVariableDeclaration("gateway"),
+                    new CSharpStatement("builder.AddYarp(\"gateway\")")
+                );
 
-                lastStatement.InsertBelow(yarpConfigurationStatement);
+                gatewayStatement = gatewayStatement.AddInvocation("WithConfiguration", cfg =>
+                {
+                    cfg.OnNewLine();
+                    cfg.AddArgument(yarpLambdaConfigurationStatement);
+                });
+
+                gatewayStatement = gatewayStatement.AddInvocation("WithExternalHttpEndpoints", cfg =>
+                {
+                    cfg.OnNewLine();
+                });
+
+                lastStatement.InsertBelow(gatewayStatement);
+            });
+        }
+
+        private void AddLocalRunOverrides(CSharpFile cSharpFile)
+        {
+            // Only relevant if Cosmos exists at all
+            if (!HasCosmosDb())
+            {
+                return;
+            }
+
+            cSharpFile.AfterBuild(config =>
+            {
+                var statements = config.TopLevelStatements;
+
+                var lastStatement = statements.FindStatement(s => s.HasMetadata("is-add-services-to-container-comment"));
+
+                // Only add if at least one app actually uses Cosmos
+                var cosmosApps = apps.Where(HasCosmosDb).ToArray();
+                if (cosmosApps.Length == 0)
+                {
+                    return;
+                }
+
+                // if (builder.ExecutionContext.IsRunMode) { ... }
+                var ifBlock = new CSharpIfStatement("builder.ExecutionContext.IsRunMode");
+                
+                ifBlock.AddStatement($"// LOCAL RUN ONLY: feed emulator connection string via ConnectionStrings__cosmos-db so your code can use GetConnectionString(\"cosmos-db\")");
+
+                foreach (var app in cosmosApps)
+                {
+                    var appNameParts = app.Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
+                    var varAppName = string.Join("", appNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
+
+                    ifBlock.AddStatement($"{varAppName}Api.WithEnvironment(\"ConnectionStrings__cosmos-db\", cosmos.Resource.ConnectionStringExpression);");
+                }
+
+                lastStatement.InsertBelow(ifBlock);
             });
         }
 
@@ -594,6 +874,39 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
         private bool HasBlobStorage()
         {
             return HasModule("Intent.Azure.BlobStorage");
+        }
+
+        private bool HasKeyVault()
+        {
+            return HasModule("Intent.Azure.KeyVault");
+        }
+
+        private const string MassTransitModuleSettingsId = "b1c11f3f-63ce-4917-8ffb-b6c7698346c7";
+        private const string MassTransitModuleSettingsMessageServiceProviderId = "2888b373-0419-4d33-ba56-2d8d0bf98eb9";
+        private const string MassTransitModuleSettingsMessageServiceProviderRabbitMqValue = "rabbitmq";
+
+        private bool HasRabbitMqServiceBus()
+        {
+            var apps = ExecutionContext.GetSolutionConfig()
+                .GetApplicationReferences()
+                .Select(app => ExecutionContext.GetSolutionConfig().GetApplicationConfig(app.Id))
+                .ToArray();
+
+            var hasRabbitMqServiceBus = apps.Any(app =>
+            {
+                var massTransitModuleSettings = app.ModuleSetting.FirstOrDefault(ms => ms.Id == MassTransitModuleSettingsId);
+
+                if (massTransitModuleSettings == null)
+                {
+                    return false;
+                }
+
+                var messageServiceProvider = massTransitModuleSettings.GetSetting(MassTransitModuleSettingsMessageServiceProviderId);
+
+                return messageServiceProvider.Value == MassTransitModuleSettingsMessageServiceProviderRabbitMqValue;
+            });
+
+            return hasRabbitMqServiceBus;
         }
 
         private bool HasBlobStorage(IApplicationConfig app)
