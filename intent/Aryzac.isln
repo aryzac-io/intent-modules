@@ -14,5 +14,6 @@
     <application id="fa07cab7-946f-4101-8ccd-26500e6b183c" name="Aryzac.Security" relativePath="Aryzac.Security/Aryzac.Security.application.config" />
     <application id="855cff45-c2a1-4077-aaf1-5d9e928e52af" name="Aryzac" relativePath="Aryzac/Aryzac.application.config" />
     <application id="336de94e-013d-4265-87bf-180b4b78f343" name="Aryzac.VueJS" solutionFolder="VueJS" relativePath="Aryzac.VueJS/Aryzac.VueJS.application.config" />
+    <application id="f986a19b-afab-423b-859e-3bc2fbe87323" name="Aryzac.Audit" relativePath="Aryzac.Audit/Aryzac.Audit.application.config" />
   </applications>
 </solution>

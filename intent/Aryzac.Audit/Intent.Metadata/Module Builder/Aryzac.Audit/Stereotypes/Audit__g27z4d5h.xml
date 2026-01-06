@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="481e9fcb-c990-4576-8459-f57fc0eddbf0" version="3.1.0">
+  <name>Audit</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9">Command</type>
+    <type id="e71b0662-e29d-4db2-868b-8a12464b25d0">Query</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>on-create</applyMode>
+  <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADBElEQVR4AcxVQVIbMRAciSrwcS8pOPoJ/gH8AP8AfgBHMJfNAeMj/AB+AD9wfkB+4CMkFx+dVGWV7vFKSF4tXsBUsqW2pFFPT68k21b+8fP/GyjKsijKstg7O+t7fBmNBjn4dfbM6bK52R1g8t75+T5wtL1YnBCVyJGHqarDHPw6e+bsjkYnBHT228w0DNA9kyvnDoB+W2KXuKuqgoDOgRrBLq7mNQw4aw9XSZuY00hOOzGwe3FxSOImCuY0qL16HIkBce5DW54rmoklNRIDdJhJ2GjIGVPEgsEAb3688FljvmRcKxjoLRaJs88yQN24VjDAhTYY5wpjzADryflh3mjkItivewxfb+sNGDMUa08hM4SJ43rcMKIFyQMCD7kaR3Jbs37hj7WNI6CQERng4szBmxEqaO1QewTYdMzC2KmIK8yF4SE5MeJaNl6IxyiuW66CVXXtnLuVqrrHV3VaFwzC+IE5qHNn4HjuteaKcLcIyT2tBtwyUVBs6hNV0LlHzjEu2CuMWRagQQ2IYH2O/wvlGpHlujSfVgMozG2HkiviNArHc44Dl5MYxqgGchKNmNJqwInwzAXbO0CBIICjORY+zuk6hzgWHYPrj4I7V6Cwzk2tpdyVj1YD4FF0xuJua+tYC+OiIa7bCdFCcMtr+NgAl+7Uc5kL/gz3R48C40YLBraqSrcrYfBMnVteOpHV73YfJgaEYA3QVhdVQwjMUPwWfdLiWsFAwqgn2MK5E5mGmy1yLx3AokAJNIojP2mvGvBMGsGYb/MI0bUgF+jUgoFFr9c8gk4SbyfFtYKBt8u8P2NeluFlgwEGrTG8+e9X7pC5WiMYqHM/3QB+K8Lbs2ZiYLGz891YmxBI2hSo/Xx5+RDr2XjCY/i1vX1HYhzfxJia+G9IilM3McCAN4GzmgIfPhIWhs70eTy+eZpMGnoNA97E09XVN+Dud693Q4B454FzfMjBr7Nnzo/J5KsWhhZ1cwA3F36JcUcIuvf4OR4/5uDX2TPnRaV9tNZAe2q3lXWsvwAAAP//LEDgsAAAAAZJREFUAwCFNLtQI91GrAAAAABJRU5ErkJggg==" />
+  <displayIcon>false</displayIcon>
+  <displayIconFunction>return false;</displayIconFunction>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>15b6b760-add3-47b7-84b8-e78290550863</parentFolderId>
+  <order>0</order>
+  <packageId>15b6b760-add3-47b7-84b8-e78290550863</packageId>
+  <packageName>Aryzac.Audit</packageName>
+  <properties />
+</stereotypeDefinition>

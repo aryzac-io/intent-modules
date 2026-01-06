@@ -9,17 +9,7 @@
       <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
       <updatedAt>2026-01-03T04:56:56.5911562Z</updatedAt>
       <deviationsHash>4EE1E6A8932D1D7DAB097E55445190D62384CD7AC2C7EE7AEA474EC04962D26B</deviationsHash>
-      <fileHash>F6E2FCC303872FD03DCBA3451D0D47214C2F09E5121FD96A3FB43A204EED72E7</fileHash>
-    </file>
-    <file>
-      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#3edd9a5b-5006-4206-96b3-9dacde262b55</correlationId>
-      <path>Aryzac.VueJS/Templates/Dto/DtoTemplatePartial.cs</path>
-      <count>2</count>
-      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
-      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
-      <updatedAt>2025-12-28T10:31:44.1363799Z</updatedAt>
-      <deviationsHash>3F21ADDA99933FAC4596A8E4A63355F9FC9AA7281C5B7E7591FEF24472279F5E</deviationsHash>
-      <fileHash>D37437F73726082475410477C98499264A53F27268CA8EBE46EDDEF9A9FEA737</fileHash>
+      <fileHash>0549AA3428F75EC9611D83370794BEBE580CAF904C84C0D8350464DC75BF4906</fileHash>
     </file>
   </files>
 </deviationsLog>

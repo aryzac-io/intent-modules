@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac", "Aryzac\Aryzac.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.VueJS", "Aryzac.VueJS\Aryzac.VueJS.csproj", "{51AFEA42-AD27-458C-8F56-EB17127A24E2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aryzac.Audit", "Aryzac.Audit\Aryzac.Audit.csproj", "{064B5344-851E-455E-923F-5C316E721A32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,5 +49,9 @@ Global
 		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51AFEA42-AD27-458C-8F56-EB17127A24E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064B5344-851E-455E-923F-5C316E721A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064B5344-851E-455E-923F-5C316E721A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064B5344-851E-455E-923F-5C316E721A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064B5344-851E-455E-923F-5C316E721A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

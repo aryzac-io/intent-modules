@@ -76,7 +76,7 @@ namespace Aryzac.VueJS.Templates.Composable
         var routeResponseType = GetRouteResponseType(service);
         var hasResponse = routeResponseType != null && routeResponseType.Fields.Any();
 
-        var responseTypeName = routeResponseType.Name;
+        var responseTypeName = routeResponseType?.Name ?? "UNKNOWN";
 
         // Split request props into path vs query based on Express-style :placeholders in the route
         var placeholderMatches = Regex.Matches(route.Path, ":([^/]+)")

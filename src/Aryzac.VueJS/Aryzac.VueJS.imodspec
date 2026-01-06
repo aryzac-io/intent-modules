@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Aryzac.VueJS</id>
-  <version>1.0.0-pre.2</version>
+  <version>1.0.0-pre.3</version>
   <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
   <summary>A custom module for Aryzac</summary>
   <description>A custom module for Aryzac</description>
@@ -11,10 +11,6 @@
     <template id="Aryzac.VueJS.Composable" externalReference="21791968-1881-4c85-bb9b-a7fe48ce44d9">
       <role>Default</role>
       <location>app/composables</location>
-    </template>
-    <template id="Aryzac.VueJS.Dto" externalReference="3edd9a5b-5006-4206-96b3-9dacde262b55">
-      <role>Default</role>
-      <location>app/types/dto</location>
     </template>
   </templates>
   <decorators></decorators>
@@ -34,9 +30,9 @@
     <dependency id="Intent.Modelers.Eventing" version="6.0.3" />
     <dependency id="Intent.Modelers.Services" version="4.0.8" />
     <dependency id="Intent.Modelers.Services.CQRS" version="6.0.4" />
-    <dependency id="Intent.Modelers.Services.DomainInteractions" version="2.3.11" />
+    <dependency id="Intent.Modelers.Services.DomainInteractions" version="2.3.12-pre.0" />
     <dependency id="Intent.Modelers.Services.EventInteractions" version="2.0.4" />
-    <dependency id="Intent.Modelers.UI" version="1.0.4" />
+    <dependency id="Intent.Modelers.UI" version="1.0.5-pre.0" />
     <dependency id="Intent.Modelers.UI.Core" version="1.0.0" />
   </dependencies>
   <files>

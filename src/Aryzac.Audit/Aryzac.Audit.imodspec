@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <id>Aryzac.Audit</id>
+  <version>1.0.0-pre.0</version>
+  <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
+  <summary>A custom module for Aryzac</summary>
+  <description>A custom module for Aryzac</description>
+  <authors>Aryzac</authors>
+  <iconUrl>data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNjcuNCAyNjcuNCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2JiMjgyODsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0xNzAuODcsMTUwLjUzaC00OWwxMS44MywzMi4zNmgtNTEuOTNsNTEuNjctMTA2LjE2czM0LjU5LDY4Ljk5LDM3LjQzLDczLjhaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTEzMy43LDBDNTkuODQsMCwwLDU5Ljg0LDAsMTMzLjdzNTkuODQsMTMzLjcsMTMzLjcsMTMzLjcsMTMzLjctNTkuODcsMTMzLjctMTMzLjdTMjA3LjUzLDAsMTMzLjcsMFptMzYuMTIsMTgyLjg5bC0xMS43OSwzMi4zMmgtOTEuM2wxNS4wMS0zMi4zMmgtNDMuOTNMMTA2Ljk4LDUyLjE5aDUzLjY5bDY4Ljg5LDEzMC43aC01OS43NFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==</iconUrl>
+  <templates>
+    <template id="Aryzac.Audit.AuditInterface" externalReference="2772ce8b-9aa6-41ce-b138-d0bdf74944b6">
+      <config>
+        <add key="ClassName" description="Class name formula override (e.g. '${Model.Name}')" />
+        <add key="Namespace" description="Class namespace formula override (e.g. '${Project.Name}'" />
+      </config>
+      <role>Domain.AuditableInterface</role>
+      <location>Common/Interfaces</location>
+    </template>
+  </templates>
+  <decorators></decorators>
+  <factoryExtensions>
+    <factoryExtension id="Aryzac.Audit.AuditExtension" externalReference="7b6090cd-4ad3-4f47-b22a-7dca13dfcdf1" />
+  </factoryExtensions>
+  <moduleSettings></moduleSettings>
+  <dependencies>
+    <dependency id="Intent.Common" version="3.7.2" />
+    <dependency id="Intent.Common.CSharp" version="3.8.0" />
+    <dependency id="Intent.Common.Types" version="3.4.0" />
+    <dependency id="Intent.Modelers.Domain" version="3.12.11" />
+    <dependency id="Intent.Modelers.Services" version="4.0.4" />
+    <dependency id="Intent.Modelers.Services.CQRS" version="6.0.4" />
+    <dependency id="Intent.OutputManager.RoslynWeaver" version="4.5.1" />
+  </dependencies>
+  <files>
+    <file src="$outDir$/$id$.dll" />
+    <file src="$outDir$/$id$.pdb" />
+  </files>
+  <tags />
+  <releaseNotes>release-notes.md</releaseNotes>
+  <moduleSettingsExtensions />
+  <metadata>
+    <install target="Domain" src="../../intent/Aryzac.Audit/Intent.Metadata/Module Builder/Aryzac.Audit/Aryzac.Audit.pkg.config" externalReference="15b6b760-add3-47b7-84b8-e78290550863" />
+  </metadata>
+  <migrations />
+</package>

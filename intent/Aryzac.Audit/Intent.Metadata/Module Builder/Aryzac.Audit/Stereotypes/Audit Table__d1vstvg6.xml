@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="c90080ae-bf89-4d10-b398-759e07630f98" version="3.1.0">
+  <name>Audit Table</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="04e12b51-ed12-42a3-9667-a6aa81bb6d10">Class</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>manually</applyMode>
+  <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAChUlEQVR4AcxWsW4aQRB9s5YilzQxKBX5gvABkXKpjNPEfxAspUvhSCkCFDGkAFoXqRLJ5A+cxsYd/gPnC0IJdkNpReLGMyeBfLt33Ap8xiOeYJfZN29nZ+7WYMP2tAUUWkGhVK+WX3ytvt5p7H0r1nc/Pm++q/hC1yqWJTkxAxpgp149ena7fRgCH2aGvxC4zWQ+URi+94WuVRSbu4elxt6bJCGOAFWsAZKcV53jkAohc6DcNocjgLf4le30YGOCkwVHABhl5GRMXLCpXQG2R8qYmAtEXEmF/J+yNDbtCNDzinmkDNiYAKD9NPCWqcGyJG4z9yk1qzWF7kjmMo9BCnXIoKs0EIdD4cn8RAK0OplxooDsigg1ykghE03BfJoGZrqCh0UCxr3BiBktZvR5visN4EGwrkskQEmue4O24GCxI51cjjIBAYj2k0D6H7JtISDbNe4hAcogBASuJIENVeBhKwuQTMkZ8ymQDJqFfY/4iARoERYb1X8CqS20YOizTxGyFFoqPGsoEgDLsoJb7msNIwHaBZPu4KVAYqPF2hGeO1gruiyOBMj3xj5PQ4AWoVxAThSQviYgkLNw3lzIweYZKEePX30ES19D+lva4fEESBEOifFWRBxA+lqKUHt4lMOGHcp5BqAixp1Bn6W3xetRgkscLAToYBNwBJDhaV5CkrhdAUy5CQDBOVpHgFxKL5GT0Yz+2tSOACnGkSHyuk7ZZGljTb3cIf8ot+3jCFCHcff8Ui4n7f/bt8fi8DsE/WTQEXH4Q4l8oOsUyjHpXBzfdM7k9a3scYhPfOL+aNoaTsdyXbvpDs6uu+ffJ72LX0rkA12nUI77nPbvpQJs51XGWWvuAAAA///au0KyAAAABklEQVQDAHQbi1DxUABAAAAAAElFTkSuQmCC" />
+  <displayIcon>false</displayIcon>
+  <displayIconFunction>return true;</displayIconFunction>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>15b6b760-add3-47b7-84b8-e78290550863</parentFolderId>
+  <order>0</order>
+  <packageId>15b6b760-add3-47b7-84b8-e78290550863</packageId>
+  <packageName>Aryzac.Audit</packageName>
+  <onAppliedScript>function execute(element) {
+    const auditTableStereotypeId = "c90080ae-bf89-4d10-b398-759e07630f98";
+    let package = element.getPackage();
+    let auditTables = package.getChildren(element.specialization).filter(x =&gt; x.hasStereotype(auditTableStereotypeId));
+    auditTables.forEach(at =&gt; {
+        if (at !== undefined &amp;&amp; at !== null &amp;&amp; at.getName() != element.getName()) {
+            at.delete();
+        }
+    });
+    if (element.hasStereotype(auditTableStereotypeId)) {
+        ensureAttributes(element, true);
+    }
+    else {
+        removeAttribute(element, "Id");
+        removeAttribute(element, "PartitionKey");
+        removeAttribute(element, "Payload");
+        removeAttribute(element, "PayloadHash");
+        removeAttribute(element, "Kind");
+        removeAttribute(element, "Name");
+        removeAttribute(element, "DurationMs");
+        removeAttribute(element, "Status");
+        removeAttribute(element, "Error");
+        removeAttribute(element, "TraceId");
+        removeAttribute(element, "UserId");
+        removeAttribute(element, "CreatedAt");
+    }
+}
+function ensureAttributes(element, enforceFieldTypes) {
+    const dateTimeOffsetTypeId = "f1ba4df3-a5bc-427e-a591-4f6029f89bd7";
+    const stringTypeId = "d384db9c-a279-45e1-801e-e4e8099625f2";
+    const intTypeId = "fb0a362d-e9e2-40de-b6ff-5ce8167cbe74";
+    const guidTypeId = "6b649125-18ea-48fd-a6ba-0bfff0d8f488";
+    ensureAttribute(element, guidTypeId, false, "Id", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "PartitionKey", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Payload", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "PayloadHash", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Kind", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Name", enforceFieldTypes);
+    ensureAttribute(element, intTypeId, false, "DurationMs", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Status", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Error", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "TraceId", enforceFieldTypes);
+    ensureAttribute(element, guidTypeId, false, "UserId", enforceFieldTypes);
+    ensureAttribute(element, dateTimeOffsetTypeId, false, "CreatedAt", enforceFieldTypes, "DateTimeOffset.UtcNow");
+}
+function ensureAttribute(element, typeId, isNullable, name, enforceFieldType, value) {
+    let el = element.getChildren("Attribute").filter(x =&gt; x.getName() == name)[0];
+    if (el == null) {
+        el = createElement("Attribute", name, element.id);
+        el.setMetadata("set-by-infrastructure", "true");
+        el.typeReference.setIsNullable(isNullable);
+        el.typeReference.setType(typeId);
+    }
+    if (enforceFieldType) {
+        el.typeReference.setIsNullable(isNullable);
+        el.typeReference.setType(typeId);
+        el.typeReference.setValue(value);
+    }
+}
+function removeAttribute(element, name) {
+    let el = element.getChildren("Attribute").filter(x =&gt; x.getName() == name)[0];
+    if (el == null || !el.hasMetadata("set-by-infrastructure")) {
+        return;
+    }
+    el.delete();
+}
+execute(element);</onAppliedScript>
+  <onChangedScript>function execute(element) {
+    const auditTableStereotypeId = "c90080ae-bf89-4d10-b398-759e07630f98";
+    let package = element.getPackage();
+    let auditTables = package.getChildren(element.specialization).filter(x =&gt; x.hasStereotype(auditTableStereotypeId));
+    auditTables.forEach(at =&gt; {
+        if (at !== undefined &amp;&amp; at !== null &amp;&amp; at.getName() != element.getName()) {
+            at.delete();
+        }
+    });
+    if (element.hasStereotype(auditTableStereotypeId)) {
+        ensureAttributes(element, true);
+    }
+    else {
+        removeAttribute(element, "Id");
+        removeAttribute(element, "PartitionKey");
+        removeAttribute(element, "Payload");
+        removeAttribute(element, "PayloadHash");
+        removeAttribute(element, "Kind");
+        removeAttribute(element, "Name");
+        removeAttribute(element, "DurationMs");
+        removeAttribute(element, "Status");
+        removeAttribute(element, "Error");
+        removeAttribute(element, "TraceId");
+        removeAttribute(element, "UserId");
+        removeAttribute(element, "CreatedAt");
+    }
+}
+function ensureAttributes(element, enforceFieldTypes) {
+    const dateTimeOffsetTypeId = "f1ba4df3-a5bc-427e-a591-4f6029f89bd7";
+    const stringTypeId = "d384db9c-a279-45e1-801e-e4e8099625f2";
+    const intTypeId = "fb0a362d-e9e2-40de-b6ff-5ce8167cbe74";
+    const guidTypeId = "6b649125-18ea-48fd-a6ba-0bfff0d8f488";
+    ensureAttribute(element, guidTypeId, false, "Id", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "PartitionKey", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Payload", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "PayloadHash", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Kind", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Name", enforceFieldTypes);
+    ensureAttribute(element, intTypeId, false, "DurationMs", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Status", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Error", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "TraceId", enforceFieldTypes);
+    ensureAttribute(element, guidTypeId, false, "UserId", enforceFieldTypes);
+    ensureAttribute(element, dateTimeOffsetTypeId, false, "CreatedAt", enforceFieldTypes, "DateTimeOffset.UtcNow");
+}
+function ensureAttribute(element, typeId, isNullable, name, enforceFieldType, value) {
+    let el = element.getChildren("Attribute").filter(x =&gt; x.getName() == name)[0];
+    if (el == null) {
+        el = createElement("Attribute", name, element.id);
+        el.setMetadata("set-by-infrastructure", "true");
+        el.typeReference.setIsNullable(isNullable);
+        el.typeReference.setType(typeId);
+    }
+    if (enforceFieldType) {
+        el.typeReference.setIsNullable(isNullable);
+        el.typeReference.setType(typeId);
+        el.typeReference.setValue(value);
+    }
+}
+function removeAttribute(element, name) {
+    let el = element.getChildren("Attribute").filter(x =&gt; x.getName() == name)[0];
+    if (el == null || !el.hasMetadata("set-by-infrastructure")) {
+        return;
+    }
+    el.delete();
+}
+execute(element);</onChangedScript>
+  <onRemovedScript>function execute(element) {
+    const auditTableStereotypeId = "c90080ae-bf89-4d10-b398-759e07630f98";
+    let package = element.getPackage();
+    let auditTables = package.getChildren(element.specialization).filter(x =&gt; x.hasStereotype(auditTableStereotypeId));
+    auditTables.forEach(at =&gt; {
+        if (at !== undefined &amp;&amp; at !== null &amp;&amp; at.getName() != element.getName()) {
+            at.delete();
+        }
+    });
+    if (element.hasStereotype(auditTableStereotypeId)) {
+        ensureAttributes(element, true);
+    }
+    else {
+        removeAttribute(element, "Id");
+        removeAttribute(element, "PartitionKey");
+        removeAttribute(element, "Payload");
+        removeAttribute(element, "PayloadHash");
+        removeAttribute(element, "Kind");
+        removeAttribute(element, "Name");
+        removeAttribute(element, "DurationMs");
+        removeAttribute(element, "Status");
+        removeAttribute(element, "Error");
+        removeAttribute(element, "TraceId");
+        removeAttribute(element, "UserId");
+        removeAttribute(element, "CreatedAt");
+    }
+}
+function ensureAttributes(element, enforceFieldTypes) {
+    const dateTimeOffsetTypeId = "f1ba4df3-a5bc-427e-a591-4f6029f89bd7";
+    const stringTypeId = "d384db9c-a279-45e1-801e-e4e8099625f2";
+    const intTypeId = "fb0a362d-e9e2-40de-b6ff-5ce8167cbe74";
+    const guidTypeId = "6b649125-18ea-48fd-a6ba-0bfff0d8f488";
+    ensureAttribute(element, guidTypeId, false, "Id", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "PartitionKey", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Payload", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "PayloadHash", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Kind", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Name", enforceFieldTypes);
+    ensureAttribute(element, intTypeId, false, "DurationMs", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Status", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "Error", enforceFieldTypes);
+    ensureAttribute(element, stringTypeId, false, "TraceId", enforceFieldTypes);
+    ensureAttribute(element, guidTypeId, false, "UserId", enforceFieldTypes);
+    ensureAttribute(element, dateTimeOffsetTypeId, false, "CreatedAt", enforceFieldTypes, "DateTimeOffset.UtcNow");
+}
+function ensureAttribute(element, typeId, isNullable, name, enforceFieldType, value) {
+    let el = element.getChildren("Attribute").filter(x =&gt; x.getName() == name)[0];
+    if (el == null) {
+        el = createElement("Attribute", name, element.id);
+        el.setMetadata("set-by-infrastructure", "true");
+        el.typeReference.setIsNullable(isNullable);
+        el.typeReference.setType(typeId);
+    }
+    if (enforceFieldType) {
+        el.typeReference.setIsNullable(isNullable);
+        el.typeReference.setType(typeId);
+        el.typeReference.setValue(value);
+    }
+}
+function removeAttribute(element, name) {
+    let el = element.getChildren("Attribute").filter(x =&gt; x.getName() == name)[0];
+    if (el == null || !el.hasMetadata("set-by-infrastructure")) {
+        return;
+    }
+    el.delete();
+}
+execute(element);</onRemovedScript>
+  <properties />
+</stereotypeDefinition>

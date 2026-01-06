@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="7b6090cd-4ad3-4f47-b22a-7dca13dfcdf1" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>AuditExtension</name>
+  <display>AuditExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>15b6b760-add3-47b7-84b8-e78290550863</parentFolderId>
+  <packageId>15b6b760-add3-47b7-84b8-e78290550863</packageId>
+  <packageName>Aryzac.Audit</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
