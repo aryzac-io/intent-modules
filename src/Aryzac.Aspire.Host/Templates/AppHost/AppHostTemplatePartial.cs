@@ -760,7 +760,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                         lastPackageName = package.Name;
                     }
 
-                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName}Cluster).WithMatchMethods(\"{method.ToString().ToUpper()}\");");
+                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName}Cluster).WithMatchMethods(\"{method.ToString().ToUpper()}\", \"OPTIONS\");");
                 }
 
                 // Create gateway with chained method calls

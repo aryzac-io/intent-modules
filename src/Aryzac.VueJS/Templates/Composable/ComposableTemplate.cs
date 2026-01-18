@@ -34,32 +34,13 @@ namespace Aryzac.VueJS.Templates.Composable
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\r\nimport type * from \"~/types/dto/");
+            this.Write("\r\n");
             
             #line 13 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.ToKebabCase()));
-            
-            #line default
-            #line hidden
-            this.Write("\";\r\n");
-            
-            #line 14 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
     var services = GetServices().ToList();
 
-            
-            #line default
-            #line hidden
-            this.Write("\r\nexport function use");
-            
-            #line 18 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));
-            
-            #line default
-            #line hidden
-            this.Write("() {\r\n\r\n");
-            
-            #line 20 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+    var imports = new List<(string Name, string Path)>();
 
     foreach (var service in services)
     {
@@ -69,12 +50,54 @@ namespace Aryzac.VueJS.Templates.Composable
         var isVersioned = route.Versioned;
 
         var routeRequestType = GetRouteRequestType(service);
-        var hasRequest = routeRequestType != null && routeRequestType.Fields.Any();
+        var hasRequest = routeRequestType != null && routeRequestType.ChildElements.Any();
 
         var requestTypeName = routeRequestType?.Name ?? "UNKNOWN";
         
         var routeResponseType = GetRouteResponseType(service);
-        var hasResponse = routeResponseType != null && routeResponseType.Fields.Any();
+        var hasResponse = routeResponseType != null && routeResponseType.ChildElements.Any();
+
+        var responseTypeName = routeResponseType?.Name ?? "UNKNOWN";
+
+        if (hasRequest)
+        {
+            AddImport(routeRequestType);
+        }
+
+        if (hasResponse)
+        {
+            AddImport(routeResponseType);
+        }
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("export function use");
+            
+            #line 46 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));
+            
+            #line default
+            #line hidden
+            this.Write("() {\r\n\r\n");
+            
+            #line 48 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+
+    foreach (var service in services)
+    {
+        var scopes = GetScopes(service);
+        var route = GetRoute(service);
+        var isGet = string.Equals(route.Method, "GET", StringComparison.OrdinalIgnoreCase);
+        var isVersioned = route.Versioned;
+
+        var routeRequestType = GetRouteRequestType(service);
+        var hasRequest = routeRequestType != null && routeRequestType.ChildElements.Any();
+
+        var requestTypeName = routeRequestType?.Name ?? "UNKNOWN";
+        
+        var routeResponseType = GetRouteResponseType(service);
+        var hasResponse = routeResponseType != null && routeResponseType.ChildElements.Any();
 
         var responseTypeName = routeResponseType?.Name ?? "UNKNOWN";
 
@@ -88,16 +111,16 @@ namespace Aryzac.VueJS.Templates.Composable
             .ToDictionary(g => g.Key, g => g.First().Groups[1].Value, StringComparer.OrdinalIgnoreCase);
 
         var pathProps = hasRequest
-            ? routeRequestType.Fields
+            ? routeRequestType.ChildElements
                 .Where(p => placeholderMap.ContainsKey(p.Name))
                 .ToList()
-            : new List<Intent.Modelers.Services.Api.DTOFieldModel>();
+            : new List<Intent.Metadata.Models.IElement>();
 
         var queryProps = hasRequest
-            ? routeRequestType.Fields
+            ? routeRequestType.ChildElements
                 .Where(p => !placeholderMap.ContainsKey(p.Name))
                 .ToList()
-            : new List<Intent.Modelers.Services.Api.DTOFieldModel>();
+            : new List<Intent.Metadata.Models.IElement>();
 
         // Signature
         var paramParts = new List<string>();
@@ -139,21 +162,21 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("    const ");
             
-            #line 94 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 122 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(service.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(" = async (");
             
-            #line 94 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 122 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramSignature));
             
             #line default
             #line hidden
             this.Write(") => {\r\n");
             
-            #line 95 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 123 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
         if (hasResponse)
         {
@@ -163,14 +186,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("        const result = await useApi<");
             
-            #line 99 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 127 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(responseTypeName));
             
             #line default
             #line hidden
             this.Write(">(\r\n            \'");
             
-            #line 100 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 128 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(route.Path));
             
             #line default
@@ -178,14 +201,14 @@ namespace Aryzac.VueJS.Templates.Composable
             this.Write("\',\r\n            {\r\n                ...(options || {}),\r\n                method: \'" +
                     "");
             
-            #line 103 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 131 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(route.Method));
             
             #line default
             #line hidden
             this.Write("\',\r\n");
             
-            #line 104 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 132 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
             if (isGet)
             {
@@ -200,7 +223,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                params: {\r\n");
             
-            #line 114 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 142 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     if (isVersioned)
                     {
@@ -210,14 +233,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    version: version");
             
-            #line 118 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 146 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(hasPathProps ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 119 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 147 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     }
                     if (hasPathProps)
@@ -233,27 +256,27 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    ");
             
-            #line 129 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 157 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(placeholderName));
             
             #line default
             #line hidden
             this.Write(": request.");
             
-            #line 129 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 157 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             
-            #line 129 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 157 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i < pathProps.Count - 1 ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 130 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 158 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                         }
                     }
@@ -263,7 +286,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                },\r\n");
             
-            #line 135 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 163 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
 
@@ -275,7 +298,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                query: {\r\n");
             
-            #line 142 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 170 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     for (var i = 0; i < queryProps.Count; i++)
                     {
@@ -287,27 +310,27 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    ");
             
-            #line 148 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 176 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             this.Write(": request.");
             
-            #line 148 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 176 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             
-            #line 148 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 176 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i < queryProps.Count - 1 ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 149 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 177 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     }
 
@@ -316,7 +339,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                },\r\n");
             
-            #line 153 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 181 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
             }
@@ -331,7 +354,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                body,\r\n");
             
-            #line 163 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 191 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
 
@@ -346,7 +369,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                params: {\r\n");
             
-            #line 173 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 201 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     if (isVersioned)
                     {
@@ -356,14 +379,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    version: version");
             
-            #line 177 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 205 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(nonGetHasPathProps ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 178 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 206 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     }
                     if (nonGetHasPathProps)
@@ -379,27 +402,27 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    ");
             
-            #line 188 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 216 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(placeholderName));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 188 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 216 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             
-            #line 188 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 216 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i < pathProps.Count - 1 ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 189 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 217 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                         }
                     }
@@ -409,7 +432,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                },\r\n");
             
-            #line 194 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 222 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
                 // no query for non-GET; non-path properties stay in body
@@ -420,14 +443,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                scopes: [");
             
-            #line 199 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 227 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(scopes));
             
             #line default
             #line hidden
-            this.Write("],\r\n            }\r\n        );\r\n        return result.data.value;\r\n");
+            this.Write("],\r\n            }\r\n        );\r\n        return result;\r\n");
             
-            #line 203 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 231 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
         }
         else
@@ -438,7 +461,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("        await useApi(\r\n            \'");
             
-            #line 209 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 237 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(route.Path));
             
             #line default
@@ -446,14 +469,14 @@ namespace Aryzac.VueJS.Templates.Composable
             this.Write("\',\r\n            {\r\n                ...(options || {}),\r\n                method: \'" +
                     "");
             
-            #line 212 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 240 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(route.Method));
             
             #line default
             #line hidden
             this.Write("\',\r\n");
             
-            #line 213 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 241 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
             if (isGet)
             {
@@ -468,7 +491,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                params: {\r\n");
             
-            #line 223 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 251 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     if (isVersioned)
                     {
@@ -478,14 +501,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    version: version");
             
-            #line 227 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 255 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(hasPathProps ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 228 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 256 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     }
                     if (hasPathProps)
@@ -501,27 +524,27 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    ");
             
-            #line 238 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 266 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(placeholderName));
             
             #line default
             #line hidden
             this.Write(": request.");
             
-            #line 238 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 266 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             
-            #line 238 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 266 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i < pathProps.Count - 1 ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 239 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 267 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                         }
                     }
@@ -531,7 +554,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                },\r\n");
             
-            #line 244 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 272 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
 
@@ -543,7 +566,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                query: {\r\n");
             
-            #line 251 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 279 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     for (var i = 0; i < queryProps.Count; i++)
                     {
@@ -555,27 +578,27 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    ");
             
-            #line 257 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 285 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             this.Write(": request.");
             
-            #line 257 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 285 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             
-            #line 257 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 285 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i < queryProps.Count - 1 ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 258 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 286 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     }
 
@@ -584,7 +607,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                },\r\n");
             
-            #line 262 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 290 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
             }
@@ -599,7 +622,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                body,\r\n");
             
-            #line 272 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 300 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
 
@@ -614,7 +637,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                params: {\r\n");
             
-            #line 282 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 310 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     if (isVersioned)
                     {
@@ -624,14 +647,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    version: version");
             
-            #line 286 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 314 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(nonGetHasPathProps ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 287 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 315 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                     }
                     if (nonGetHasPathProps)
@@ -647,27 +670,27 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                    ");
             
-            #line 297 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 325 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(placeholderName));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 297 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 325 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tsName));
             
             #line default
             #line hidden
             
-            #line 297 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 325 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i < pathProps.Count - 1 ? "," : ""));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 298 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 326 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                         }
                     }
@@ -677,7 +700,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                },\r\n");
             
-            #line 303 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 331 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
                 }
                 // no query for non-GET; non-path properties stay in body
@@ -688,14 +711,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("                scopes: [");
             
-            #line 308 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 336 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(scopes));
             
             #line default
             #line hidden
             this.Write("],\r\n            }\r\n        );\r\n");
             
-            #line 311 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 339 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
         }
 
@@ -704,7 +727,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("    }\r\n");
             
-            #line 315 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 343 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
     }
 
@@ -713,7 +736,7 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("\r\n    return {\r\n");
             
-            #line 320 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 348 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
     foreach (var service in services)
     {
@@ -723,14 +746,14 @@ namespace Aryzac.VueJS.Templates.Composable
             #line hidden
             this.Write("        ");
             
-            #line 324 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 352 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(service.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 325 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
+            #line 353 "E:\aryzac-io\intent-modules\src\Aryzac.VueJS\Templates\Composable\ComposableTemplate.tt"
 
     }
 

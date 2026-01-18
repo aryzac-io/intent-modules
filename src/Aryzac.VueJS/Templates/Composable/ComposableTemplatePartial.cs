@@ -6,6 +6,7 @@ using Intent.Engine;
 using Intent.Metadata.ApiGateway.Api;
 using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
+using Intent.Modelers.Services.CQRS.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
@@ -33,6 +34,7 @@ namespace Aryzac.VueJS.Templates.Composable
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new TypeScriptFileConfig(
+                overwriteBehaviour: OverwriteBehaviour.Always,
                 className: $"{Model.Name}",
                 fileName: $"use{Model.Name.ToPascalCase()}");
         }
@@ -164,7 +166,7 @@ namespace Aryzac.VueJS.Templates.Composable
             return string.Join(",", result.Select(s => $"'{s.Name}'"));
         }
 
-        public DTOModel GetRouteResponseType(ComposableServiceModel service)
+        public IElement GetRouteResponseType(ComposableServiceModel service)
         {
             var serviceSettings = service.GetServiceSettings();
             var serviceProperty = serviceSettings.Service();
@@ -172,10 +174,10 @@ namespace Aryzac.VueJS.Templates.Composable
             var apiGatewayRoute = serviceProperty.AsApiGatewayRouteModel();
             var endpoint = apiGatewayRoute.DownstreamEndpoints()[0].Element;
 
-            return endpoint.TypeReference.Element.AsDTOModel();
+            return (IElement)endpoint.TypeReference.Element;
         }
 
-        public DTOModel GetRouteRequestType(ComposableServiceModel service)
+        public IElement GetRouteRequestType(ComposableServiceModel service)
         {
             var serviceSettings = service.GetServiceSettings();
             var serviceProperty = serviceSettings.Service();
@@ -183,8 +185,23 @@ namespace Aryzac.VueJS.Templates.Composable
             var apiGatewayRoute = serviceProperty.AsApiGatewayRouteModel();
             var endpoint = apiGatewayRoute.DownstreamEndpoints()[0].Element;
 
-            return endpoint.AsDTOModel();
+            return (IElement)endpoint;
         }
+
+        public void AddImport(IElement dtoElement)
+        {
+            var parentElementPath = dtoElement.ParentElement.Name.ToPascalCase();
+
+            var type =
+                dtoElement.IsCommandModel() ? "command" :
+                dtoElement.IsQueryModel() ? "query" :
+                "dto";
+
+            var filename = $"{dtoElement.Name.ToKebabCase().RemoveSuffix($"-{type}")}.{type}";
+
+            ImportType(dtoElement.Name, $"../types/dto/{parentElementPath}/{filename}");
+        }
+
     }
 
     [IntentManaged(Mode.Ignore)]

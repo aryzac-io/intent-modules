@@ -10,11 +10,39 @@
 <#@ import namespace="Intent.Metadata.Models" #>
 <#@ import namespace="Aryzac.VueJS.Api" #>
 
-import type * from "~/types/dto/<#= Model.Name.ToKebabCase() #>";
 <#
     var services = GetServices().ToList();
-#>
 
+    var imports = new List<(string Name, string Path)>();
+
+    foreach (var service in services)
+    {
+        var scopes = GetScopes(service);
+        var route = GetRoute(service);
+        var isGet = string.Equals(route.Method, "GET", StringComparison.OrdinalIgnoreCase);
+        var isVersioned = route.Versioned;
+
+        var routeRequestType = GetRouteRequestType(service);
+        var hasRequest = routeRequestType != null && routeRequestType.ChildElements.Any();
+
+        var requestTypeName = routeRequestType?.Name ?? "UNKNOWN";
+        
+        var routeResponseType = GetRouteResponseType(service);
+        var hasResponse = routeResponseType != null && routeResponseType.ChildElements.Any();
+
+        var responseTypeName = routeResponseType?.Name ?? "UNKNOWN";
+
+        if (hasRequest)
+        {
+            AddImport(routeRequestType);
+        }
+
+        if (hasResponse)
+        {
+            AddImport(routeResponseType);
+        }
+    }
+#>
 export function use<#= Model.Name #>() {
 
 <#
@@ -26,12 +54,12 @@ export function use<#= Model.Name #>() {
         var isVersioned = route.Versioned;
 
         var routeRequestType = GetRouteRequestType(service);
-        var hasRequest = routeRequestType != null && routeRequestType.Fields.Any();
+        var hasRequest = routeRequestType != null && routeRequestType.ChildElements.Any();
 
         var requestTypeName = routeRequestType?.Name ?? "UNKNOWN";
         
         var routeResponseType = GetRouteResponseType(service);
-        var hasResponse = routeResponseType != null && routeResponseType.Fields.Any();
+        var hasResponse = routeResponseType != null && routeResponseType.ChildElements.Any();
 
         var responseTypeName = routeResponseType?.Name ?? "UNKNOWN";
 
@@ -45,16 +73,16 @@ export function use<#= Model.Name #>() {
             .ToDictionary(g => g.Key, g => g.First().Groups[1].Value, StringComparer.OrdinalIgnoreCase);
 
         var pathProps = hasRequest
-            ? routeRequestType.Fields
+            ? routeRequestType.ChildElements
                 .Where(p => placeholderMap.ContainsKey(p.Name))
                 .ToList()
-            : new List<Intent.Modelers.Services.Api.DTOFieldModel>();
+            : new List<Intent.Metadata.Models.IElement>();
 
         var queryProps = hasRequest
-            ? routeRequestType.Fields
+            ? routeRequestType.ChildElements
                 .Where(p => !placeholderMap.ContainsKey(p.Name))
                 .ToList()
-            : new List<Intent.Modelers.Services.Api.DTOFieldModel>();
+            : new List<Intent.Metadata.Models.IElement>();
 
         // Signature
         var paramParts = new List<string>();
@@ -199,7 +227,7 @@ export function use<#= Model.Name #>() {
                 scopes: [<#= scopes #>],
             }
         );
-        return result.data.value;
+        return result;
 <#
         }
         else

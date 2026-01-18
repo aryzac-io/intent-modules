@@ -43,7 +43,8 @@ namespace Aryzac.Security.Templates.ScopePermissionMap
                 {
                     var scopeConstants = GetScopeConstants(outputTarget);
 
-                    @class.AddField("List<Scope>", "_scopes", field => {
+                    @class.AddField("List<Scope>", "_scopes", field =>
+                    {
                         field.WithAssignment(new CSharpStatement("new List<Scope>()"));
                     });
                     @class.AddProperty("IReadOnlyList<Scope>", "All", prop =>

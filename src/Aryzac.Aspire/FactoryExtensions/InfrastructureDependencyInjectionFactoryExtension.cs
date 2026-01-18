@@ -53,7 +53,6 @@ namespace Aryzac.Aspire.FactoryExtensions
             dependencyInjectionTemplate.CSharpFile.OnBuild(file =>
             {
                 file.AddUsing("Microsoft.EntityFrameworkCore");
-                file.AddUsing("Microsoft.Azure.Cosmos");
                 var method = file.Classes.First().FindMethod("AddInfrastructure");
                 foreach (var dbContextInstance in dbContexts)
                 {
@@ -62,10 +61,15 @@ namespace Aryzac.Aspire.FactoryExtensions
                     //    up this logic.
                     var dbContextConnectionStringStatement = method.FindStatement(s => s.HasMetadata("is-connection-string"));
                     var newStatement = UpdateAddDbContextStatement(
+                        file,
                         dependencyInjectionTemplate,
                         dbContextInstance,
                         dbContextConnectionStringStatement.Parent,
                         dependencyInjectionTemplate.ExecutionContext);
+
+                    if (newStatement is null) { continue; }
+
+                    file.AddUsing("Microsoft.Azure.Cosmos");
 
                     method.FindAndReplaceStatement(s => s == dbContextConnectionStringStatement.Parent, newStatement);
                 }
@@ -75,6 +79,7 @@ namespace Aryzac.Aspire.FactoryExtensions
         // No need for this module at all if this is embedded in Intent.Modules.EntityFrameworkCore. 
         // In case this stays a custom module, we can extend this to support more providers as needed.
         private static CSharpInvocationStatement UpdateAddDbContextStatement(
+            CSharpFile file,
             ICSharpFileBuilderTemplate dependencyInjection,
             DbContextInstance dbContextInstance,
             IHasCSharpStatementsActual optionsStatement,
@@ -112,6 +117,8 @@ namespace Aryzac.Aspire.FactoryExtensions
                     // doesn't work here.
                     //var appNameParts = executionContext.GetApplicationConfig().Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
                     //var varAppName = string.Join("", appNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
+
+                    file.AddUsing("Microsoft.Azure.Cosmos");
 
                     statement = new CSharpInvocationStatement("options.UseCosmos")
                         .WithArgumentsOnNewLines()

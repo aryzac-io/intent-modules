@@ -9,12 +9,13 @@
 	  <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.1.2" />
 	  <PackageReference Include="Intent.Modules.Metadata.ApiGateway" Version="1.0.0-beta.4" />
 	  <PackageReference Include="Intent.Modules.Modelers.Services" Version="4.0.8" />
+	  <PackageReference Include="Intent.Modules.Modelers.Services.CQRS" Version="6.0.4" />
 	  <PackageReference Include="Intent.Packager" Version="3.6.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	  <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
-	  <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.0-pre.0" />
+	  <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -26,6 +27,30 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ComposableTemplate.cs</LastGenOutput>
     </None>
+    <None Update="Templates\NewTypescriptFile\NewTypescriptFileTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>NewTypescriptFileTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Command\CommandTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Dto\DtoTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DtoTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Query\QueryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>QueryTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\JsonReponse\JsonReponseTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>JsonReponseTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\EnumType\EnumTypeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EnumTypeTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +58,36 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ComposableTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\NewTypescriptFile\NewTypescriptFileTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NewTypescriptFileTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Command\CommandTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CommandTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Dto\DtoTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DtoTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Query\QueryTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>QueryTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\JsonReponse\JsonReponseTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>JsonReponseTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\EnumType\EnumTypeTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumTypeTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
