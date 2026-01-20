@@ -108,6 +108,37 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
         public static readonly INugetPackageInfo AspireHostingAzureKeyVault = new NugetPackageInfo("Aspire.Hosting.Azure.KeyVault", "13.1.0");
         public static readonly INugetPackageInfo AspireHostingRabbitMQ = new NugetPackageInfo("Aspire.Hosting.RabbitMQ", "13.1.0");
 
+        // Preferred ordering (OPTIONS is always forced to the end)
+        private static readonly string[] HttpMethodOrder =
+        {
+            "GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "TRACE", "CONNECT"
+        };
+
+        private static IReadOnlyList<string> BuildMatchMethods(IEnumerable<string> methods)
+        {
+            var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (var m in methods)
+            {
+                if (string.IsNullOrWhiteSpace(m)) continue;
+                set.Add(m.Trim().ToUpperInvariant());
+            }
+
+            // Always emit OPTIONS once, at the end
+            set.Remove("OPTIONS");
+
+            var ordered = set
+                .OrderBy(m =>
+                {
+                    var idx = Array.IndexOf(HttpMethodOrder, m);
+                    return idx >= 0 ? idx : int.MaxValue;
+                })
+                .ThenBy(m => m, StringComparer.Ordinal)
+                .ToList();
+
+            ordered.Add("OPTIONS");
+            return ordered;
+        }
 
         private void AddApplicationInsights(CSharpFile cSharpFile)
         {
@@ -711,56 +742,89 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                 var apiGatewayRoutes = GetApiGatewayRoutes(OutputTarget);
 
-                // Build yarp configuration lambda first (unchanged logic, just moved up)
+                // Flatten then group by (application, package, route) to combine methods
+                var groupedRoutes = apiGatewayRoutes
+                    .Select(r =>
+                    {
+                        var upstream = r.GetUpstreamRouteInfo();
+                        var route = upstream.Route;
+                        var method = upstream.Verb.ToString().ToUpperInvariant();
+
+                        var package = r.DownstreamEndpoints().FirstOrDefault()?.Package
+                                      ?? throw new Exception($"API Gateway route '{route}' has no downstream endpoint/package");
+
+                        var serviceApplicationId = package.ApplicationId;
+                        var serviceApplication = apps.FirstOrDefault(a => a.Id == serviceApplicationId)
+                            ?? throw new Exception($"Unable to find application with ID '{serviceApplicationId}' for API Gateway route '{route}'");
+
+                        var appNameParts = serviceApplication.Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
+                        var varAppName = string.Join("", appNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
+
+                        return new
+                        {
+                            ServiceApplication = serviceApplication,
+                            PackageName = package.Name,
+                            VarAppName = varAppName,
+                            Route = route,
+                            Method = method
+                        };
+                    })
+                    .GroupBy(x => new { x.ServiceApplication.Id, x.PackageName, x.Route })
+                    .Select(g => new
+                    {
+                        ServiceApplication = g.First().ServiceApplication,
+                        PackageName = g.Key.PackageName,
+                        VarAppName = g.First().VarAppName,
+                        Route = g.Key.Route,
+                        Methods = BuildMatchMethods(g.Select(x => x.Method))
+                    })
+                    // Deterministic output ordering
+                    .OrderBy(x => x.ServiceApplication.Name)
+                    .ThenBy(x => x.PackageName)
+                    .ThenBy(x => x.Route, StringComparer.Ordinal)
+                    .ToList();
+
+                // Build yarp configuration lambda
                 var yarpLambdaConfigurationStatement = new CSharpLambdaBlock("yarp");
                 var lastApplicationName = string.Empty;
                 var lastPackageName = string.Empty;
 
-                foreach (var apiGatewayRoute in apiGatewayRoutes
-                    .OrderBy(r => r.DownstreamEndpoints().FirstOrDefault()?.Package?.ApplicationId ?? string.Empty)
-                    .ThenBy(r => r.DownstreamEndpoints().FirstOrDefault()?.Package?.Name ?? string.Empty))
+                foreach (var entry in groupedRoutes)
                 {
-                    var route = apiGatewayRoute.GetUpstreamRouteInfo().Route;
-                    var package = apiGatewayRoute.DownstreamEndpoints()[0].Package;
-                    var method = apiGatewayRoute.GetUpstreamRouteInfo().Verb;
-                    var serviceApplicationId = package.ApplicationId;
-                    var serviceApplication = apps.FirstOrDefault(app => app.Id == serviceApplicationId);
-
-                    if (serviceApplication == null)
-                    {
-                        throw new Exception($"Unable to find application with ID '{serviceApplicationId}' for API Gateway route '{route}'");
-                    }
-
-                    var appNameParts = serviceApplication.Name.Split('.', StringSplitOptions.RemoveEmptyEntries);
-                    var varAppName = string.Join("", appNameParts.Select(m => m.ToPascalCase())).ToCamelCase();
+                    var serviceApplication = entry.ServiceApplication;
 
                     if (lastApplicationName != serviceApplication.Name)
                     {
-                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to {serviceApplication.Name} ({package.Name})", stmt =>
-                        {
-                            if (lastApplicationName != string.Empty)
+                        yarpLambdaConfigurationStatement.AddStatement(
+                            $"// Routes to {serviceApplication.Name} ({entry.PackageName})",
+                            stmt =>
                             {
-                                stmt.SeparatedFromPrevious();
-                            }
-                        });
+                                if (lastApplicationName != string.Empty)
+                                {
+                                    stmt.SeparatedFromPrevious();
+                                }
+                            });
 
                         yarpLambdaConfigurationStatement.AddStatement(
                             new CSharpAssignmentStatement(
-                                new CSharpVariableDeclaration($"{varAppName}Cluster"),
-                                new CSharpInvocationStatement("yarp.AddCluster").AddArgument("resource", $"{varAppName}Api")
+                                new CSharpVariableDeclaration($"{entry.VarAppName}Cluster"),
+                                new CSharpInvocationStatement("yarp.AddCluster").AddArgument("resource", $"{entry.VarAppName}Api")
                             )
                         );
 
                         lastApplicationName = serviceApplication.Name;
-                        lastPackageName = package.Name;
+                        lastPackageName = entry.PackageName;
                     }
-                    else if (lastPackageName != package.Name)
+                    else if (lastPackageName != entry.PackageName)
                     {
-                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to package {package.Name}");
-                        lastPackageName = package.Name;
+                        yarpLambdaConfigurationStatement.AddStatement($"// Routes to package {entry.PackageName}");
+                        lastPackageName = entry.PackageName;
                     }
 
-                    yarpLambdaConfigurationStatement.AddStatement($"yarp.AddRoute(\"{route}\", {varAppName}Cluster).WithMatchMethods(\"{method.ToString().ToUpper()}\", \"OPTIONS\");");
+                    var methodArgs = string.Join(", ", entry.Methods.Select(m => $"\"{m}\""));
+                    yarpLambdaConfigurationStatement.AddStatement(
+                        $"yarp.AddRoute(\"{entry.Route}\", {entry.VarAppName}Cluster).WithMatchMethods({methodArgs});"
+                    );
                 }
 
                 // Create gateway with chained method calls
@@ -807,7 +871,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
 
                 // if (builder.ExecutionContext.IsRunMode) { ... }
                 var ifBlock = new CSharpIfStatement("builder.ExecutionContext.IsRunMode");
-                
+
                 ifBlock.AddStatement($"// LOCAL RUN ONLY: feed emulator connection string via ConnectionStrings__cosmos-db so your code can use GetConnectionString(\"cosmos-db\")");
 
                 foreach (var app in cosmosApps)

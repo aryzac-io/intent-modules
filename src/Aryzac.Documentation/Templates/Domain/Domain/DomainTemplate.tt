@@ -1,0 +1,200 @@
+<#@ template language="C#" inherits="IntentTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+<#@ import namespace="Intent.Modelers.Domain.Api" #>
+<#@ import namespace="Intent.Modelers.Domain.Events.Api" #>
+
+---
+title: <#= EscapeYaml(Model.Name.ToSentenceCase()) #>
+description: <#= EscapeYaml(SingleLine(Model.Comment)) #>
+---
+<# if (!string.IsNullOrWhiteSpace(Model.Comment)) { #>
+<#= Model.Comment #>
+
+<# } #>
+<# if (Model.Attributes.Any()) { #>
+## Attributes
+
+::field-group
+<# foreach (var attribute in Model.Attributes) { #>
+  <#= FormatFieldTag(
+        name: attribute.Name,
+        type: GetTypeName(attribute.TypeReference),
+        required: !attribute.TypeReference.IsNullable,
+        defaultValue: attribute.Value?.ToString()
+      ) #>
+<#   if (!string.IsNullOrWhiteSpace(attribute.Comment)) { #>
+  <#= attribute.Comment #>
+<#   } #>
+  ::
+<# } #>
+::
+<# } #>
+
+## Constructors
+<# foreach (var constructor in Model.Constructors) {
+   var sig = string.Join(", ", constructor.Parameters.Select(p => $"{GetTypeName(p.TypeReference)} {p.Name}"));
+#>
+
+### <#= Model.Name #>
+<# if (!string.IsNullOrWhiteSpace(constructor.Comment)) { #>
+
+<#= constructor.Comment #>
+
+<# } #>
+
+<# if (constructor.Parameters.Any()) { #>
+#### Parameters
+
+::field-group
+<# foreach (var parameter in constructor.Parameters) { #>
+  <#= FormatFieldTag(
+        name: parameter.Name,
+        type: GetTypeName(parameter.TypeReference),
+        required: !parameter.TypeReference.IsNullable,
+        defaultValue: null
+      ) #>
+<#   if (!string.IsNullOrWhiteSpace(parameter.Comment)) { #>
+  <#= parameter.Comment #>
+<#   } #>
+  ::
+<# } #>
+::
+<# } #>
+
+<# var ctorEvents = constructor.PublishedDomainEvents().ToList();
+   if (ctorEvents.Any()) { #>
+#### Published Domain Events
+
+| Domain Event | Description |
+|--------------|-------------|
+<#   foreach (var de in ctorEvents) { #>
+| <#= de.Element.Name #> | <#= string.IsNullOrWhiteSpace(de.Element.Comment) ? "" : de.Element.Comment #> |
+<#   } #>
+<# } #>
+<# } #>
+
+<# if (Model.Operations.Any()) { #>
+## Operations
+<# foreach (var operation in Model.Operations) {
+   var sig = string.Join(", ", operation.Parameters.Select(p => $"{GetTypeName(p.TypeReference)} {p.Name}"));
+#>
+
+### <#= operation.Name #>
+<# if (!string.IsNullOrWhiteSpace(operation.Comment)) { #>
+
+<#= operation.Comment #>
+<# } #>
+
+<# if (operation.Parameters.Any()) { #>
+#### Parameters
+
+::field-group
+<# foreach (var parameter in operation.Parameters) { #>
+  <#= FormatFieldTag(
+        name: parameter.Name,
+        type: GetTypeName(parameter.TypeReference),
+        required: !parameter.TypeReference.IsNullable,
+        defaultValue: null
+      ) #>
+<#   if (!string.IsNullOrWhiteSpace(parameter.Comment)) { #>
+  <#= parameter.Comment #>
+<#   } #>
+  ::
+<# } #>
+::
+<# } #>
+
+<# var opEvents = operation.PublishedDomainEvents().ToList();
+   if (opEvents.Any()) { #>
+#### Published Domain Events
+
+| Domain Event | Description |
+|--------------|-------------|
+<#   foreach (var de in opEvents) { #>
+| <#= de.Element.Name #> | <#= string.IsNullOrWhiteSpace(de.Element.Comment) ? "" : de.Element.Comment #> |
+<#   } #>
+<# } #>
+<# } #>
+<# } #>
+
+<# if (Model.AssociatedToClasses().Any()) { #>
+## Outbound Associations
+
+| Associated Class | Multiplicity |
+|------------------|-------------|
+<# foreach (var associatedClass in Model.AssociatedToClasses()) { #>
+| <#= associatedClass.Name #> | <#= associatedClass.Multiplicity.ToString() #> |
+<# } #>
+<# } #>
+
+<# if (Model.AssociatedFromClasses().Any()) { #>
+## Inbound Associations
+
+| Associated Class | Multiplicity |
+|------------------|-------------|
+<# foreach (var associatedClass in Model.AssociatedFromClasses()) { #>
+| <#= associatedClass.Name #> | <#= associatedClass.Multiplicity.ToString() #> |
+<# } #>
+<# } #>
+
+<#+
+string GetTypeName(ITypeReference tr)
+{
+    var name = tr.Element.Name;
+    if (tr.IsCollection) name += " []";
+    return name;
+}
+
+string FormatFieldTag(string name, string type, bool required, string defaultValue)
+{
+    var parts = new List<string>
+    {
+        $"name=\"{EscapeAttr(name)}\"",
+        $"type=\"{EscapeAttr(type)}\""
+    };
+
+    if (!string.IsNullOrWhiteSpace(defaultValue))
+    {
+        parts.Add($"defaultValue=\"{EscapeAttr(defaultValue)}\"");
+    }
+
+    if (required)
+    {
+        parts.Add("required");
+    }
+
+    return $"::field{{{string.Join(" ", parts)}}}";
+}
+
+string EscapeAttr(string value)
+{
+    if (value == null) return string.Empty;
+    return value.Replace("\"", "&quot;");
+}
+
+string EscapeYaml(string value)
+{
+    if (string.IsNullOrWhiteSpace(value)) return "\"\"";
+
+    // YAML-safe double-quoted scalar. Also keep it single-line.
+    var v = SingleLine(value)
+        .Replace("\\", "\\\\")
+        .Replace("\"", "\\\"");
+    return $"\"{v}\"";
+}
+
+string SingleLine(string value)
+{
+    if (string.IsNullOrWhiteSpace(value)) return string.Empty;
+    return value
+        .Replace("\r\n", " ")
+        .Replace("\n", " ")
+        .Replace("\r", " ")
+        .Trim();
+}
+#>
