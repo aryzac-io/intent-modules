@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Intent.Configuration;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Services.CQRS.Api;
@@ -65,6 +66,12 @@ namespace Aryzac.Security.Templates.ScopePermissionMap
                 });
         }
 
+        private const string scopeDefinitionTypeId = "33256cb2-6ac1-48e5-b3dd-75c8e83f156e";
+        private const string scopeVerbTypeId = "561f871a-ac3f-4e82-b2ce-4cc129d7f264";
+        private const string commandTypeId = "ccf14eb6-3a55-4d81-b5b9-d27311c70cb9";
+        private const string queryTypeId = "e71b0662-e29d-4db2-868b-8a12464b25d0";
+        private const string classTypeId = "04e12b51-ed12-42a3-9667-a6aa81bb6d10";
+
         private IEnumerable<ScopeConstant> GetScopeConstants(IOutputTarget outputTarget)
         {
             List<ScopeConstant> securityModels = [];
@@ -72,24 +79,34 @@ namespace Aryzac.Security.Templates.ScopePermissionMap
             var servicesDesigner = outputTarget.ExecutionContext.MetadataManager.GetDesigner(outputTarget.ExecutionContext.GetApplicationConfig().Id, "Services");
             var domainDesigner = outputTarget.ExecutionContext.MetadataManager.GetDesigner(outputTarget.ExecutionContext.GetApplicationConfig().Id, "Domain");
 
-            securityModels.AddRange(GetDesignerScopeConstants(servicesDesigner, domainDesigner, outputTarget));
+            List<IElement> scopeDefinitions = new List<IElement>();
+            List<IElement> scopeVerbs = new List<IElement>();
+
+            var apps = outputTarget.ExecutionContext.GetSolutionConfig()
+                .GetApplicationReferences()
+                .Select(app => ExecutionContext.GetSolutionConfig().GetApplicationConfig(app.Id))
+                .ToArray();
+
+            foreach (var app in apps)
+            {
+                var designer = outputTarget.ExecutionContext.MetadataManager.GetDesigner(app.Id, "Services");
+
+                scopeDefinitions.AddRange(designer.GetElementsOfType(scopeDefinitionTypeId));
+                scopeVerbs.AddRange(designer.GetElementsOfType(scopeVerbTypeId));
+            }
+
+            securityModels.AddRange(GetDesignerScopeConstants(servicesDesigner, domainDesigner, scopeDefinitions, scopeVerbs, outputTarget));
 
             return securityModels;
         }
 
-        private const string scopeDefinitionTypeId = "33256cb2-6ac1-48e5-b3dd-75c8e83f156e";
-        private const string scopeVerbTypeId = "561f871a-ac3f-4e82-b2ce-4cc129d7f264";
-        private const string commandTypeId = "ccf14eb6-3a55-4d81-b5b9-d27311c70cb9";
-        private const string queryTypeId = "e71b0662-e29d-4db2-868b-8a12464b25d0";
-        private const string classTypeId = "04e12b51-ed12-42a3-9667-a6aa81bb6d10";
-
         private IEnumerable<ScopeConstant> GetDesignerScopeConstants(
             IDesigner designer,
             IDesigner domainDesigner,
+            IEnumerable<IElement> scopeDefinitions,
+            IEnumerable<IElement> scopeVerbs,
             IOutputTarget outputTarget)
         {
-            var scopeDefinitions = designer.GetElementsOfType(scopeDefinitionTypeId);
-            var scopeVerbs = designer.GetElementsOfType(scopeVerbTypeId);
             var commands = designer.GetElementsOfType(commandTypeId);
             var queries = designer.GetElementsOfType(queryTypeId);
 

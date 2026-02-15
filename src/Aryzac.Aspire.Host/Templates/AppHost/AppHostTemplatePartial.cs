@@ -343,6 +343,20 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                         new CSharpStatement($"builder.AddAzureStorage(\"storage\")")
                     );
 
+                addAzureStorageStatement = addAzureStorageStatement.AddInvocation("ConfigureInfrastructure", cfg =>
+                {
+                    cfg.OnNewLine();
+
+                    var infraLambda = new CSharpLambdaBlock("infra")
+                        .AddStatement("var storageAccount = infra.GetProvisionableResources()")
+                        .AddStatement("    .OfType<StorageAccount>()")
+                        .AddStatement("    .Single();")
+                        .AddStatement(string.Empty)
+                        .AddStatement("storageAccount.AllowSharedKeyAccess = true;");
+
+                    cfg.AddArgument(infraLambda);
+                });
+
                 addAzureStorageStatement = addAzureStorageStatement.AddInvocation("RunAsEmulator", config =>
                 {
                     config.OnNewLine();
@@ -529,23 +543,11 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                 {
                     var blobStorageStatement = new CSharpAssignmentStatement(
                         new CSharpVariableDeclaration($"{varAppName}Storage"),
-                        new CSharpStatement($"azureStorage.AddBlobContainer(\"{varAppName.ToKebabCase()}-blobs\");"));
+                        new CSharpStatement($"azureStorage.AddBlobs(\"{varAppName.ToKebabCase()}-blobs\");"));
 
                     lastStatement.InsertBelow(blobStorageStatement);
 
                     lastStatement = blobStorageStatement;
-
-                    var azureStorageConnectionString = new CSharpAssignmentStatement(
-                        new CSharpVariableDeclaration($"{varAppName}StorageConnectionString"),
-                        new CSharpStatement($"new ConnectionStringReference({varAppName}Storage.Resource, optional: false);")
-                    );
-
-                    lastStatement.InsertBelow(azureStorageConnectionString, stmt =>
-                    {
-                        stmt.SeparatedFromNext();
-                    });
-
-                    lastStatement = azureStorageConnectionString;
                 }
 
                 var appApiStatement = new CSharpStatement($"{varAppName}Api");
@@ -660,7 +662,7 @@ namespace Aryzac.Aspire.Host.Templates.AppHost
                     {
                         config.OnNewLine();
                         config.AddArgument($"\"AzureBlobStorage\"");
-                        config.AddArgument($"{varAppName}StorageConnectionString");
+                        config.AddArgument($"{varAppName}Storage.Resource.ConnectionStringExpression");
                     });
                     appApiStatement = appApiStatement.AddInvocation("WithReference", config =>
                     {
