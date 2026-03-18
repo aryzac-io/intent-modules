@@ -30,7 +30,7 @@ namespace Aryzac.Documentation.Templates.Domain.Domain
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             var applicationParts = Model.Application.Name.ToKebabCase().Replace(".", "-").Replace("-", "/").Split("/");
-            var application = string.Join("/", applicationParts.Where(x => !string.Equals(x, "endura", StringComparison.OrdinalIgnoreCase)));
+            var application = string.Join("/", applicationParts.Where(x => !string.Equals(x, "verentis", StringComparison.OrdinalIgnoreCase)));
             var folders = this.GetFolderPath().ToLower();
 
             return new TemplateFileConfig(

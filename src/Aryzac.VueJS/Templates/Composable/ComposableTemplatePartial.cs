@@ -187,9 +187,11 @@ namespace Aryzac.VueJS.Templates.Composable
 
             return (IElement)endpoint;
         }
-
-        public void AddImport(IElement dtoElement)
+        public string AddImport(IElement dtoElement)
         {
+            if (dtoElement.ParentElement is null)
+                return "";
+
             var parentElementPath = dtoElement.ParentElement.Name.ToPascalCase();
 
             var type =
@@ -199,7 +201,7 @@ namespace Aryzac.VueJS.Templates.Composable
 
             var filename = $"{dtoElement.Name.ToKebabCase().RemoveSuffix($"-{type}")}.{type}";
 
-            ImportType(dtoElement.Name, $"../types/dto/{parentElementPath}/{filename}");
+            return $"import type {{ {dtoElement.Name} }} from \"../types/dto/{parentElementPath}/{filename}\";";
         }
 
     }

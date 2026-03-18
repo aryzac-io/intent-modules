@@ -34,12 +34,16 @@
 
         if (hasRequest)
         {
-            AddImport(routeRequestType);
+#>
+<#= AddImport(routeRequestType) #>
+<#
         }
 
         if (hasResponse)
         {
-            AddImport(routeResponseType);
+#>
+<#= AddImport(routeResponseType) #>
+<#
         }
     }
 #>
