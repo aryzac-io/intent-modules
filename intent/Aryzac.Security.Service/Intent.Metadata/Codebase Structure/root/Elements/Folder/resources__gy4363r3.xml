@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="815b2ad8-6779-4a01-8100-28ad98348a61" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>resources</name>
+  <display>resources</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>56950af0-bae7-492c-9a08-2e3848cf9415</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="e9212c8d-f8b8-4d2f-a4a9-c9b5b00e37d6" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.IntentDomainInteractionsExpert.ResourcesInteractionsCheatsheetMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.IntentDomainInteractionsExpert.ResourcesInteractionsCheatsheetMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>815b2ad8-6779-4a01-8100-28ad98348a61</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,65 @@
+{
+  "slug": "unified-service-security",
+  "updatedUtc": "2026-08-10T12:58:42Z",
+  "links": {
+    "R1": [
+      {
+        "targetKind": "element",
+        "applicationId": "fa07cab7-946f-4101-8ccd-26500e6b183c",
+        "designerId": "a1c3dd87-352e-4353-853b-c79853debecb",
+        "elementId": "60426536-829d-421e-b1a9-24d81d378527",
+        "elementName": "SecurityContractFoundation: Single File",
+        "operation": "created",
+        "linkSource": "implementation",
+        "statementHashAtLink": "f3cf5c4afae3d8de",
+        "taskId": "T1.1"
+      },
+      {
+        "targetKind": "element",
+        "applicationId": "fa07cab7-946f-4101-8ccd-26500e6b183c",
+        "designerId": "a1c3dd87-352e-4353-853b-c79853debecb",
+        "elementId": "8a8cae7b-8901-4080-b7a6-f2e8c1aa3242",
+        "elementName": "SecurityRegistration: Single File",
+        "operation": "created",
+        "linkSource": "implementation",
+        "statementHashAtLink": "f3cf5c4afae3d8de",
+        "taskId": "T1.2"
+      },
+      {
+        "targetKind": "element",
+        "applicationId": "fa07cab7-946f-4101-8ccd-26500e6b183c",
+        "designerId": "a1c3dd87-352e-4353-853b-c79853debecb",
+        "elementId": "0d8bf564-127c-4247-848d-6570dcaf0f2a",
+        "elementName": "SecurityInboundCredentials: Single File",
+        "operation": "created",
+        "linkSource": "implementation",
+        "statementHashAtLink": "f3cf5c4afae3d8de",
+        "taskId": "T1.3"
+      }
+    ],
+    "R9": [
+      {
+        "targetKind": "element",
+        "applicationId": "fa07cab7-946f-4101-8ccd-26500e6b183c",
+        "designerId": "0701433c-36c0-4569-b1f4-9204986b587d",
+        "elementId": "02c755f0-80b1-4670-ad2e-673e443ef10b",
+        "elementName": "Aryzac.Security.Tests",
+        "operation": "created",
+        "linkSource": "implementation",
+        "statementHashAtLink": "53d939e0d75c7e5a",
+        "taskId": "T1.4"
+      },
+      {
+        "targetKind": "association",
+        "applicationId": "fa07cab7-946f-4101-8ccd-26500e6b183c",
+        "designerId": "0701433c-36c0-4569-b1f4-9204986b587d",
+        "elementId": "ca2b72ce-5103-43c8-a8b3-9c91e4c956dc",
+        "elementName": "Reference: Aryzac.Security",
+        "operation": "created",
+        "linkSource": "implementation",
+        "statementHashAtLink": "53d939e0d75c7e5a",
+        "taskId": "T1.4"
+      }
+    ]
+  }
+}

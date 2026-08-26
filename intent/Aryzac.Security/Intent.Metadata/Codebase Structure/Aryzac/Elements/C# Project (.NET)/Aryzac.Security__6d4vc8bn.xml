@@ -66,8 +66,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -92,8 +92,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -118,8 +118,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -144,8 +144,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -170,8 +170,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -196,8 +196,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -222,8 +222,8 @@
       <stereotypes>
         <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
             <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
@@ -235,7 +235,7 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="bfebc94c-1175-441b-8487-949f6c458eb9" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+    <childElement id="bfebc94c-1175-441b-8487-949f6c458eb9" type="Output Anchor" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
       <name>Api</name>
       <display>Api</display>
       <externalReference>5db7fdaf-f264-4513-9e7d-daa3c5a6d0cb</externalReference>
@@ -246,10 +246,10 @@
       <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
       <packageName>Aryzac</packageName>
       <stereotypes>
-        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Role Settings">
+        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Output Anchor Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="8d79a350-96f1-4d50-bb0a-f65a5c53ec62" display="Create Sub-Folders" value="true" isActive="true" />
           </properties>
@@ -258,7 +258,7 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="4293752f-91e7-4f63-8f5d-4098049a44d5" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+    <childElement id="4293752f-91e7-4f63-8f5d-4098049a44d5" type="Output Anchor" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
       <name>Decorators</name>
       <display>Decorators</display>
       <externalReference>40cc9431-b446-4168-af80-2f3747b6f063</externalReference>
@@ -269,10 +269,10 @@
       <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
       <packageName>Aryzac</packageName>
       <stereotypes>
-        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Role Settings">
+        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Output Anchor Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="8d79a350-96f1-4d50-bb0a-f65a5c53ec62" display="Create Sub-Folders" value="true" isActive="true" />
           </properties>
@@ -281,7 +281,7 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="d6ffa842-3c82-4a1a-aa2d-471dd98b19d5" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+    <childElement id="d6ffa842-3c82-4a1a-aa2d-471dd98b19d5" type="Output Anchor" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
       <name>DesignerConfig</name>
       <display>DesignerConfig</display>
       <externalReference>8ace95f8-22fe-4922-9ca0-12d7820cb8bb</externalReference>
@@ -292,10 +292,10 @@
       <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
       <packageName>Aryzac</packageName>
       <stereotypes>
-        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Role Settings">
+        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Output Anchor Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="8d79a350-96f1-4d50-bb0a-f65a5c53ec62" display="Create Sub-Folders" value="true" isActive="true" />
           </properties>
@@ -304,7 +304,7 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="19d323d6-856f-418f-97ef-77d81b34d5cf" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+    <childElement id="19d323d6-856f-418f-97ef-77d81b34d5cf" type="Output Anchor" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
       <name>IModSpec</name>
       <display>IModSpec</display>
       <externalReference>cf6e41be-aa79-4d0b-85d5-2908102fb131</externalReference>
@@ -315,10 +315,10 @@
       <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
       <packageName>Aryzac</packageName>
       <stereotypes>
-        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Role Settings">
+        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Output Anchor Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="8d79a350-96f1-4d50-bb0a-f65a5c53ec62" display="Create Sub-Folders" value="true" isActive="true" />
           </properties>
@@ -327,7 +327,7 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="e32db610-009f-45da-a9c2-fe4d1f3059d6" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+    <childElement id="e32db610-009f-45da-a9c2-fe4d1f3059d6" type="Output Anchor" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
       <name>Templates</name>
       <display>Templates</display>
       <externalReference>21bb58b7-6c18-4926-980f-35ea567706e6</externalReference>
@@ -338,10 +338,10 @@
       <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
       <packageName>Aryzac</packageName>
       <stereotypes>
-        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Role Settings">
+        <stereotype stereotypeDefinitionId="a23c7901-31a5-4cbf-b8bf-1be128977e6d" name="Output Anchor Settings">
           <addedByDefault>true</addedByDefault>
-          <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
-          <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
           <properties>
             <property name="8d79a350-96f1-4d50-bb0a-f65a5c53ec62" display="Create Sub-Folders" value="true" isActive="true" />
           </properties>

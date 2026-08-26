@@ -12,4 +12,66 @@
       <fileHash>D9F1F5B9D68F2C47379B6FFB1CD0035C8329F0F9ADB0416615E6AA0F5DE1DA82</fileHash>
     </file>
   </files>
+  <customFiles>
+    <customFile>
+      <path>src/Aryzac.Security.Tests/Aryzac.Security.Tests.csproj</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.2473001Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Tests/Program.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.2743136Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityContract/SecurityContractTemplate.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.2873443Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityContract/SecurityContractTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.29835Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityContractFoundation/SecurityContractFoundationTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.311081Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityContractFoundation/SecurityContractFoundationTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.3243332Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityInboundCredentials/SecurityInboundCredentialsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.3337004Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityInboundCredentials/SecurityInboundCredentialsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.3463222Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityRegistration/SecurityRegistrationTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.3597614Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security/Templates/SecurityRegistration/SecurityRegistrationTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.3699142Z</approvedAt>
+    </customFile>
+  </customFiles>
 </deviationsLog>

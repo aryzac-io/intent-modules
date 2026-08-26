@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "fromPhase": "requirements",
+      "toPhase": "design",
+      "approvedVia": "chat-gate",
+      "conversationId": "conv-1787723319436-793908740",
+      "timestampUtc": "2026-08-26T06:07:33Z"
+    },
+    {
+      "fromPhase": "design",
+      "toPhase": "tasks",
+      "approvedVia": "chat-gate",
+      "conversationId": "conv-1787724801917-702794937",
+      "timestampUtc": "2026-08-26T06:36:49Z"
+    },
+    {
+      "fromPhase": "tasks",
+      "toPhase": "implementation",
+      "approvedVia": "chat-gate",
+      "conversationId": "conv-1787726513498-183008085",
+      "timestampUtc": "2026-08-26T06:44:29Z"
+    }
+  ]
+}

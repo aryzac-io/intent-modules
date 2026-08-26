@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="42f49baa-37c9-431d-8e3e-3ff23650c949" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>resources</name>
+  <display>resources</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d75bae51-b14e-49fb-8ce5-a4ed7c3d0ad3</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="85958008-6c8f-4432-adc9-783bb9b22799" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.AddAssociationType.ResourcesAssociationTypeWorkflowMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.AddAssociationType.ResourcesAssociationTypeWorkflowMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>42f49baa-37c9-431d-8e3e-3ff23650c949</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

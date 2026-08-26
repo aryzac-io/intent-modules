@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c6de6632-d98d-45b4-bf80-e906ba9eff05" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>intent-mapping-architect</name>
+  <display>intent-mapping-architect</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>fd215579-6c47-4cce-b410-fbfe48881ea6</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="d9dfbb5b-f0a5-4fdc-9a9b-37a7855bf8e9" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.IntentMappingArchitect.SkillMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.IntentMappingArchitect.SkillMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c6de6632-d98d-45b4-bf80-e906ba9eff05</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

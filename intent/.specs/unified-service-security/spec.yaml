@@ -1,0 +1,7 @@
+source: native
+title: Unified Service Security
+description: Generate one configurable security contract with safe inbound, outbound, diagnostics, and conformance behavior.
+slug: unified-service-security
+phase: implementation
+createdUtc: 2026-08-10T08:58:29Z
+updatedUtc: 2026-08-10T12:53:22Z

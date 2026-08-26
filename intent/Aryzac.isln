@@ -6,7 +6,7 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="4.1.16-pre.0" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilderAiSkills" version="1.0.0" />
   <applications>
     <application id="5add474b-8d3c-48c6-8d33-bb26a42c2d12" name="Aryzac.Aspire.Host" solutionFolder="Aspire" relativePath="Aryzac.Aspire.Host/Aryzac.Aspire.Host.application.config" />
     <application id="093080b5-5680-41c1-a11c-5663609e4edd" name="Aryzac.Aspire.Application" solutionFolder="Aspire" relativePath="Aryzac.Aspire.Application/Aryzac.Aspire.Application.application.config" />
@@ -16,5 +16,6 @@
     <application id="336de94e-013d-4265-87bf-180b4b78f343" name="Aryzac.VueJS" solutionFolder="VueJS" relativePath="Aryzac.VueJS/Aryzac.VueJS.application.config" />
     <application id="f986a19b-afab-423b-859e-3bc2fbe87323" name="Aryzac.Audit" relativePath="Aryzac.Audit/Aryzac.Audit.application.config" />
     <application id="457fdc4e-7100-4ba0-90c7-34cd95b5885f" name="Aryzac.Documentation" relativePath="Aryzac.Documentation/Aryzac.Documentation.application.config" />
+    <application id="d86fd2e7-39c0-4eb0-9eb0-c3db164825cd" name="Aryzac.Security.Service" relativePath="Aryzac.Security.Service/Aryzac.Security.Service.application.config" />
   </applications>
 </solution>

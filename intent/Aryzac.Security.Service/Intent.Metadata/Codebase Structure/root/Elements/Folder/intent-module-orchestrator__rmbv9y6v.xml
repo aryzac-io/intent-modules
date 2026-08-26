@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="7ac9060b-db19-4c81-91de-3d625c2e55d3" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>intent-module-orchestrator</name>
+  <display>intent-module-orchestrator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>fd215579-6c47-4cce-b410-fbfe48881ea6</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="b7b6eef1-45db-431a-ae91-ee9e447b21b7" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.IntentModuleOrchestrator.SkillMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.IntentModuleOrchestrator.SkillMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>7ac9060b-db19-4c81-91de-3d625c2e55d3</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,7 @@
+source: native
+title: Installable Security Authority Service
+description: Standalone module generating a complete additive OAuth/OIDC security authority.
+slug: security-service-authority
+phase: implementation
+createdUtc: 2026-08-26T06:07:06Z
+updatedUtc: 2026-08-26T06:44:29Z

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files />
+  <customFiles>
+    <customFile>
+      <path>.gitignore</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.3887882Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/approvals.json</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.4038765Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/design.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.4304121Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/requirements.json</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.4469505Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/requirements.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.4665564Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/spec.yaml</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.4808273Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/tasks.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.4954283Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/unified-service-security/design.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5093574Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/unified-service-security/requirements.json</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5192495Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/unified-service-security/requirements.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5314394Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/unified-service-security/spec.yaml</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5445415Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/unified-service-security/tasks.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5607747Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/unified-service-security/traceability.json</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5746741Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/Aryzac.Security.Service/.gitattributes</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5856284Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/Aryzac.Security.Service/.gitignore</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.5976357Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/Aryzac.Security.Service/Intent.Metadata/Codebase Structure/Codebase Structure.designer.config</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-26T06:45:16.6108139Z</approvedAt>
+    </customFile>
+  </customFiles>
+</deviationsLog>

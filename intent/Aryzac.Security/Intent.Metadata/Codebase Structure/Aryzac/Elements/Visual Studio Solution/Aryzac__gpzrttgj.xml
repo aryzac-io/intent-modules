@@ -3,9 +3,12 @@
   <name>Aryzac</name>
   <display>Aryzac</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</parentFolderId>
+  <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
+  <packageName>Aryzac</packageName>
   <stereotypes>
     <stereotype stereotypeDefinitionId="90085088-b29b-4386-b87e-f7f62c76c5de" name="Visual Studio Solution Options">
       <addedByDefault>false</addedByDefault>
@@ -15,12 +18,65 @@
         <property name="71b53d7c-7977-467b-853c-15016c196afa" display="Solution Name" value="Aryzac.Modules" isActive="true" />
         <property name="22b54494-6f14-4f12-9e6b-a39a96dd1ae1" display="Solution Relative Location" isActive="true" />
         <property name="49e78350-c77b-4f83-88d8-5841e6cb3ab9" display="Manage Package Versions Centrally" value="false" isActive="true" />
-        <property name="ad4bb70e-9dbd-41ce-95a0-1d319a40b8a9" display="Output Location" value="Check Parent Folders" isActive="true" />
-        <property name="ca30802f-7cf3-459e-9ea1-aa20d7af7638" display="Only check current Git repository" value="true" isActive="true" />
-        <property name="eaf8fe0b-2aec-4610-9bc8-608f6967ce55" display="Relative Path" isActive="true" />
+        <property name="ad4bb70e-9dbd-41ce-95a0-1d319a40b8a9" display="Output Location" value="Check Parent Folders" isActive="false" />
+        <property name="ca30802f-7cf3-459e-9ea1-aa20d7af7638" display="Only check current Git repository" value="true" isActive="false" />
+        <property name="eaf8fe0b-2aec-4610-9bc8-608f6967ce55" display="Relative Path" isActive="false" />
       </properties>
     </stereotype>
   </stereotypes>
   <metadata />
-  <childElements />
+  <childElements>
+    <childElement id="3f187729-0e7c-43d2-b5d1-6fd197d6819b" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.DomainServices.DomainServiceImplementation</name>
+      <display>Intent.DomainServices.DomainServiceImplementation</display>
+      <externalReference>Intent.DomainServices</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>bb3dd5d4-5287-4bed-a6fd-efcb4329bbb4</parentFolderId>
+      <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
+      <packageName>Aryzac</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
+          <properties>
+            <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
+            <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="f6d5ec1f-33c2-436f-91a4-287499814877" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.DomainServices.DomainServiceInterface</name>
+      <display>Intent.DomainServices.DomainServiceInterface</display>
+      <externalReference>Intent.DomainServices</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>bb3dd5d4-5287-4bed-a6fd-efcb4329bbb4</parentFolderId>
+      <packageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</packageId>
+      <packageName>Aryzac</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="967ae6f6-cc06-4b67-a391-44ed1aac1959" name="Template Output Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Modelers.CodebaseStructure</definitionPackageName>
+          <definitionPackageId>525868ff-adc0-4ab6-a90e-352288da941f</definitionPackageId>
+          <properties>
+            <property name="2ae1addc-b4dc-4cc8-94e1-56ef8a5420aa" display="Is Enabled" value="true" isActive="true" />
+            <property name="2d8e6d2c-785c-4708-9104-bd3e9781a86a" display="Registration Filter" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
 </class>

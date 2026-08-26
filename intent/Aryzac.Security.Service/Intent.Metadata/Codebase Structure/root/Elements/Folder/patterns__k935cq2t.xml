@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b35539fa-0b6c-495b-a674-bcc5d111d6a1" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>patterns</name>
+  <display>patterns</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d652edc5-9f86-45df-9fa6-20124c4bdb18</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="dd1132b5-997e-4521-84e1-c69e0ca9bdc2" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesPatternsAdvancedTypesCs_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesPatternsAdvancedTypesCs_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>b35539fa-0b6c-495b-a674-bcc5d111d6a1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="88764cb4-bfe7-4cf5-86e0-a53bc28f30bc" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesPatternsControlFlowCs_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesPatternsControlFlowCs_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>b35539fa-0b6c-495b-a674-bcc5d111d6a1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="69e7c8aa-450c-4a2c-a5dd-76615f03edff" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesPatternsLifecycleHooksCs_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesPatternsLifecycleHooksCs_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>b35539fa-0b6c-495b-a674-bcc5d111d6a1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

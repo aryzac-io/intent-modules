@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d652edc5-9f86-45df-9fa6-20124c4bdb18" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>resources</name>
+  <display>resources</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>377eb022-556e-47cc-8e7a-9eed355ff391</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="ba1c52ca-9ef9-4798-b7a8-8618fd8ff311" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesApiCheatsheetMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesApiCheatsheetMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d652edc5-9f86-45df-9fa6-20124c4bdb18</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="7036356f-dd81-4ada-91cf-34f07666595c" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesBuilderPatternsMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesBuilderPatternsMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d652edc5-9f86-45df-9fa6-20124c4bdb18</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="05c7b1d7-caf8-477b-aa64-e50691313ec9" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesTroubleshootingMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.FileBuilderExpert.ResourcesTroubleshootingMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d652edc5-9f86-45df-9fa6-20124c4bdb18</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

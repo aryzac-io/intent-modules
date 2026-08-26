@@ -16,6 +16,30 @@
       <role>Application</role>
       <location>Security</location>
     </template>
+    <template id="Aryzac.Security.SecurityContractFoundation" externalReference="60426536-829d-421e-b1a9-24d81d378527">
+      <config>
+        <add key="ClassName" description="Class name formula override (e.g. '${Model.Name}')" />
+        <add key="Namespace" description="Class namespace formula override (e.g. '${Project.Name}'" />
+      </config>
+      <role>Api</role>
+      <location>Security</location>
+    </template>
+    <template id="Aryzac.Security.SecurityInboundCredentials" externalReference="0d8bf564-127c-4247-848d-6570dcaf0f2a">
+      <config>
+        <add key="ClassName" description="Class name formula override (e.g. '${Model.Name}')" />
+        <add key="Namespace" description="Class namespace formula override (e.g. '${Project.Name}'" />
+      </config>
+      <role>Api</role>
+      <location>Security</location>
+    </template>
+    <template id="Aryzac.Security.SecurityRegistration" externalReference="8a8cae7b-8901-4080-b7a6-f2e8c1aa3242">
+      <config>
+        <add key="ClassName" description="Class name formula override (e.g. '${Model.Name}')" />
+        <add key="Namespace" description="Class namespace formula override (e.g. '${Project.Name}'" />
+      </config>
+      <role>Api</role>
+      <location>Security</location>
+    </template>
   </templates>
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
@@ -27,6 +51,7 @@
     <dependency id="Intent.Modelers.Services" version="4.0.10" />
     <dependency id="Intent.Modelers.Services.CQRS" version="6.0.5" />
     <dependency id="Intent.OutputManager.RoslynWeaver" version="4.5.1" />
+    <dependency id="Intent.Security.JWT" version="4.3.10" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

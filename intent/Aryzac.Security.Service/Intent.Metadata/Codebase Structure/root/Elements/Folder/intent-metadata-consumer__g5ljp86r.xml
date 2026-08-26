@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="294e2ecd-de2a-4f3c-bcb3-a80b8fef78bb" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>intent-metadata-consumer</name>
+  <display>intent-metadata-consumer</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>fd215579-6c47-4cce-b410-fbfe48881ea6</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="96033d4d-71fd-4bbe-b930-784243c238b0" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.AI.Skills.Skills.IntentMetadataConsumer.SkillMd_Agents</name>
+      <display>Intent.ModuleBuilder.AI.Skills.Skills.IntentMetadataConsumer.SkillMd_Agents</display>
+      <externalReference>Intent.ModuleBuilder.AI.Skills</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>294e2ecd-de2a-4f3c-bcb3-a80b8fef78bb</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

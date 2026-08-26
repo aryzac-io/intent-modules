@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="ca2b72ce-5103-43c8-a8b3-9c91e4c956dc">
+  <sourceEnd id="e22635df-9a6e-41ac-90f4-792eb609f928" type="Project Reference Source End" typeId="bf6b54c8-e305-41d5-a08d-52d5325d05b2">
+    <display>: Aryzac.Security.Tests</display>
+    <order>0</order>
+    <typeReference id="0473c78e-3b6e-4ebf-852d-72bd15899ea1">
+      <typeId>02c755f0-80b1-4670-ad2e-673e443ef10b</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Aryzac</typePackageName>
+      <typePackageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="ca2b72ce-5103-43c8-a8b3-9c91e4c956dc" type="Project Reference Target End" typeId="dea99762-17e6-41f7-acb5-6b3c28969e3d">
+    <name>Reference</name>
+    <display>Reference: Aryzac.Security</display>
+    <order>0</order>
+    <typeReference id="9e0cdefe-852e-4681-a418-d96543159f99">
+      <typeId>d6257d5c-437c-4b7e-8955-81528181567b</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Aryzac</typePackageName>
+      <typePackageId>e3a7668f-e6cd-49c8-b363-23e9bd1893e1</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Project Reference</associationType>
+  <associationTypeId>08ed7993-fa72-4359-aa1e-b4389a32edec</associationTypeId>
+  <stereotypes />
+</association>
