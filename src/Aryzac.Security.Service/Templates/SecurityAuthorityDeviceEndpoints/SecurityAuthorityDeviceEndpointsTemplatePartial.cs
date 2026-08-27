@@ -260,10 +260,10 @@ namespace Aryzac.Security.Service.Templates.SecurityAuthorityDeviceEndpoints
                             var now = utcNow();
                             await using var operation = await persistence.BeginAtomicOperationAsync(SecurityAuthorityAtomicOperationKind.TokenRedemption, true, cancellationToken);
                             SecurityAuthorityDeviceGrant redeemedGrant;
-                            SecurityAuthorityDeferredCredential? deferredRefreshToken = null;
+                            SecurityAuthorityDeferredCredential deferredRefreshToken;
                             SecurityAuthorityCommitReceipt receipt;
                             string accessToken;
-                            string? idToken;
+                            string idToken;
                             try
                             {
                             var grant = await findDeviceGrantByDeviceCode(operation.Records, clearDeviceCode, cancellationToken);
@@ -319,7 +319,7 @@ namespace Aryzac.Security.Service.Templates.SecurityAuthorityDeviceEndpoints
                             await operation.RollbackAsync(cancellationToken);
                             throw;
                             }
-                            return TokenResponse(accessToken, configuration.AccessTokenMinutes * 60, redeemedGrant.RequestedScopes, idToken, deferredRefreshToken!.Reveal(receipt));
+                            return TokenResponse(accessToken, configuration.AccessTokenMinutes * 60, redeemedGrant.RequestedScopes, idToken, deferredRefreshToken.Reveal(receipt));
                             """);
                     });
                     @class.AddMethod("ValueTask<IResult>", "RollbackOAuthErrorAsync", method =>

@@ -211,7 +211,7 @@ namespace Aryzac.Security.Service.Templates.SecurityAuthorityTokenEndpoint
                         method.AddStatement("var now = utcNow();");
                         method.AddStatement("await using var operation = await persistence.BeginAtomicOperationAsync(SecurityAuthorityAtomicOperationKind.TokenRedemption, true, cancellationToken);");
                         method.AddStatement("SecurityAuthorityAuthorizationCode redeemedCode;");
-                        method.AddStatement("SecurityAuthorityDeferredCredential? deferredRefreshToken = null;");
+                        method.AddStatement("SecurityAuthorityDeferredCredential deferredRefreshToken;");
                         method.AddStatement("SecurityAuthorityCommitReceipt receipt;");
                         method.AddStatement("try");
                         method.AddStatement("{");
@@ -242,7 +242,7 @@ namespace Aryzac.Security.Service.Templates.SecurityAuthorityTokenEndpoint
                         method.AddStatement("var contextClaims = await ResolveContextClaimsAsync(configuration, resolveContextClaims, \"User\", redeemedCode.UserId, redeemedCode.Scopes, cancellationToken);");
                         method.AddStatement("var accessToken = CreateAccessToken(configuration, signingKeys, redeemedCode.UserId, \"User\", client.ClientIdentifier, redeemedCode.Scopes, contextClaims, now);");
                         method.AddStatement("var idToken = CreateIdToken(configuration, signingKeys, client.ClientIdentifier, redeemedCode.UserId, redeemedCode.Nonce, now);");
-                        method.AddStatement("var refreshToken = deferredRefreshToken!.Reveal(receipt);");
+                        method.AddStatement("var refreshToken = deferredRefreshToken.Reveal(receipt);");
                         method.AddStatement("return TokenResponse(accessToken, configuration.AccessTokenMinutes * 60, redeemedCode.Scopes, idToken, refreshToken);");
                     });
                     @class.AddMethod("ValueTask<IResult>", "RedeemRefreshTokenAsync", method =>

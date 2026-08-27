@@ -170,8 +170,11 @@ internal static class AuthorizationCodeAndTokenEndpointSelfTests
         Contains(TokenSource, "[\\\"kid\\\"] = configuration.SigningKeyId");
         Contains(TokenSource, "[\\\"typ\\\"] = \\\"JWT\\\"");
         Contains(TokenSource, "configuration.AccessTokenMinutes * 60");
+        Contains(TokenSource, "SecurityAuthorityDeferredCredential deferredRefreshToken;");
         Contains(TokenSource, "var idToken = CreateIdToken(configuration, signingKeys, client.ClientIdentifier, redeemedCode.UserId, redeemedCode.Nonce, now)");
-        Contains(TokenSource, "var refreshToken = deferredRefreshToken!.Reveal(receipt)");
+        Contains(TokenSource, "var refreshToken = deferredRefreshToken.Reveal(receipt)");
+        Contains(TokenSource, "TokenResponse(accessToken, configuration.AccessTokenMinutes * 60, redeemedCode.Scopes, idToken, refreshToken)");
+        DoesNotContain(TokenSource, "SecurityAuthorityDeferredCredential? deferredRefreshToken");
         DoesNotContain(TokenSource, "redeemedCode.Scopes.Contains(\\\"openid\\\", StringComparer.Ordinal) ? CreateIdToken");
         DoesNotContain(TokenSource, "configuration.RefreshTokenEnabled && client.AllowedGrantTypes.Contains(\\\"refresh_token\\\", StringComparer.Ordinal)");
     }

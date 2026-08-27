@@ -12,7 +12,7 @@
   <file path="Aryzac.Security/ApiMetadataProviderExtensions.cs" />
   <file path="Aryzac.Security/Aryzac.Security.csproj" />
   <file path="Aryzac.Security/Aryzac.Security.imodspec" />
-  <file path="Aryzac.Security/Templates/ScopePermissionMap/ScopePermissionMapTemplatePartial.cs" />
+  <file path="Aryzac.Security/Templates/ScopePermissionMap/ScopePermissionMapTemplatePartial.cs" deviationsHash="BE6C0AAD929D19E36296EC91340171F27452FA6AB4854133D382CF756C5B0837" />
   <file path="Aryzac.Security/Templates/ScopePermissionMap/ScopePermissionMapTemplateRegistration.cs" />
   <file path="Aryzac.Security/Templates/SecurityContractFoundation/SecurityContractFoundationTemplatePartial.cs" />
   <file path="Aryzac.Security/Templates/SecurityContractFoundation/SecurityContractFoundationTemplateRegistration.cs" />

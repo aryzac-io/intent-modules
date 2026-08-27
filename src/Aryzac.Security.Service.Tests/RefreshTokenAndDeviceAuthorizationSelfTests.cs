@@ -184,12 +184,17 @@ internal static class RefreshTokenAndDeviceAuthorizationSelfTests
         Contains(redeem, "string.Equals(grant.Status, \"Redeemed\", StringComparison.Ordinal)");
         Contains(redeem, "The Device Grant was already redeemed.");
         Contains(redeem, "string.Equals(grant.Status, \"Approved\", StringComparison.Ordinal)");
+        Contains(redeem, "SecurityAuthorityDeferredCredential deferredRefreshToken;");
+        Contains(redeem, "string idToken;");
         Contains(redeem, "idToken = CreateIdToken(configuration, signingKeys, client.ClientIdentifier, user.Id, now)");
         Contains(redeem, "deferredRefreshToken = new SecurityAuthorityDeferredCredential(operation.OperationId, () => clearRefreshToken)");
+        Contains(redeem, "TokenResponse(accessToken, configuration.AccessTokenMinutes * 60, redeemedGrant.RequestedScopes, idToken, deferredRefreshToken.Reveal(receipt))");
+        DoesNotContain(redeem, "SecurityAuthorityDeferredCredential? deferredRefreshToken");
+        DoesNotContain(redeem, "string? idToken");
         DoesNotContain(redeem, "configuration.RefreshTokenEnabled && client.AllowedGrantTypes.Contains(\"refresh_token\", StringComparer.Ordinal)");
         Contains(redeem, "redeemedGrant = grant with { Status = \"Redeemed\", RedeemedAt = now, LastPolledAt = now");
         Contains(redeem, "operation.Records.UpdateAsync(redeemedGrant, grant.ConcurrencyToken, cancellationToken)");
-        Before(redeem, "receipt = await operation.CommitAsync(cancellationToken)", "deferredRefreshToken!.Reveal(receipt)");
+        Before(redeem, "receipt = await operation.CommitAsync(cancellationToken)", "deferredRefreshToken.Reveal(receipt)");
         Contains(redeem, "catch (Exception exception) when (isConcurrencyConflict(exception))");
         Contains(redeem, "OAuthError(\"invalid_grant\", \"The Device Grant was concurrently redeemed.\")");
     }

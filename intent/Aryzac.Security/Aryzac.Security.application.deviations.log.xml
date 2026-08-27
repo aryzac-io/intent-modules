@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <deviationsLog>
-  <files />
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.CSharp.Templates.CSharpTemplatePartial#5413af14-47de-4778-8883-bd789689bc6d</correlationId>
+      <path>Aryzac.Security/Templates/ScopePermissionMap/ScopePermissionMapTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2026-08-27T10:21:16.6855549Z</updatedAt>
+      <deviationsHash>BE6C0AAD929D19E36296EC91340171F27452FA6AB4854133D382CF756C5B0837</deviationsHash>
+    </file>
+  </files>
 </deviationsLog>

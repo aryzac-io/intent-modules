@@ -8,6 +8,7 @@
   <file path=".agents/skills/add-designer-extension/SKILL.md" />
   <file path=".agents/skills/add-designer-extension/resources/designer-extension-workflow.md" />
   <file path=".agents/skills/add-designer-extension/resources/designer-extensions-reference.md" />
+  <file path=".agents/skills/add-module-migration/SKILL.md" />
   <file path=".agents/skills/architecture-templates/SKILL.md" />
   <file path=".agents/skills/file-builder-expert/SKILL.md" />
   <file path=".agents/skills/file-builder-expert/resources/api-cheatsheet.md" />
@@ -27,6 +28,7 @@
   <file path=".agents/skills/module-building-strategies/SKILL.md" />
   <file path=".agents/skills/module-debugging/SKILL.md" />
   <file path=".agents/skills/module-docs/SKILL.md" />
+  <file path=".agents/skills/module-svg-icon/SKILL.md" />
   <file path=".agents/skills/module-versioning/SKILL.md" />
   <file path=".claude/instructions/csharp-guidelines.md" />
   <file path=".claude/instructions/exception-guidelines.instructions.md" />
@@ -39,6 +41,7 @@
   <file path=".claude/skills/add-designer-extension/SKILL.md" />
   <file path=".claude/skills/add-designer-extension/resources/designer-extension-workflow.md" />
   <file path=".claude/skills/add-designer-extension/resources/designer-extensions-reference.md" />
+  <file path=".claude/skills/add-module-migration/SKILL.md" />
   <file path=".claude/skills/architecture-templates/SKILL.md" />
   <file path=".claude/skills/file-builder-expert/SKILL.md" />
   <file path=".claude/skills/file-builder-expert/resources/api-cheatsheet.md" />
@@ -58,6 +61,7 @@
   <file path=".claude/skills/module-building-strategies/SKILL.md" />
   <file path=".claude/skills/module-debugging/SKILL.md" />
   <file path=".claude/skills/module-docs/SKILL.md" />
+  <file path=".claude/skills/module-svg-icon/SKILL.md" />
   <file path=".claude/skills/module-versioning/SKILL.md" />
   <file path="src/Aryzac.Modules.sln" />
   <file path="src/Aryzac.Security.Service.Tests/Aryzac.Security.Service.Tests.csproj" />
