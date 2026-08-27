@@ -63,11 +63,11 @@
   <file path="src/Aryzac.Security.Service.Tests/Aryzac.Security.Service.Tests.csproj" />
   <file path="src/Aryzac.Security.Service/Aryzac.Security.Service.csproj" />
   <file path="src/Aryzac.Security.Service/Aryzac.Security.Service.imodspec" />
-  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityConfigurationValidationExtension.cs" />
-  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityMiddlewareExtension.cs" />
-  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityModuleDependencyValidationExtension.cs" />
-  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityPersistenceExtension.cs" />
-  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityRegistrationExtension.cs" />
+  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityConfigurationValidationExtension.cs" deviationsHash="685E05ED66FED86C666F0BEF4F450DEB0B63BCD0C7F8970465151A632552034E" />
+  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityMiddlewareExtension.cs" deviationsHash="28FE87EC20DC765015FA0AE8CD7D33ABE7D4408F219AD472F464F4B5101CD8C0" />
+  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityModuleDependencyValidationExtension.cs" deviationsHash="641F917B1C625932AD3E5BC9148408E7A0E7CF13ACB6A7F66E57BFC12FE4AB80" />
+  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityPersistenceExtension.cs" deviationsHash="E933B2CC3745CE0E0260EFD13D73DF3E5CDFC9F70D509B7F543FE1B82B4CA320" />
+  <file path="src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityRegistrationExtension.cs" deviationsHash="BFC7F615111B60F6BF417E88549F2EA747784D8DE42C995B754A9DADFB97C1A7" />
   <file path="src/Aryzac.Security.Service/Settings/ModuleSettingsExtensions.cs" />
   <file path="src/Aryzac.Security.Service/Templates/SecurityAuthorityAuthorizationEndpoints/SecurityAuthorityAuthorizationEndpointsTemplatePartial.cs" />
   <file path="src/Aryzac.Security.Service/Templates/SecurityAuthorityAuthorizationEndpoints/SecurityAuthorityAuthorizationEndpointsTemplateRegistration.cs" />

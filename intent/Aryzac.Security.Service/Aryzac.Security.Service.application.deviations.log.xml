@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <deviationsLog>
-  <files />
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.FactoryExtension#4cacf649-0d47-47de-8b16-4d6cd7f87522</correlationId>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityConfigurationValidationExtension.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2026-08-27T10:19:40.15694Z</updatedAt>
+      <deviationsHash>685E05ED66FED86C666F0BEF4F450DEB0B63BCD0C7F8970465151A632552034E</deviationsHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.FactoryExtension#878af907-4eaf-4f14-b6fc-0483e03dd035</correlationId>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityMiddlewareExtension.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2026-08-27T10:19:40.1571581Z</updatedAt>
+      <deviationsHash>28FE87EC20DC765015FA0AE8CD7D33ABE7D4408F219AD472F464F4B5101CD8C0</deviationsHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.FactoryExtension#25318d4a-036c-450b-bca9-3d7358e1be7c</correlationId>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityModuleDependencyValidationExtension.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2026-08-27T10:19:40.1571693Z</updatedAt>
+      <deviationsHash>641F917B1C625932AD3E5BC9148408E7A0E7CF13ACB6A7F66E57BFC12FE4AB80</deviationsHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.FactoryExtension#5fdd980a-374f-4c6f-923e-77710dba197b</correlationId>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityPersistenceExtension.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2026-08-27T10:19:40.1571775Z</updatedAt>
+      <deviationsHash>E933B2CC3745CE0E0260EFD13D73DF3E5CDFC9F70D509B7F543FE1B82B4CA320</deviationsHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.FactoryExtension#2b554c04-1669-46c4-9206-59025214ced4</correlationId>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityRegistrationExtension.cs</path>
+      <count>1</count>
+      <updatedByAccountName>stephan@aryzac.io</updatedByAccountName>
+      <updatedByDisplayName>Stephan Johnson</updatedByDisplayName>
+      <updatedAt>2026-08-27T10:19:40.1571861Z</updatedAt>
+      <deviationsHash>BFC7F615111B60F6BF417E88549F2EA747784D8DE42C995B754A9DADFB97C1A7</deviationsHash>
+    </file>
+  </files>
   <customFiles>
     <customFile>
       <path>.gitignore</path>
