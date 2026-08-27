@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="a6ff5d91-c88b-42eb-abe5-c2918cebfd6f" type="C# Template" typeId="f6456232-0f1b-4235-b5f8-b4cce548ca59">
+  <comment>Generate User and Service lifecycle coordination. Permit only New to Active, Active to Suspended, Suspended to Active, and New, Active, or Suspended to Archived or Deleted; keep Archived and Deleted terminal. Require Active Users for new SSO Sessions, Authorization Codes, Device Grant approvals, Access Tokens, ID Tokens, Refresh Token exchanges, and API Key authentication. On User archive/delete revoke active SSO Sessions, Refresh Tokens, API Keys, Role Memberships, and direct Grants without deleting immutable history. On Service deactivate/delete revoke active API Keys and Refresh Tokens and make live-principal validation fail. Service administration must expose create, read, list, update, activate, deactivate, delete, Role assignment/removal, Grant assignment/removal, and idempotent Tenant/name provisioning hooks. API Key lifecycle hooks must cover issue, read/list, revoke, regenerate, expiry, owner-state enforcement, and successful last-used updates.</comment>
+  <name>SecurityAuthorityLifecycle</name>
+  <display>SecurityAuthorityLifecycle: Single File</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="b5485046-5a7e-49d7-bf2a-d6eabf7a5ba2">
+    <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.ModuleBuilder</typePackageName>
+    <typePackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="78be0482-1cd7-4b9f-b457-5ebe1536786e" name="C# Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder.CSharp</definitionPackageName>
+      <definitionPackageId>f2bfb0f7-d304-466f-b923-021d4016b48d</definitionPackageId>
+      <properties>
+        <property name="3b9e1f1b-e253-4c04-89aa-30fef0a9bfa8" display="Templating Method" value="C# File Builder" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="b1f08a30-9aae-4702-bfc8-e285e6b43a61" name="Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="a9de6cf5-6d4f-4ae1-aa60-5ca85e458709" display="Source" value="Lookup Type" isActive="true" />
+        <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" isActive="true" />
+        <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" isActive="true" />
+        <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
+        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Api" isActive="true" />
+        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" value="Security" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

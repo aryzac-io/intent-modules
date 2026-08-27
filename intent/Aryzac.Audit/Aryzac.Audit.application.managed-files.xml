@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="f986a19b-afab-423b-859e-3bc2fbe87323">
+  <file path="Aryzac.Audit/Api/ClassModelStereotypeExtensions.cs" />
+  <file path="Aryzac.Audit/Api/CommandModelStereotypeExtensions.cs" />
+  <file path="Aryzac.Audit/Api/QueryModelStereotypeExtensions.cs" />
+  <file path="Aryzac.Audit/Aryzac.Audit.csproj" />
+  <file path="Aryzac.Audit/Aryzac.Audit.imodspec" />
+  <file path="Aryzac.Audit/FactoryExtensions/AuditExtension.cs" />
+  <file path="Aryzac.Audit/Templates/AuditInterface/AuditInterfaceTemplatePartial.cs" />
+  <file path="Aryzac.Audit/Templates/AuditInterface/AuditInterfaceTemplateRegistration.cs" />
+  <file path="Aryzac.Audit/Templates/TemplateExtensions.cs" />
+  <file path="Aryzac.Audit/release-notes.md" />
+  <file path="Aryzac.Modules.sln" />
+</managedFiles>

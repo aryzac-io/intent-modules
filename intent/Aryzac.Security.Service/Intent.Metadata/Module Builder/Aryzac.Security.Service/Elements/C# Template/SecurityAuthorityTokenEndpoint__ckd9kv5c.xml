@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="45d647a7-6f49-450a-a662-ae416f4a3386" type="C# Template" typeId="f6456232-0f1b-4235-b5f8-b4cce548ca59">
+  <comment>Generate anonymous POST /connect/token with application/x-www-form-urlencoded dispatch for exactly the enabled authorization_code, client_credentials, refresh_token, and urn:ietf:params:oauth:grant-type:device_code grants. Authenticate active clients by their modeled Public/Confidential rules, validate grant enablement and case-sensitive allowed Scopes, and map protocol failures to OAuth error plus optional error_description with HTTP 400 except invalid_client at HTTP 401. Atomically redeem one-time Authorization Codes with exact client, redirect, expiry, lifecycle, and S256 verifier checks. Issue signed Access Tokens containing issuer, audience, subject, Principal Type, Scopes, iat, nbf, exp, jti, and configured tenant/resource context; issue User ID Tokens with client audience, subject, timing, and optional nonce. Apply configured Access Token, ID Token, and Refresh Token durations. Client Credentials issues only an Access Token. Authorization Code and Device Authorization issue Access Token, ID Token, and rotating Refresh Token metadata. Refresh redemption atomically revokes the presented token, links exactly one successor, detects replay, revokes the active successor lineage for the same User and client, and returns invalid_grant without credentials.</comment>
+  <name>SecurityAuthorityTokenEndpoint</name>
+  <display>SecurityAuthorityTokenEndpoint: Single File</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="7c20caf5-ea25-4b71-8741-a588485dbcc5">
+    <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.ModuleBuilder</typePackageName>
+    <typePackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="78be0482-1cd7-4b9f-b457-5ebe1536786e" name="C# Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder.CSharp</definitionPackageName>
+      <definitionPackageId>f2bfb0f7-d304-466f-b923-021d4016b48d</definitionPackageId>
+      <properties>
+        <property name="3b9e1f1b-e253-4c04-89aa-30fef0a9bfa8" display="Templating Method" value="C# File Builder" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="b1f08a30-9aae-4702-bfc8-e285e6b43a61" name="Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="a9de6cf5-6d4f-4ae1-aa60-5ca85e458709" display="Source" value="Lookup Type" isActive="true" />
+        <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" isActive="true" />
+        <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" isActive="true" />
+        <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
+        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Api" isActive="true" />
+        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" value="Security" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

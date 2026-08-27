@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="5add474b-8d3c-48c6-8d33-bb26a42c2d12">
+  <file path="Aryzac.Aspire.Host/Aryzac.Aspire.Host.csproj" />
+  <file path="Aryzac.Aspire.Host/Aryzac.Aspire.Host.imodspec" />
+  <file path="Aryzac.Aspire.Host/FactoryExtensions/MetadataLoaderExtension.cs" />
+  <file path="Aryzac.Aspire.Host/Templates/AppHost/AppHostTemplatePartial.cs" deviationsHash="4A2F0E9B251ED8178660D064318FF683F6A6243292233F9507C0C28089EC6A9F" />
+  <file path="Aryzac.Aspire.Host/Templates/AppHost/AppHostTemplateRegistration.cs" />
+  <file path="Aryzac.Aspire.Host/Templates/AppSettings/AppSettingsTemplatePartial.cs" />
+  <file path="Aryzac.Aspire.Host/Templates/AppSettings/AppSettingsTemplateRegistration.cs" />
+  <file path="Aryzac.Aspire.Host/Templates/AppSettingsDevelopment/AppSettingsDevelopmentTemplatePartial.cs" />
+  <file path="Aryzac.Aspire.Host/Templates/AppSettingsDevelopment/AppSettingsDevelopmentTemplateRegistration.cs" />
+  <file path="Aryzac.Aspire.Host/Templates/TemplateExtensions.cs" />
+  <file path="Aryzac.Modules.sln" />
+</managedFiles>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4cacf649-0d47-47de-8b16-4d6cd7f87522" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <comment>Emit startup validation for Refresh Token feature dependencies, settings bounds, discovery/JWKS and fixed-route collisions, HTTPS outside Development, RSA signing kid/private material, issuer, external-provider secret protection, keyed API Key hashing, SSO cookie protection, development-only ephemeral signing, OAuth Client redirect/grant/Scope configuration, uniqueness, optimistic concurrency, atomic credential rotation, one-time redemption, host persistence guarantees, and the conditional Tenant Adapter requirement. Missing production capabilities fail before the host listens.</comment>
+  <name>SecurityAuthorityConfigurationValidationExtension</name>
+  <display>SecurityAuthorityConfigurationValidationExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="2b554c04-1669-46c4-9206-59025214ced4" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <comment>Register authority options, cryptography, discovery/JWKS, OAuth Client validation, settings, and generated services through established broadcast and handle mechanisms. Publish capability metadata for enabled protocol features, routes, grants, response types, Scopes, claims, signing algorithms, subject types, and PKCE methods. Detect route, authentication-scheme, configuration-key, persistence, and service-registration conflicts, name both registrations, and preserve every existing host registration without replacement.</comment>
+  <name>SecurityAuthorityRegistrationExtension</name>
+  <display>SecurityAuthorityRegistrationExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

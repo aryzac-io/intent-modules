@@ -9,6 +9,12 @@
       <approvedAt>2026-08-26T06:45:16.3887882Z</approvedAt>
     </customFile>
     <customFile>
+      <path>.intent-modules/Aryzac.Security.Service.1.0.0-pre.0.imod</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.1514775Z</approvedAt>
+    </customFile>
+    <customFile>
       <path>intent/.specs/security-service-authority/approvals.json</path>
       <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
       <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
@@ -43,6 +49,18 @@
       <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
       <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
       <approvedAt>2026-08-26T06:45:16.4954283Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/traceability.json</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.310306Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/.specs/security-service-authority/verdict.json</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.4785377Z</approvedAt>
     </customFile>
     <customFile>
       <path>intent/.specs/unified-service-security/design.md</path>
@@ -97,6 +115,12 @@
       <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
       <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
       <approvedAt>2026-08-26T06:45:16.6108139Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>intent/Aryzac.Security.Service/Intent.Metadata/Module Builder/Module Builder.designer.config</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.5744114Z</approvedAt>
     </customFile>
   </customFiles>
 </deviationsLog>

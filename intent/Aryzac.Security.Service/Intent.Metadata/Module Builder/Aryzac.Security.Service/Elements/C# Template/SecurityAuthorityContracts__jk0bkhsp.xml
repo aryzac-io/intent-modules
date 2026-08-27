@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="5f3672ef-3c36-4fae-97f3-6984fc49cb9f" type="C# Template" typeId="f6456232-0f1b-4235-b5f8-b4cce548ca59">
+  <comment>Generate technology-neutral authority host contracts for Tenant resolution, persistence capabilities, atomic operations, authorization administration, RSA signing-key material and active/retained verification-key publication, external-provider secret protection, keyed credential hashing, constant-time comparison, time, idempotency, live-principal validation, lifecycle notifications, auditing, Integration Events, and post-commit delivery failure handling. Tenant resolution exposes Tenant id, Tenant Resource id, Resource Kind, optional parent id, and inheritance protection; startup requires it only when tenant-scoped capabilities are enabled, and authorization always treats the Tenant Adapter as authoritative for current Tenant ownership and parentage. Authorization management contracts register Tenant Resources, Roles, memberships, Grants, and Grant Catalog entries and expose invalidation hooks for Grant, membership, Role, User, Service, API Key, and Tenant Resource parent changes. Persistence capabilities advertise uniqueness, optimistic concurrency, transaction participation where supported, atomic credential rotation, and one-time redemption. Management contracts additionally define action-specific Scope names, deterministic paged result metadata, secret-safe resource projections, RFC 9457 field-error payloads, optional 24-hour idempotency request fingerprints and stored outcomes, concurrency tokens, and status/result shapes for every versioned resource and parity action. Lifecycle notification contracts expose a secret-safe post-commit payload containing transition action, target type and stable identifier, optional Tenant identifier, correlation identifier, UTC timestamp, outcome, and non-secret changed-field names, plus an optional adapter operation for asynchronous delivery. Audit contracts expose actor Principal, action, target type and stable identifier, optional Tenant identifier, correlation identifier, UTC timestamp, outcome, and non-secret changed-field names, plus an optional adapter operation for asynchronous submission. Post-commit delivery failure contracts identify the failed optional adapter, committed operation and target, correlation identifier, UTC failure time, and exception without exposing secrets, plus a host failure-handler operation. Delivery outcomes distinguish not configured, delivered, and failed so absence never claims successful delivery. Cleanup contracts expose a host persistence candidate query that returns committed cleanup snapshots by credential category and cutoff, and a cleanup trigger operation that uses the existing atomic-operation boundary and expected concurrency token for deletion. Candidate snapshots include stable record identifier, credential category, committed expiry, optional revocation and redemption instants, retention-until instant, and concurrency token, but no clear or redeemable secret. Cleanup results report examined, removed, concurrency-lost, and retained counts without treating a race loss as deletion success.</comment>
+  <name>SecurityAuthorityContracts</name>
+  <display>SecurityAuthorityContracts: Single File</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="35d6e108-5d8e-48da-97b8-a5c9d2a2d319">
+    <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.ModuleBuilder</typePackageName>
+    <typePackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="78be0482-1cd7-4b9f-b457-5ebe1536786e" name="C# Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder.CSharp</definitionPackageName>
+      <definitionPackageId>f2bfb0f7-d304-466f-b923-021d4016b48d</definitionPackageId>
+      <properties>
+        <property name="3b9e1f1b-e253-4c04-89aa-30fef0a9bfa8" display="Templating Method" value="C# File Builder" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="b1f08a30-9aae-4702-bfc8-e285e6b43a61" name="Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="a9de6cf5-6d4f-4ae1-aa60-5ca85e458709" display="Source" value="Lookup Type" isActive="true" />
+        <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" isActive="true" />
+        <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" isActive="true" />
+        <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
+        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Api" isActive="true" />
+        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" value="Security" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

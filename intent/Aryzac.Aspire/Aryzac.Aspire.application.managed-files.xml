@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="9206a64f-e735-47bf-bd45-ec8ad45cf58c">
+  <file path="Aryzac.Aspire/Aryzac.Aspire.csproj" />
+  <file path="Aryzac.Aspire/Aryzac.Aspire.imodspec" />
+  <file path="Aryzac.Aspire/FactoryExtensions/InfrastructureDependencyInjectionFactoryExtension.cs" />
+  <file path="Aryzac.Modules.sln" />
+</managedFiles>

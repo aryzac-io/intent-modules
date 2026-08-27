@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d93d5b3c-74e2-490e-ae37-9c17fe49c15b" type="C# Template" typeId="f6456232-0f1b-4235-b5f8-b4cce548ca59">
+  <comment>Generate authority-owned record contracts for User, External Identity, Service, OAuth Client, Redirect URI, Post-Logout Redirect URI, Identity Provider, API Key, Tenant Resource, Role, Role Membership, Grant, Authorization Code, Device Grant, Refresh Token, Access Token Metadata, ID Token Metadata, SSO Session, bootstrap state, idempotency outcome, and processed Integration Event. Tenant Resources retain stable identity, Resource Kind, inheritance protection, and observed parent/Tenant values while the Tenant Adapter remains authoritative for current ownership and parentage. Roles belong to exactly one Tenant Resource and carry enabled state. Role Memberships assign a Role to exactly one User or Service within the Role Tenant boundary and carry optional expiry, revocation, and reason. Grants target exactly one User, Service, Role, or API Key and exactly one Tenant Resource; preserve the Permission Key with ordinal case sensitivity; carry Allow/Deny effect, applicability, optional expiry, revocation, reason, and description. Grant Catalog entries list known Permission Keys and descriptions without granting access. OAuth Clients are explicitly Public or Confidential, have stable identifiers and display names, allowed grant types and case-sensitive allowed Scopes, optional preferred provider, active state, and separate zero-or-more exact Redirect URI and Post-Logout Redirect URI collections. Public clients never retain a secret and require S256 PKCE; Confidential client secrets persist only as hashes. Redirects are absolute, fragment-free, and compared ordinally. Mutable records carry stable identifiers, UTC timestamps, optimistic concurrency stamps, and committed lifecycle state; redeemable secrets persist only hashes or opaque identifiers, and direct API Key permissions persist canonically as Grant records. Service administration additionally requires Tenant-scoped unique normalized names, idempotent provisioning identity, active/deactivated/deleted lifecycle state, Role and direct Grant relationships, and concurrency state. API Key records require exactly one User or Service owner, configurable public prefix, keyed one-way hash, optional Tenant and expiry, revocation/replacement lineage, last-used time, concurrency state, and direct Scope input translated canonically into API Key Grant records; clear key material is never retained. Generate a secret-free revoked credential metadata record and cleanup candidate snapshot containing stable credential identifier and category, optional owner and Tenant identifiers, committed expiry, optional revocation, redemption, and terminal lifecycle timestamps, retain-until UTC instant, and optimistic concurrency token. These records never contain clear redeemable credentials or private key material and support bounded retention plus race-safe cleanup enumeration.</comment>
+  <name>SecurityAuthorityRecords</name>
+  <display>SecurityAuthorityRecords: Single File</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="798ab835-ad17-4838-aa3f-0497b79b71d1">
+    <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.ModuleBuilder</typePackageName>
+    <typePackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="78be0482-1cd7-4b9f-b457-5ebe1536786e" name="C# Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder.CSharp</definitionPackageName>
+      <definitionPackageId>f2bfb0f7-d304-466f-b923-021d4016b48d</definitionPackageId>
+      <properties>
+        <property name="3b9e1f1b-e253-4c04-89aa-30fef0a9bfa8" display="Templating Method" value="C# File Builder" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="b1f08a30-9aae-4702-bfc8-e285e6b43a61" name="Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="a9de6cf5-6d4f-4ae1-aa60-5ca85e458709" display="Source" value="Lookup Type" isActive="true" />
+        <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" isActive="true" />
+        <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" isActive="true" />
+        <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
+        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Api" isActive="true" />
+        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" value="Security" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

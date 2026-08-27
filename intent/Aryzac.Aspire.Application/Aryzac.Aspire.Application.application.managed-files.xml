@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="093080b5-5680-41c1-a11c-5663609e4edd">
+  <file path="Aryzac.Aspire.Application/Aryzac.Aspire.Application.Template/metadata.iatspec" />
+  <file path="Aryzac.Aspire.Application/Aryzac.Aspire.Application.csproj" />
+  <file path="Aryzac.Modules.sln" />
+</managedFiles>

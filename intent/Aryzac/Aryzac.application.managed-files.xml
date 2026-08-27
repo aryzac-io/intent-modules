@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="855cff45-c2a1-4077-aaf1-5d9e928e52af">
+  <file path="Aryzac.Modules.sln" />
+  <file path="Aryzac/Api/HostedServiceModel.cs" />
+  <file path="Aryzac/Api/HostedServicePackageExtensionModel.cs" />
+  <file path="Aryzac/ApiMetadataProviderExtensions.cs" />
+  <file path="Aryzac/Aryzac.csproj" />
+  <file path="Aryzac/Aryzac.imodspec" />
+  <file path="Aryzac/Templates/HostedService/HostedServiceTemplatePartial.cs" />
+  <file path="Aryzac/Templates/HostedService/HostedServiceTemplateRegistration.cs" />
+  <file path="Aryzac/Templates/HostedServicesConfiguration/HostedServicesConfigurationTemplatePartial.cs" />
+  <file path="Aryzac/Templates/HostedServicesConfiguration/HostedServicesConfigurationTemplateRegistration.cs" />
+  <file path="Aryzac/Templates/TemplateExtensions.cs" />
+  <file path="Aryzac/modelers/Service Designer Extensions.designer.settings" />
+  <file path="Aryzac/release-notes.md" />
+</managedFiles>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="fa07cab7-946f-4101-8ccd-26500e6b183c">
+  <file path="Aryzac.Modules.sln" />
+  <file path="Aryzac.Security.Tests/Aryzac.Security.Tests.csproj" />
+  <file path="Aryzac.Security/Api/CommandModelStereotypeExtensions.cs" />
+  <file path="Aryzac.Security/Api/QueryModelStereotypeExtensions.cs" />
+  <file path="Aryzac.Security/Api/ScopeConfigurationModel.cs" />
+  <file path="Aryzac.Security/Api/ScopeModel.cs" />
+  <file path="Aryzac.Security/Api/ScopeModelStereotypeExtensions.cs" />
+  <file path="Aryzac.Security/Api/ScopePackageExtensionModel.cs" />
+  <file path="Aryzac.Security/Api/ScopeVerbModel.cs" />
+  <file path="Aryzac.Security/ApiMetadataProviderExtensions.cs" />
+  <file path="Aryzac.Security/Aryzac.Security.csproj" />
+  <file path="Aryzac.Security/Aryzac.Security.imodspec" />
+  <file path="Aryzac.Security/Templates/ScopePermissionMap/ScopePermissionMapTemplatePartial.cs" />
+  <file path="Aryzac.Security/Templates/ScopePermissionMap/ScopePermissionMapTemplateRegistration.cs" />
+  <file path="Aryzac.Security/Templates/SecurityContractFoundation/SecurityContractFoundationTemplatePartial.cs" />
+  <file path="Aryzac.Security/Templates/SecurityContractFoundation/SecurityContractFoundationTemplateRegistration.cs" />
+  <file path="Aryzac.Security/Templates/SecurityInboundCredentials/SecurityInboundCredentialsTemplatePartial.cs" />
+  <file path="Aryzac.Security/Templates/SecurityInboundCredentials/SecurityInboundCredentialsTemplateRegistration.cs" />
+  <file path="Aryzac.Security/Templates/SecurityRegistration/SecurityRegistrationTemplatePartial.cs" />
+  <file path="Aryzac.Security/Templates/SecurityRegistration/SecurityRegistrationTemplateRegistration.cs" />
+  <file path="Aryzac.Security/Templates/TemplateExtensions.cs" />
+  <file path="Aryzac.Security/modelers/Security Extensions.designer.settings" />
+  <file path="Aryzac.Security/modelers/Security Options Extensions.designer.settings" />
+  <file path="Aryzac.Security/release-notes.md" />
+</managedFiles>

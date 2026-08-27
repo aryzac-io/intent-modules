@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="336de94e-013d-4265-87bf-180b4b78f343">
+  <file path="Aryzac.Modules.sln" />
+  <file path="Aryzac.VueJS/Api/ClientModel.cs" />
+  <file path="Aryzac.VueJS/Api/ComposableExtensionModel.cs" />
+  <file path="Aryzac.VueJS/Api/ComposableModel.cs" />
+  <file path="Aryzac.VueJS/Api/ComposableServiceModel.cs" />
+  <file path="Aryzac.VueJS/Api/ComposableServiceModelStereotypeExtensions.cs" />
+  <file path="Aryzac.VueJS/ApiMetadataDesignerExtensions.cs" />
+  <file path="Aryzac.VueJS/ApiMetadataPackageExtensions.cs" />
+  <file path="Aryzac.VueJS/ApiMetadataProviderExtensions.cs" />
+  <file path="Aryzac.VueJS/Aryzac.VueJS.csproj" />
+  <file path="Aryzac.VueJS/Aryzac.VueJS.imodspec" />
+  <file path="Aryzac.VueJS/Templates/Command/CommandTemplate.cs" />
+  <file path="Aryzac.VueJS/Templates/Command/CommandTemplate.tt" />
+  <file path="Aryzac.VueJS/Templates/Command/CommandTemplatePartial.cs" />
+  <file path="Aryzac.VueJS/Templates/Command/CommandTemplateRegistration.cs" />
+  <file path="Aryzac.VueJS/Templates/Composable/ComposableTemplate.cs" />
+  <file path="Aryzac.VueJS/Templates/Composable/ComposableTemplate.tt" />
+  <file path="Aryzac.VueJS/Templates/Composable/ComposableTemplatePartial.cs" deviationsHash="4EE1E6A8932D1D7DAB097E55445190D62384CD7AC2C7EE7AEA474EC04962D26B" />
+  <file path="Aryzac.VueJS/Templates/Composable/ComposableTemplateRegistration.cs" />
+  <file path="Aryzac.VueJS/Templates/Dto/DtoTemplate.cs" />
+  <file path="Aryzac.VueJS/Templates/Dto/DtoTemplate.tt" />
+  <file path="Aryzac.VueJS/Templates/Dto/DtoTemplatePartial.cs" />
+  <file path="Aryzac.VueJS/Templates/Dto/DtoTemplateRegistration.cs" />
+  <file path="Aryzac.VueJS/Templates/EnumType/EnumTypeTemplate.cs" />
+  <file path="Aryzac.VueJS/Templates/EnumType/EnumTypeTemplate.tt" />
+  <file path="Aryzac.VueJS/Templates/EnumType/EnumTypeTemplatePartial.cs" />
+  <file path="Aryzac.VueJS/Templates/EnumType/EnumTypeTemplateRegistration.cs" />
+  <file path="Aryzac.VueJS/Templates/JsonReponse/JsonReponseTemplate.cs" />
+  <file path="Aryzac.VueJS/Templates/JsonReponse/JsonReponseTemplate.tt" />
+  <file path="Aryzac.VueJS/Templates/JsonReponse/JsonReponseTemplatePartial.cs" />
+  <file path="Aryzac.VueJS/Templates/JsonReponse/JsonReponseTemplateRegistration.cs" />
+  <file path="Aryzac.VueJS/Templates/Query/QueryTemplate.cs" />
+  <file path="Aryzac.VueJS/Templates/Query/QueryTemplate.tt" />
+  <file path="Aryzac.VueJS/Templates/Query/QueryTemplatePartial.cs" />
+  <file path="Aryzac.VueJS/Templates/Query/QueryTemplateRegistration.cs" />
+  <file path="Aryzac.VueJS/Templates/TemplateExtensions.cs" />
+  <file path="Aryzac.VueJS/modelers/VueJS Settings.designer.settings" />
+  <file path="Aryzac.VueJS/modelers/VueJS.designer.config" />
+  <file path="Aryzac.VueJS/release-notes.md" />
+</managedFiles>

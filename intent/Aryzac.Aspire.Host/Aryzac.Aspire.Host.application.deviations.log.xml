@@ -14,6 +14,426 @@
   </files>
   <customFiles>
     <customFile>
+      <path>src/Aryzac.Security.Service.Tests/ApiKeyManagementSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.6762864Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/Aryzac.Security.Service.Tests.csproj</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.7675665Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/AuthorizationCodeAndTokenEndpointSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.8596814Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/AuthorizationEngineSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:20.9895203Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/BootstrapUserAndServiceLifecycleSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.1024273Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/ConformanceKitSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.1560141Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/CoreAuthorityContractSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.2385625Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/CryptographicMaterialSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.3206023Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/DiscoveryAndOAuthClientValidationSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.3872465Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/ExternalProviderSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.4675975Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/IntegrationDeliveryCleanupSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.5764641Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/ManagementApiContractSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.7315882Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/Program.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.7776897Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/RefreshTokenAndDeviceAuthorizationSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.8587523Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service.Tests/SessionEndpointsSelfTests.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:21.896174Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Aryzac.Security.Service.csproj</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.0458694Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Aryzac.Security.Service.imodspec</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.0892451Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityConfigurationValidationExtension.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.168498Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityIntegration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.2251083Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityMiddlewareExtension.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.3662826Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityModuleDependencyValidationExtension.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.4810995Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityPersistenceExtension.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.6382289Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/FactoryExtensions/SecurityAuthorityRegistrationExtension.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.7423997Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/release-notes.md</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.8225267Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Settings/ModuleSettingsExtensions.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:22.9306445Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityAuthorizationEndpoints/SecurityAuthorityAuthorizationEndpointsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.0573254Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityAuthorizationEndpoints/SecurityAuthorityAuthorizationEndpointsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.163574Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityAuthorizationEngine/SecurityAuthorityAuthorizationEngineTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.2145991Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityAuthorizationEngine/SecurityAuthorityAuthorizationEngineTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.2464221Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityBootstrap/SecurityAuthorityBootstrapTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.3805594Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityBootstrap/SecurityAuthorityBootstrapTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.4820865Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityCleanup/SecurityAuthorityCleanupTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.571601Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityCleanup/SecurityAuthorityCleanupTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.6486504Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityConformanceTests/SecurityAuthorityConformanceTestsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.7531273Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityConformanceTests/SecurityAuthorityConformanceTestsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.795655Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityContracts/SecurityAuthorityContractsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.8372872Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityContracts/SecurityAuthorityContractsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.9385969Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityCryptography/SecurityAuthorityCryptographyTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:23.9887048Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityCryptography/SecurityAuthorityCryptographyTemplatePartial.cs.orig</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.031839Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityCryptography/SecurityAuthorityCryptographyTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.0620573Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityDeviceEndpoints/SecurityAuthorityDeviceEndpointsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.1940432Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityDeviceEndpoints/SecurityAuthorityDeviceEndpointsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.2944513Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityDiscoveryEndpoints/SecurityAuthorityDiscoveryEndpointsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.4405404Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityDiscoveryEndpoints/SecurityAuthorityDiscoveryEndpointsTemplatePartial.cs.orig</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.516796Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityDiscoveryEndpoints/SecurityAuthorityDiscoveryEndpointsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.6136184Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityEnums/SecurityAuthorityEnumsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.7117739Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityEnums/SecurityAuthorityEnumsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.7680671Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityExternalProviders/SecurityAuthorityExternalProvidersTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.8303393Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityExternalProviders/SecurityAuthorityExternalProvidersTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:24.9527288Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityIntegrationEvents/SecurityAuthorityIntegrationEventsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.0126659Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityIntegrationEvents/SecurityAuthorityIntegrationEventsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.0829228Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityLifecycle/SecurityAuthorityLifecycleTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.2068528Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityLifecycle/SecurityAuthorityLifecycleTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.2736747Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityManagementEndpoints/SecurityAuthorityManagementEndpointsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.3251234Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityManagementEndpoints/SecurityAuthorityManagementEndpointsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.416789Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityOptions/SecurityAuthorityOptionsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.6235069Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityOptions/SecurityAuthorityOptionsTemplatePartial.cs.orig</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.8296786Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityOptions/SecurityAuthorityOptionsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:25.9380562Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityPostCommitDispatch/SecurityAuthorityPostCommitDispatchTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.0319909Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityPostCommitDispatch/SecurityAuthorityPostCommitDispatchTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.205052Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityRecords/SecurityAuthorityRecordsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.2727624Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityRecords/SecurityAuthorityRecordsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.450403Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthoritySessionEndpoints/SecurityAuthoritySessionEndpointsTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.5833977Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthoritySessionEndpoints/SecurityAuthoritySessionEndpointsTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.7109962Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityTokenEndpoint/SecurityAuthorityTokenEndpointTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.8382755Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityTokenEndpoint/SecurityAuthorityTokenEndpointTemplatePartial.cs.orig</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:26.9591433Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityTokenEndpoint/SecurityAuthorityTokenEndpointTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:27.0041028Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityValidation/SecurityAuthorityValidationTemplatePartial.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:27.0583773Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/SecurityAuthorityValidation/SecurityAuthorityValidationTemplateRegistration.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:27.1950577Z</approvedAt>
+    </customFile>
+    <customFile>
+      <path>src/Aryzac.Security.Service/Templates/TemplateExtensions.cs</path>
+      <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
+      <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>
+      <approvedAt>2026-08-27T10:18:27.2842585Z</approvedAt>
+    </customFile>
+    <customFile>
       <path>src/Aryzac.Security.Tests/Aryzac.Security.Tests.csproj</path>
       <approvedByAccountName>stephan@aryzac.io</approvedByAccountName>
       <approvedByDisplayName>Stephan Johnson</approvedByDisplayName>

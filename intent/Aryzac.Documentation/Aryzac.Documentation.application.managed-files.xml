@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="457fdc4e-7100-4ba0-90c7-34cd95b5885f">
+  <file path="Aryzac.Documentation/Aryzac.Documentation.csproj" />
+  <file path="Aryzac.Documentation/Aryzac.Documentation.imodspec" />
+  <file path="Aryzac.Documentation/Templates/Domain/Domain/DomainTemplate.cs" />
+  <file path="Aryzac.Documentation/Templates/Domain/Domain/DomainTemplate.tt" />
+  <file path="Aryzac.Documentation/Templates/Domain/Domain/DomainTemplatePartial.cs" />
+  <file path="Aryzac.Documentation/Templates/Domain/Domain/DomainTemplateRegistration.cs" />
+  <file path="Aryzac.Modules.sln" />
+</managedFiles>

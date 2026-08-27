@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="25318d4a-036c-450b-bca9-3d7358e1be7c" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <comment>Validate compatible Aryzac.Security, ASP.NET Core host, route, authentication-scheme, configuration-key, persistence-registration, service-registration, and enabled-feature capabilities. Emit one actionable FriendlyException for each missing or incompatible application capability; use ElementException only for a specific invalid model element.</comment>
+  <name>SecurityAuthorityModuleDependencyValidationExtension</name>
+  <display>SecurityAuthorityModuleDependencyValidationExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>ff9ba137-4fc8-442a-8b7e-991d82af4229</parentFolderId>
+  <packageId>ff9ba137-4fc8-442a-8b7e-991d82af4229</packageId>
+  <packageName>Aryzac.Security.Service</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
